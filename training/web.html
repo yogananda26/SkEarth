@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="header"></h1>
+    
+    
+    <script>
+        // this is for training the ASYN 
+        const ajax = new XMLHttpRequest(); 
+        ajax.open('GET', "data_storage.json"); 
+        // this is for getting data from OUR JSON
+        ajax.addEventListener('load', function(){ 
+            const value = JSON.parse(ajax.responseText); 
+            const header = document.getElementById('header'); 
+            header.textContent = value.name1;
+        }); 
+        ajax.send();
+
+        // this is for displaying the time or the current time of state
+        setTimeout(() => {
+            
+        }, timeout);
+        const time = new Date().toString; 
+
+
+        // ajax.send();
+    </script>
+</body>
+</html>
