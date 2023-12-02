@@ -25,7 +25,7 @@ app.use('/solar',route_solar);
 app.use('/report-FnQ',route_report)
 
 // this is for making the connection to localhost on port 1234
-app.listen(1234 ,()=>{ ``
+app.listen(2000 ,()=>{ ``
 console.log('this is your server side is running .... '); 
 });
 
@@ -33,7 +33,7 @@ console.log('this is your server side is running .... ');
 const connect = async(url)=>{ 
     try{ 
         await database(url); 
-        console.log("your database successfull connected");
+        console.log("your database successfull yeah");
     }catch(err){ 
         console.log(err)
     }
