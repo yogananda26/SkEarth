@@ -13,6 +13,4 @@ const input_user = async(req,res)=>{
 
 module.exports = { 
     input_user
-} 
-
-vgvg
+}
