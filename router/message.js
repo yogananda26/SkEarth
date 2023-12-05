@@ -13,12 +13,8 @@ router.use(express.json(), express.urlencoded());
  
 router 
     .route('/')
-    .get((req, res)=>{
-        console.log(req.params);
-        res.end();
-    })
+    .get(get_all_message)
     .post(make_message); 
-
 
 router
     .route("/:id")

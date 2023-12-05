@@ -10,7 +10,7 @@ const message_schema = new mongoose.Schema(
     },
     types: {type:String, required :[true, "please provide your type"]},
     history:{ 
-        date : String, 
+        date : {type:Date, default: Date.now()}, 
         content:{
             type:String, 
             maxlength: [10000  , 'please not more than 1000 word']
