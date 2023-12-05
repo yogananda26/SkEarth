@@ -5,12 +5,11 @@ const {make_message,
     update_message, 
     get_some_message
 } = require("../controller/task-message");
-const throws_error = require('../middleware/throws-error');
-
-
+const {get_error} = require('../middleware/throws-error');
 const router = express.Router();
+
+4
 router.use(express.json(), express.urlencoded());
- 
 router 
     .route('/')
     .get(get_all_message)
@@ -18,7 +17,7 @@ router
 
 router
     .route("/:id")
-    .patch(update_message, throws_error)
+    .patch(update_message, get_error)
     .delete(delete_message);
 
 

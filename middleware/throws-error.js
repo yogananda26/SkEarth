@@ -1,8 +1,8 @@
-const {asycn_error} = require('../middleware/error-handlers'); 
+const {custom_api_error} = require('../error/driver-error'); 
 
 const get_error = (err, req, res, next) =>{
-    if(err instanceof asycn_error){ 
-        return res.status(err.status).json({input: "null", msg : err.message});
+    if(err instanceof custom_api_error){ 
+        res.status(err.status_code).json({input: "null", msg : err.message});
     }
 }
-module.exports = get_error;
+module.exports = {get_error};

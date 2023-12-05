@@ -1,8 +1,6 @@
 // this is a basic of server in node js 
 const express = require('express'); 
 const app = express();
-const {product} = require('../database/storage');
-const {createReadStream} = require('fs');
 const database = require('../database/main');
 require('dotenv').config(); 
 
