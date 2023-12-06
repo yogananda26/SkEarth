@@ -12,15 +12,19 @@ const route_news = require('../router/news');
 const route_report = require('../router/report');
 const route_solar = require('../router/solar-panel'); 
 const route_UV = require('../router/uv-index');
+const login_auth = require("../router/login-auth");
+const sign_auth = require("../router/signup-auth");
 
-
-// this is for accesing the route
+// this is for accesing the route/ and using the middleware
+app.use(express.json(), express.urlencoded());
 app.use('/message',route_message);
 app.use('/forecast',route_forecast)
 app.use('/uv-index',route_UV);
 app.use('/news',route_news); 
 app.use('/solar',route_solar);
 app.use('/report-FnQ',route_report)
+app.use('/login', login_auth);
+app.use('/sign-up', sign_auth);
 
 // this is for making the connection to localhost on port 1234
 app.listen(2000 ,()=>{ ``

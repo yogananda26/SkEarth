@@ -2,9 +2,6 @@ const express = require('express');
 const {input_user} = require('../controller/auth')
 const router = express.Router();
 
-// middleware
-// router.use(express.json()); 
-
 router 
     .route("/")
     .get((req, res)=>{ 

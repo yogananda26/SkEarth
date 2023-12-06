@@ -8,8 +8,6 @@ const {make_message,
 const {get_error} = require('../middleware/throws-error');
 const router = express.Router();
 
-4
-router.use(express.json(), express.urlencoded());
 router 
     .route('/')
     .get(get_all_message)
