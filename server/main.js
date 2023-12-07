@@ -16,6 +16,7 @@ const route_UV = require('../router/uv-index');
 const route_auth = require("../router/auth");
 
 // this is for accesing the route/ and using the middleware
+app.use(express.static('./front-end'));
 app.use(express.json(), express.urlencoded());
 app.use('/message',route_message);
 app.use('/forecast',route_forecast)
