@@ -1,16 +1,37 @@
-const express = require("express");
-const template = require('../model/task');
+const { async_wrapper } = require("../middleware/async-wrapper");
+const User = require('../model/User');
+const {StatusCodes} = require("http-status-codes");
+const {auth_error} = require("../error/driver-error");
 
-const input_user = async(req,res)=>{
-    try{ 
-        const data = await template.create(req.body);
-        return res.status(200).json({data});  
-    }catch(err){ 
-        console.log(`there is a error ${err}`);
-        return res.end('please input your JSON file...')
+
+const signUp = async_wrapper(async(req, res, next)=>{ 
+    const {name, email, password} = req.body;
+    // console.log(name, email, password); 
+    if(!name || !email || !password) { 
+        throw new auth_error("provide your credential thing");
     }
-}
+    const user = await User.create({...req.body})
+    const token = user.create_JWT();
+    res.status(StatusCodes.ACCEPTED).json({data : user, token : token});
+})
 
-module.exports = { 
-    input_user
+const logIn = async_wrapper(async(req, res, next)=>{
+    const {name, email, password} = req.body;
+    if(!name || !password){
+        throw new auth_error("please input your credential data");
+    }
+    const user = await User.findOne({email});
+    if(!user){
+        throw new auth_error("there is no user with this email");
+    }
+    const isMatch = await user.comparePassword(password);
+    if(!isMatch){ 
+        throw new auth_error("your password is wrong");
+    }
+    const token = await user.create_JWT();
+    res.status(StatusCodes.ACCEPTED).json({data : token});
+})
+
+module.exports ={
+    logIn, signUp
 }

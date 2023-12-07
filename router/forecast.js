@@ -1,5 +1,5 @@
 const express = require('express'); 
-const {input_user} = require('../controller/auth')
+const {login} = require('../controller/auth')
 const router = express.Router();
 
 router 
@@ -8,7 +8,7 @@ router
         console.log("this is for getting something bby");
         res.end();
     })
-    .post(express.json(), input_user)
+    .post(express.json())
     
 
 module.exports = router;

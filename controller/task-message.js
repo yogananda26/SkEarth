@@ -17,24 +17,24 @@ const delete_message = async_wrapper(async(req, res)=>{
     res.status(200).json({status : 'success' , msg : `success deleted your message ${userID}`});
 })
 const update_message = async_wrapper(async(req, res, next)=> { 
-    const {id} = req.params;
+    const {userID} = req.params;
     if(req.body = {}){ 
-        return next(new bad_request("please provide body in HTML"));
+        throw new bad_request("please provide body in HTML");
     } 
-    const person = await message.findOneAndUpdate({_id : valueID}, req.body, {
+    const person = await message.findOneAndUpdate({_id : userID}, req.body, {
         new : true,
         runValidators : true
     })
-    res.status(200).json({msg : `you updatted the user with id : ${id}`}, person);
+    res.status(200).json({msg : `you updatted the user with id : ${userID}`}, person);
 })
 // this is for searching the unique message
 const get_some_message = async_wrapper(async(req, res)=>{ 
-    const { id: userID } = req.params;
+    const { userID } = req.params;
     const search = await message.find({ 
-        id : 8080
+        _id : userID
     })
     console.log("this is testing");
-    res.status(200).json({data : Number(id)});
+    res.status(200).json({id : Number(userID),data: search});
 })
 
 

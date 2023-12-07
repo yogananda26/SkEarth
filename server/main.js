@@ -2,6 +2,7 @@
 const express = require('express'); 
 const app = express();
 const database = require('../database/main');
+const {get_error} = require('../middleware/throws-error');
 require('dotenv').config(); 
 
 
@@ -12,8 +13,7 @@ const route_news = require('../router/news');
 const route_report = require('../router/report');
 const route_solar = require('../router/solar-panel'); 
 const route_UV = require('../router/uv-index');
-const login_auth = require("../router/login-auth");
-const sign_auth = require("../router/signup-auth");
+const route_auth = require("../router/auth");
 
 // this is for accesing the route/ and using the middleware
 app.use(express.json(), express.urlencoded());
@@ -23,8 +23,11 @@ app.use('/uv-index',route_UV);
 app.use('/news',route_news); 
 app.use('/solar',route_solar);
 app.use('/report-FnQ',route_report)
-app.use('/login', login_auth);
-app.use('/sign-up', sign_auth);
+app.use('/auth', route_auth);
+
+
+// this is for handling the error
+app.use(get_error);
 
 // this is for making the connection to localhost on port 1234
 app.listen(2000 ,()=>{ ``

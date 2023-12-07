@@ -3,27 +3,26 @@ const jwt = require("jsonwebtoken");
 const {auth_error} = require("../error/driver-error")
 const {async_wrapper} = require("./async-wrapper");
 
-const auth = async_wrapper(async(req, res, next)=>{ 
+const authentication = async_wrapper(async(req, res, next)=>{ 
     const header_token = req.headers.authorization; 
     console.log(req.headers.authorization);
-    // this is for ekstracting
+
     if(!header_token || !header_token.startsWith('Bearer ')){ 
-        throw new auth_error("You dont have permissino to access this page")
+        throw new auth_error("You dont have permission to access this page")
     }
     const token = header_token.split(' ')[1]; 
-    console.log(token, "thig");
     try{ 
         const decode = jwt.verify(token, process.env.PRIVATE_CODE); 
-        const {name, id} = decode;
-        req.user = {name, id};
+        const {userID, name} = decode;
+        req.user = {userID , name};
         console.log(decode);
-        // this is suppose to use next(); 
-        res.status(200).json({decode});
+        next()
     }catch(err){ 
         throw new auth_error("You dont have permission to access this page")
     }
+
 })
 
 module.exports = { 
-    auth
+    authentication 
 }
