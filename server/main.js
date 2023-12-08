@@ -18,12 +18,12 @@ const route_auth = require("../router/auth");
 // this is for accesing the route/ and using the middleware
 app.use(express.static('./front-end'));
 app.use(express.json(), express.urlencoded());
-app.use('/message',route_message);
-app.use('/forecast',route_forecast)
-app.use('/uv-index',route_UV);
-app.use('/news',route_news); 
-app.use('/solar',route_solar);
-app.use('/report-FnQ',route_report)
+app.use('api/v1/message',route_message);
+app.use('api/v1/forecast',route_forecast)
+app.use('api/v1/uv-index',route_UV);
+app.use('api/v1/news',route_news); 
+app.use('api/v1/solar',route_solar);
+app.use('api/v1/report-FnQ',route_report)
 app.use('/auth', route_auth);
 
 

@@ -40,7 +40,7 @@ User.methods.create_JWT = function() {
     })
     return token; 
 }
-User.methods.check_pass = async function(password){ 
+User.methods.check_password = async function(password){ 
     const isMatch = await bcrypt.compare(password, this.password);
     return isMatch; 
 }

@@ -16,20 +16,20 @@ const signUp = async_wrapper(async(req, res, next)=>{
 })
 
 const logIn = async_wrapper(async(req, res, next)=>{
-    const {name, email, password} = req.body;
-    if(!name || !password){
+    const {email, password} = req.body;
+    if(!email || !password){
         throw new auth_error("please input your credential data");
     }
-    const user = await User.findOne({email});
+    const user = await User.findOne({email : email});
     if(!user){
         throw new auth_error("there is no user with this email");
     }
-    const isMatch = await user.comparePassword(password);
+    const isMatch = await user.check_password(password);
     if(!isMatch){ 
         throw new auth_error("your password is wrong");
     }
     const token = await user.create_JWT();
-    res.status(StatusCodes.ACCEPTED).json({data : token});
+    res.status(StatusCodes.ACCEPTED).json({token : token});
 })
 
 module.exports ={
