@@ -1,0 +1,290 @@
+.login-container {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+  }
+  .login-photos {
+    top: 0px;
+    left: 800px;
+    width: 720px;
+    height: 900px;
+    position: absolute;
+  }
+  .login-sign-up-form {
+    top: 0px;
+    left: 0px;
+    width: 900px;
+    height: 900px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .login-sign-upbutton {
+    top: 704px;
+    left: 72px;
+    width: 750px;
+    height: 59px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .login-emailtextbox {
+    top: 441px;
+    left: 69px;
+    width: 350px;
+    height: 50px;
+    position: absolute;
+    box-shadow: 2px 4px 6px 0px rgba(78, 78, 78, 0.15000000596046448) ;
+  }
+  .login-agetextbox {
+    top: 441px;
+    left: 465px;
+    width: 350px;
+    height: 50px;
+    position: absolute;
+    box-shadow: 2px 4px 6px 0px rgba(78, 78, 78, 0.15000000596046448) ;
+  }
+  .login-full-nametexbox {
+    top: 313px;
+    left: 69px;
+    width: 350px;
+    height: 50px;
+    position: absolute;
+    box-shadow: 2px 4px 6px 0px rgba(78, 78, 78, 0.15000000596046448) ;
+  }
+  .login-usernametextbox {
+    top: 313px;
+    left: 465px;
+    width: 350px;
+    height: 50px;
+    position: absolute;
+    box-shadow: 2px 4px 6px 0px rgba(78, 78, 78, 0.15000000596046448) ;
+  }
+  .login-passwordtextbox {
+    top: 571px;
+    left: 69px;
+    width: 350px;
+    height: 50px;
+    position: absolute;
+    box-shadow: 2px 4px 6px 0px rgba(78, 78, 78, 0.15000000596046448) ;
+  }
+  .login-confirm-passwordtextbox {
+    top: 571px;
+    left: 465px;
+    width: 350px;
+    height: 50px;
+    position: absolute;
+    box-shadow: 2px 4px 6px 0px rgba(78, 78, 78, 0.15000000596046448) ;
+  }
+  .login-text14 {
+    top: 541px;
+    left: 69px;
+    color: rgba(79, 79, 79, 1);
+    width: 84px;
+    height: auto;
+    position: absolute;
+    font-size: 14px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .login-text16 {
+    top: 541px;
+    left: 465px;
+    color: rgba(79, 79, 79, 1);
+    width: 126px;
+    height: auto;
+    position: absolute;
+    font-size: 14px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .login-text02 {
+    top: 410px;
+    left: 69px;
+    color: rgba(79, 79, 79, 1);
+    width: 63px;
+    height: auto;
+    position: absolute;
+    font-size: 14px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .login-text04 {
+    top: 410px;
+    left: 465px;
+    color: rgba(79, 79, 79, 1);
+    width: 63px;
+    height: auto;
+    position: absolute;
+    font-size: 14px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .login-text06 {
+    top: 282px;
+    left: 69px;
+    color: rgba(79, 79, 79, 1);
+    width: 70px;
+    height: auto;
+    position: absolute;
+    font-size: 14px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .login-text08 {
+    top: 282px;
+    left: 465px;
+    color: rgba(79, 79, 79, 1);
+    width: 70px;
+    height: auto;
+    position: absolute;
+    font-size: 14px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .login-sign-intextline {
+    top: 798px;
+    left: 105px;
+    width: 325px;
+    height: 31px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .login-text10 {
+    color: rgba(79, 79, 79, 1);
+    width: 250px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .login-text12 {
+    left: 210px;
+    color: rgba(99, 198, 241, 1);
+    width: 75px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Semi Bold;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+
+  .login-text18 {
+    top: 69px;
+    left: 259px;
+    color: rgba(0, 0, 0, 1);
+    width: 361px;
+    height: auto;
+    position: absolute;
+    font-size: 45px;
+    font-style: Regular;
+    text-align: center;
+    font-family: Inknut Antiqua;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .login-text20 {
+    top: 143px;
+    left: 162px;
+    color: rgba(0, 0, 0, 1);
+    width: 554px;
+    height: auto;
+    position: absolute;
+    font-size: 25px;
+    font-style: Regular;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .login-agreementtextline {
+    top: 648px;
+    left: 69px;
+    width: 303px;
+    height: 25px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .login-text22 {
+    top: 1px;
+    left: 28px;
+    color: rgba(79, 79, 79, 1);
+    width: 267px;
+    height: auto;
+    position: absolute;
+    font-size: 15px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .login-agreementcheckbox {
+    top: 0px;
+    left: 0px;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    border-color: rgba(0, 0, 0, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+  }
+  
