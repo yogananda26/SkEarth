@@ -14,16 +14,18 @@ const route_report = require('../router/report');
 const route_solar = require('../router/solar-panel'); 
 const route_UV = require('../router/uv-index');
 const route_auth = require("../router/auth");
+const route_air_polution = require("../router/air-polution");
 
 // this is for accesing the route/ and using the middleware
 app.use(express.static('./front-end'));
 app.use(express.json(), express.urlencoded());
-app.use('api/v1/message',route_message);
-app.use('api/v1/forecast',route_forecast)
-app.use('api/v1/uv-index',route_UV);
-app.use('api/v1/news',route_news); 
-app.use('api/v1/solar',route_solar);
-app.use('api/v1/report-FnQ',route_report)
+app.use('/api/v1/message',route_message);
+app.use('/api/v1/forecast',route_forecast)
+app.use('/api/v1/uv-index',route_UV);
+app.use('/api/v1/news',route_news); 
+app.use('/api/v1/solar',route_solar);
+app.use('/api/v1/air-polution', route_air_polution); 
+app.use('/api/v1/report-FnQ',route_report)
 app.use('/auth', route_auth);
 
 

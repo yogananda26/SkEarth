@@ -8,7 +8,7 @@ const authentication = async_wrapper(async(req, res, next)=>{
     console.log(req.headers.authorization);
 
     if(!header_token || !header_token.startsWith('Bearer ')){ 
-        throw new auth_error("You dont have permission to access this page")
+        throw new auth_error("You dont have permission to access this page, please login first")
     }
     const token = header_token.split(' ')[1]; 
     try{ 

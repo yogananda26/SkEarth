@@ -17,7 +17,7 @@
                 <div class="signUp-text20">
                     Get started absolutely free
                 </div>
-                <form id="form1" method="post">
+                <form id="form1">
                     <div class="signUp-text06">Full Name</div>
                     <input type="text" name="fullName" placeholder="" required=""
                         class="signUp-full-nametexbox"><br />
@@ -34,22 +34,28 @@
                     <div class="signUp-text16">Confirm Password</div>
                     <input type="password" name="passwordConf" placeholder="" required=""
                         class="signUp-confirm-passwordtextbox"><br />
-                    <input type="submit" value="Sign Up" class="signUp-sign-upbutton">
                     <div class="signUp-agreementtextline">
                         <input type="checkbox" class="signUp-agreementcheckbox" name="agreement1">
                         <label for="signUp-agreementcheckbox" class="signUp-text22"> I agree to the Terms and
                             Conditions</label><br>
                     </div>
-                    <div class="signUp-sign-intextline">
+                    <button type="submit" class="signUp-sign-upbutton">SignUp</button>
+                </form>
+                 <div class="signUp-sign-intextline">
                         <div class="signUp-text10">
                             Already have an account?
                         </div>
                         <div class="signUp-text12"><a href="../page/testing.html">SignUp</a></div>
                     </div>
-                </form>
             </div>
         </div>
     </div>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    ></script>
+    <script src="./script.js"></script>
 </body>
-
 </html>
