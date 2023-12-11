@@ -1,4 +1,4 @@
-.signUp-container {
+.login-container {
   width: 100%;
   height: 100%;
   display: flex;
@@ -7,14 +7,14 @@
   align-items: center;
   flex-direction: column;
 }
-.signUp-photos {
+.login-photos {
   top: 0px;
   right:800px;
   width: 736px;
   height: 739px;
   position: absolute;
 }
-.signUp-form {
+.login-form {
   top: 0px;
   left: 700px;
   width: 800px;
@@ -27,7 +27,7 @@
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
 }
-.signUp-sign-upbutton {
+.login-sign-upbutton {
   top: 540px;
   left: 330px;
   width: 300px;
@@ -40,7 +40,7 @@
   color: white;
   background-color: #95CEF6;
 }
-.signUp-emailtextbox {
+.login-emailtextbox {
   top: 300px;
   left: 210px;
   width: 500px;
@@ -52,7 +52,7 @@
   border-style: solid;
 }
 
-.signUp-passwordtextbox {
+.login-passwordtextbox {
   top: 430px;
   left: 210px;
   width: 500px;
@@ -77,7 +77,7 @@ input[type=email] {
 }
 
 
-.signUp-text14 {
+.login-password {
   top: 400px;
   left: 220px;
   color: rgba(79, 79, 79, 1);
@@ -93,7 +93,7 @@ input[type=email] {
   font-stretch: normal;
   text-decoration: none;
 }
-.signUp-text02 {
+.login-email {
   top: 260px;
   left: 220px;
   color: rgba(79, 79, 79, 1);
@@ -109,7 +109,7 @@ input[type=email] {
   font-stretch: normal;
   text-decoration: none;
 }
-.signUp-text10 {
+.login-reminder {
   color: rgba(79, 79, 79, 1);
   width: 210px;
   height: auto;
@@ -123,7 +123,7 @@ input[type=email] {
   font-stretch: normal;
   text-decoration: none;
 }
-.signUp-text12 {
+.login-signIn {
   left: 190px;
   color: #95CEF6;
   width: 75px;
@@ -139,12 +139,12 @@ input[type=email] {
   text-decoration: none;
 }
 
-.signUp-text12:hover {
+.login-text12:hover {
   text-decoration: underline;
   font-style: Extra bold;
 }
 
-.signUp-text18 {
+.login-title {
   top: 120px;
   left: 259px;
   color: rgba(0, 0, 0, 1);
@@ -160,7 +160,7 @@ input[type=email] {
   font-stretch: normal;
   text-decoration: none;
 }
-.signUp-text20 {
+.login-subtitle {
   top: 190px;
   left: 162px;
   color: rgba(0, 0, 0, 1);
@@ -177,7 +177,7 @@ input[type=email] {
   text-decoration: none;
 }
 
-.signUp-sign-intextline {
+.login-sign-intextline {
   top: 630px;
   left: 220px;
   width: 325px;
