@@ -1,50 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up</title>
+    <title>Sign In</title>
+    <link rel="stylesheet" href="./login.css"/>
 </head>
 
 <body>
+
     <div>
-        <link href="./login.css" rel="stylesheet" />
-        <div class="login-container">
-            <img alt="Photos16" src="/property/login-asset/ivo-raeber-2OwHJrzt_9Q-unsplash.jpg" class="login-photos" />
-            <div class="login-sign-up-form">
-                <div class="login-text18">Sign Up</div>
-                <div class="login-text20">
+        <div class="signUp-container">
+            <img alt="Photos16" src="../property/login-asset/sergei-wing-vwoIxht1BYw-unsplash.jpg" class="signUp-photos" />
+            <div class="signUp-form">
+                <div class="signUp-text18">Sign In</div>
+                <div class="signUp-text20">
                     Get started absolutely free
                 </div>
                 <form id="form1" method="post">
-                    <div class="login-text06">Full Name</div>
-                    <input type="text" name="fullName" placeholder="Full Name" required=""
-                        class="login-full-nametexbox"><br />
-                    <div class="login-text08">Username</div>
-                    <input type="text" name="username" placeholder="Username" required=""
-                        class="login-usernametextbox"><br />
-                    <div class="login-text02">Email</div>
-                    <input type="email" name="email" placeholder="E-mail" required="" class="login-emailtextbox"><br />
-                    <div class="login-text04">Age</div>
-                    <input type="text" name="age" placeholder="Age" required="" class="login-agetextbox"><br />
-                    <div class="login-text14">Password</div>
-                    <input type="password" name="password" placeholder="Password" required=""
-                        class="login-passwordtextbox"><br />
-                    <div class="login-text16">Confirm Password</div>
-                    <input type="password" name="passwordConf" placeholder="Confirm Password" required=""
-                        class="login-confirm-passwordtextbox"><br />
-                    <input type="submit" value="Register" class="login-sign-upbutton">
-                    <div class="login-agreementtextline">
-                        <input type="checkbox" class="login-agreementcheckbox" name="agreement1">
-                        <label for="login-agreementcheckbox" class="login-text22"> I agree to the Terms and
-                            Conditions</label><br>
-                    </div>
-                    <div class="login-sign-intextline">
-                        <div class="login-text10">
-                            Already have an account?
+                    <div class="signUp-text02">Email</div>
+                    <input type="email" name="email" placeholder="" required="" class="signUp-emailtextbox"><br />
+                    <div class="signUp-text14">Password</div>
+                    <input type="password" name="password" placeholder="" required=""
+                        class="signUp-passwordtextbox"><br />
+                    <input type="submit" value="Sign In" class="signUp-sign-upbutton">
+                    <div class="signUp-sign-intextline">
+                        <div class="signUp-text10">
+                            Don't have an account?
                         </div>
-                        <div class="login-text12" a="">Sign In</div>
+                        <div class="signUp-text12"><a href="../signUp/signUp.html">SignUp</a></div>
                     </div>
                 </form>
             </div>
