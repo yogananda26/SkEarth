@@ -1,7 +1,7 @@
 const { async_wrapper } = require("../middleware/async-wrapper");
 const User = require('../model/User');
 const {StatusCodes} = require("http-status-codes");
-const {auth_error} = require("../error/driver-error");
+const {auth_error, bad_request} = require("../error/driver-error");
 
 
 const signUp = async_wrapper(async(req, res, next)=>{ 
@@ -9,6 +9,11 @@ const signUp = async_wrapper(async(req, res, next)=>{
     // console.log(name, email, password); 
     if(!name || !email || !password) { 
         throw new auth_error("provide your credential thing");
+    }
+    // this is for checking
+    const isRegistered = await User.findOne({email : email});
+    if(isRegistered){
+        throw new auth_error("you've been registered");
     }
     const user = await User.create({...req.body})
     const token = user.create_JWT();
@@ -31,7 +36,6 @@ const logIn = async_wrapper(async(req, res, next)=>{
     const token = await user.create_JWT();
     res.status(StatusCodes.ACCEPTED).json({token : token});
 })
-
 module.exports ={
     logIn, signUp
 }

@@ -12,7 +12,7 @@ formDOM.addEventListener('submit', async(e)=>{
     const password = password_inputDOM.value; 
     try{ 
         // trying to log in
-       const {data} = await axios.post('/auth/login',{
+       const {data} = await axios.post('/auth/Login',{
         email : email,
         password : password
        })
