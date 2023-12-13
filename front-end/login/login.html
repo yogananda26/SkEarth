@@ -1,36 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In</title>
-    <link rel="stylesheet" href="./login.css"/>
+    <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
-
-    <div>
-        <div class="login-container">
-            <img alt="Photos16" src="../property/login-asset/ivo-raeber-2OwHJrzt_9Q-unsplash.jpg" class="login-photos" />
-            <div class="login-sign-up-form">
-                <div class="login-text18">Sign Up</div>
-                <div class="login-text20">
-                    Get started absolutely free
-                </div>
-                <form id="form1" method="post">
-                    <div class="login-email">Email</div>
-                    <input type="email" name="email" placeholder="" required="" class="login-emailtextbox"><br />
-                    <div class="login-password">Password</div>
-                    <input type="password" name="password" placeholder="" required=""
-                        class="login-passwordtextbox"><br />
-                    <input type="submit" value="Sign In" class="login-sign-upbutton">
-                    <div class="login-sign-intextline">
-                        <div class="login-reminder">
-                            Don't have an account?
-                        </div>
-                        <div class="login-signIn"><a href="../signUp/signUp.html">Sign In</a></div>
-                    </div>
-                </form>
+    <div class="container">
+        <div class="formlogin">
+            <div class="title-text">
+                <p class="title-1">Sign In</p>
+                <p class="title-2">Get absolutely free</p>
+            </div>
+            <div class="form-input">
+                <p class="text-info">Email</p>
+                <input type="email" class="input-text">
+                <p class="text-info">Password</p>
+                <input type="password" class="input-text">
+            </div>
+            <input type="button" class="button" value="Sign In">
+            <div class="reminder">
+                <p>Don't have account? <a href="">Sign In</p>
             </div>
         </div>
     </div>
