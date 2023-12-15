@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap");
+:root {
+  --mainColor: #F5F5F7;
+  --secondaryColor: black;
+  --thirdColor: #535353;
+
+  --weight-700: 700;
+
+  --fontsizeHeader: 40px;
+  --fontsizeRegular: 20px;
+  --fontsizeNavigation: 30px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Oswald", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+/* container css */
+
+.container{
+  max-width: 1160px;
+}
+
+.opening, li{
+  font-weight: 900;
+  font-size: 16px;
+}
+
+ul{
+  padding: 0 0 0 30px;
+  color: var(--secondaryColor);
+}
+
+ol li::marker {
+  color:var(--secondaryColor);
+  font-weight: bold;
+}
+
+.faq{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.tombol-tombol {
+  margin-top: 30px;
+  margin-bottom: -10px;
+  margin-left: 10px;
+}
+
+.back {
+  color: black;
+  width: 100px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 25px;
+  text-align: center;
+  margin-right: 50px;
+  font-weight: bold;
+  padding: 9px 35px;
+  font-size: 21px;
+  }  
+
+.box{
+  flex: 45%;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--secondaryColor);
+  padding: 20px 50px;
+  margin: 10px;
+  max-width: 450px;
+  align-items: center;
+  border-radius: 2em;
+}
+
+.top-box{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question{
+  margin: 0 10px;
+  color: var(--mainColor);
+}
+
+.box > div > p, .box > div > div > p{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.plus{
+  background-color: rgba(255, 200, 0, 255);
+  padding: 5px 15px;
+  cursor: pointer;
+  background-color: var(--mainColor);
+}
+
+.button-back a{
+  color: black;
+}
+
+.button-back a:hover{
+  color: var(--mainColor);
+}
+
+
+.content{
+  display: none;
+  color: var(--mainColor);
+}
+
+.show{
+  display: block;
+}
+
+.black-text{
+  color: var(--secondaryColor);
+}
+
+/* Footer css */
+footer{
+  background-color: var(--mainColor);
+}
+
+.top-footer{
+  padding: 30px;
+}
+
+.img-footer-logo img{
+  width: 90%;
+}
+
+hr{
+  border: 1px solid white;
+}
+
+.top-footer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bottom-footer p{
+  padding-top: 10px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.info-1{
+  width: 200px;
+}
+
+.menu-footer-1 ul, .menu-footer-2 ul{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.not-active-footer{
+  font-size: var(--fontsizeRegular);
+  color: var(--thirdColor);
+  font-weight: var(--weight-700);
+}
+
+.not-active-footer:hover{
+  text-decoration: none;
+  color: var(--secondaryColor);
+}
+.active:hover { 
+  color: var(--mainColor);
+}
+.footer-active:hover {
+  color: var(--secondaryColor);
+  font-weight: var(--weight-700);
+}
+
+.footer-active{
+  color: var(--secondaryColor);
+  font-weight: var(--weight-700);
+  font-size: var(--fontsizeRegular);
+}
+
+
+.follow-us-text p{
+  text-align: right;
+  font-weight: var(--weight-700);
+}
+
+.icon-footer{
+  padding-top: 20px;
+}
+
+.icon-footer img{
+  padding-left: 10px;
+}
+
+.bottom-footer p {
+  margin-bottom: 0px;
+}
+  
