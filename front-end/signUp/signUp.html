@@ -1,61 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="./signUp.css"/>
+    <link rel="stylesheet" href="signUp.css">
 </head>
 
 <body>
-
-    <div>
-        <div class="signUp-container">
-            <img alt="Photos16" src="../property/signUp-asset/ivo-raeber-2OwHJrzt_9Q-unsplash.jpg" class="signUp-photos" />
-            <div class="signUp-form">
-                <div class="signUp-text18">Sign Up</div>
-                <div class="signUp-text20">
-                    Get started absolutely free
+    <div class="bgbody">
+        <div class="container">
+            <h1>Sign Up</h1>
+            <p>Get started absolutely free</p>
+            <form action="#">
+                <div class="boxtext">
+                    <div class="input-field">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" name="fullname" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" name="confirm-password" required>
+                    </div>
                 </div>
-                <form id="form1">
-                    <div class="signUp-text06">Full Name</div>
-                    <input type="text" name="fullName" placeholder="" required=""
-                        class="signUp-full-nametexbox"><br />
-                    <div class="signUp-text08">Username</div>
-                    <input type="text" name="username" placeholder="" required=""
-                        class="signUp-usernametextbox"><br />
-                    <div class="signUp-text02">Email</div>
-                    <input type="email" name="email" placeholder="" required="" class="signUp-emailtextbox"><br />
-                    <div class="signUp-text04">Age</div>
-                    <input type="number" name="age" placeholder="" required="" class="signUp-agetextbox"><br />
-                    <div class="signUp-text14">Password</div>
-                    <input type="password" name="password" placeholder="" required=""
-                        class="signUp-passwordtextbox"><br />
-                    <div class="signUp-text16">Confirm Password</div>
-                    <input type="password" name="passwordConf" placeholder="" required=""
-                        class="signUp-confirm-passwordtextbox"><br />
-                    <div class="signUp-agreementtextline">
-                        <input type="checkbox" class="signUp-agreementcheckbox" name="agreement1">
-                        <label for="signUp-agreementcheckbox" class="signUp-text22"> I agree to the Terms and
-                            Conditions</label><br>
-                    </div>
-                    <button type="submit" class="signUp-sign-upbutton">SignUp</button>
-                </form>
-                 <div class="signUp-sign-intextline">
-                        <div class="signUp-text10">
-                            Already have an account?
-                        </div>
-                        <div class="signUp-text12"><a href="../page/testing.html">SignUp</a></div>
-                    </div>
-            </div>
+                <div class="checkbox-field">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the Terms and Conditions.</label>
+                </div>
+                <div class="buttontext">
+                    <button type="submit">Sign Up</button>
+                </div>
+                <p class="haveaccount">Already have an account? <a href="../login/login.html">Log In</a></p>
+            </form>
         </div>
     </div>
-    <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-    ></script>
-    <script src="./script.js"></script>
 </body>
+
 </html>
