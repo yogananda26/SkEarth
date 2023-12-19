@@ -10,11 +10,12 @@ const GetForecast = async_wrapper(async(req, res, next)=>{
 
     const fetching = await fetch(API_URL); 
     const data = await fetching.json();  
-    const latitude = Object.entries(data)[0][1].lat
-    const longitude = Object.entries(data)[0][1].lon
+    // const latitude = Object.entries(data)[0][1].lat
+    // const longitude = Object.entries(data)[0][1].lon
 
-    req.body.requirement = {latitude, longitude};
-    next();
+    // req.body.requirement = {latitude, longitude};
+    // next();
+    res.status(200).json(data);
 })
 
 module.exports = GetForecast;
