@@ -1,24 +1,24 @@
 const formDOM = document.getElementById('form1');
-const fullnameDOM = document.getElementsByClassName('signUp-full-nametexbox'); 
-const usernameDOM = document.getElementsByClassName('signUp-usernametextbox'); 
-const emailDOM = document.getElementsByClassName('signUp-emailtextbox') ; 
-const ageDOM = document.getElementsByClassName('signUp-agetextbox'); 
-const passwordDOM = document.getElementsByClassName('signUp-passwordtextbox'); 
-const confirm_passDOM = document.getElementsByClassName('signUp-confirm-passwordtextbox');
+const fullnameDOM = document.getElementById('signUp-full-nametexbox'); 
+const usernameDOM = document.getElementById('signUp-usernametextbox'); 
+const emailDOM = document.getElementById('signUp-emailtextbox') ; 
+const ageDOM = document.getElementById('signUp-agetextbox'); 
+const passwordDOM = document.getElementById('signUp-passwordtextbox'); 
+const confirm_passDOM = document.getElementById('signUp-confirm-passwordtextbox');
 
 formDOM.addEventListener("submit", async(e)=>{
     e.preventDefault();
-    if(passwordDOM[0].value != confirm_passDOM[0].value){
-        passwordDOM[0].value = ''
-        confirm_passDOM[0].value = ''
+    if(passwordDOM.value != confirm_passDOM.value){
+        passwordDOM.value = ''
+        confirm_passDOM.value = ''
         alert("Please correct your password, Your password is not match"); 
         return; 
     }
     try{ 
         const {data} = await axios.post("/auth/SignUp",{ 
-            name :  usernameDOM[0].value,
-            email : emailDOM[0].value,
-            password : passwordDOM[0].value
+            name :  usernameDOM.value,
+            email : emailDOM.value,
+            password : passwordDOM.value
         })
         localStorage.setItem('token', data.token); 
         alert('successfully register your id');

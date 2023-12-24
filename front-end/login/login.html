@@ -5,15 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In</title>
-<<<<<<< Updated upstream
     <link rel="stylesheet" href="login.css">
-=======
-    <link rel="stylesheet" href="./login.css">
->>>>>>> Stashed changes
 </head>
 
 <body>
-    <div class="container">
+    <form class="container form">
         <div class="formlogin">
             <div class="title-text">
                 <p class="title-1">Sign In</p>
@@ -21,16 +17,23 @@
             </div>
             <div class="form-input">
                 <p class="text-info">Email</p>
-                <input type="email" class="input-text">
+                <input type="email" class="input-text" id="input-text-email">
                 <p class="text-info">Password</p>
-                <input type="password" class="input-text">
+                <input type="password" class="input-text" id="input-text-password">
             </div>
-            <input type="button" class="button" value="Sign In">
+            <button type="submit" class="button">Sign Up</button>
             <div class="reminder">
                 <p>Don't have account? <a href="../signUp/signUp.html">Sign Up</p>
             </div>
         </div>
-    </div>
+    </form>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

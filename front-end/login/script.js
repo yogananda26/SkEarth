@@ -1,9 +1,10 @@
 
-const formDOM = document.querySelector('.form');
-const email_inputDOM = document.querySelector('.email-input');
-const password_inputDOM = document.querySelector('.password-input');
+const formDOM = document.querySelector('.container');
+const email_inputDOM = document.getElementById('input-text-email');
+const password_inputDOM = document.getElementById('input-text-password');
 const testing = document.getElementById('testing');
 
+console.log("im in")
 
 formDOM.addEventListener('submit', async(e)=>{ 
     e.preventDefault();
