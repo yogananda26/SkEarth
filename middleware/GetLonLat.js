@@ -13,9 +13,15 @@ const GetForecast = async_wrapper(async(req, res, next)=>{
     // const latitude = Object.entries(data)[0][1].lat
     // const longitude = Object.entries(data)[0][1].lon
 
+<<<<<<< Updated upstream
     // req.body.requirement = {latitude, longitude};
     // next();
     res.status(200).json(data);
+=======
+    req.body.requirement = {latitude, longitude};
+    next();
+
+>>>>>>> Stashed changes
 })
 
 module.exports = GetForecast;

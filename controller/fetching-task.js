@@ -42,8 +42,9 @@ const GetAirPolution = async_wrapper(async(req, res)=>{
         })
 })
 
-const GetCurrent_weather = async_wrapper(async(req, res)=>{ 
 
+const GetCurrent_weather = async_wrapper(async(req, res)=>{ 
+    
 })
 
 

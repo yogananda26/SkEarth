@@ -5,8 +5,10 @@ const {bad_request} = require('../error/driver-error')
 
 // this is the task
 const make_message = async_wrapper(async(req, res)=>{
-    const data = await message.create(req.body); 
-    res.status(200).json({data});
+    req.body.createdBy = req.user.UserID;
+    console.log(req.body);
+    const data = await message.create(req.body);
+    res.status(200).json({ msg : "oke"});
 })
 const get_all_message = async_wrapper(async(req, res)=>{  
     const res_message = await message.find({});

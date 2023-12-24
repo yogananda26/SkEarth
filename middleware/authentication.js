@@ -13,8 +13,8 @@ const authentication = async_wrapper(async(req, res, next)=>{
     const token = header_token.split(' ')[1]; 
     try{ 
         const decode = jwt.verify(token, process.env.PRIVATE_CODE); 
-        const {userID, name} = decode;
-        req.user = {userID , name};
+        const {UserID, name} = decode;
+        req.user = {UserID , name};
         console.log(decode);
         next()
     }catch(err){ 

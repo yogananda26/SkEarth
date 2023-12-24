@@ -6,16 +6,17 @@ const {make_message,
     get_some_message
 } = require("../controller/task-message");
 const router = express.Router();
+const {authentication} = require("../middleware/authentication")
 
 router 
     .route('/')
-    .get(get_all_message)
-    .post(make_message); 
+    .get(authentication, get_all_message)
+    .post(authentication, make_message); 
 
 router
     .route("/:id")
-    .patch(update_message)
-    .delete(delete_message);
+    .patch(authentication, update_message)
+    .delete(authentication, delete_message);
 
  
 module.exports = router; 

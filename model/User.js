@@ -23,8 +23,15 @@ const User = new mongoose.Schema({
         type: String, 
         required:[true, "please provide your password"],
         minlength : 1
-    }
-})
+    },
+    following : new mongoose.Schema({
+        name : {
+            default : null, 
+            type: String
+        }
+    }, {timestamps : true})
+
+}, {timestamps: true})
 
 User.pre("save", async function() {
     const salt = await bcrypt.genSalt(10);
@@ -36,7 +43,7 @@ User.methods.create_JWT = function() {
         UserID : this._id,
         name : this.name
     },process.env.PRIVATE_CODE,{ 
-        expiresIn : '30d'
+        expiresIn : '30d' 
     })
     return token; 
 }
