@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../header.css">
     <link rel="stylesheet" href="homepage.css">
     <link rel="stylesheet" href="../footer.css">
+    <script src="../header.js"></script>
 </head>
 <body>
     <div class="header">
@@ -15,12 +16,26 @@
         </div>
         <div class="center-header">
             <a href = "homepage.html" class="headerbutton" id="home-button">Home</a>
-            <a href = "" class="headerbutton" id="features-button">Features</a>
-            <a href = "" class="headerbutton" id="more-button">More</a>
+            <div class="dropdown">
+                <button onclick="dropFunction('dropdown-list1')" class="dropbtn">Features</button>
+                <div id="dropdown-list1" class="dropdown-content">
+                  <a href="#">Weather Forecast</a>
+                  <a href="#">Air Pollution</a>
+                  <a href="#">UV - Index</a>
+                  <a href="#">Solar Panel</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button onclick="dropFunction('dropdown-list2')" class="dropbtn">More</button>
+                <div id="dropdown-list2" class="dropdown-content">
+                  <a href="#">News</a>
+                  <a href="#">Chat</a>
+                </div>
+            </div>
             <a href = "" class="headerbutton" id="user-button">User</a>
         </div>
         <div class="right-header">
-            <input type="text", placeholder="what do you need ?">
+            <input type="text", placeholder="Search">
             <img src="../property/header-asset/search-logo.png" alt="search-logo">
         </div>
     </div>
@@ -42,12 +57,12 @@
                 <a class="details-button" href="../weather-forecast-page/weather-forecast.html">Details</a>
             </div>
             <div class="image">
-
+                <img src="../property/home-page-asset/weather-image.jpg" alt="">
             </div>
         </div>
         <div class="content-container">
             <div class="image">
-
+                <img src="../property/home-page-asset/airpollution-image.jpg" alt="">
             </div>
             <div class="explanation2">
                 <p class="label">Air Pollution Index</p>
@@ -62,12 +77,12 @@
                 <a class="details-button" href="../uv-index/uv-index.html">Details</a>
             </div>
             <div class="image">
-
+                <img src="../property/home-page-asset/uv-image.jpg" alt="">
             </div>
         </div>
         <div class="content-container">
             <div class="image">
-
+                <img src="../property/home-page-asset/solarpanel-image.jpg" alt="">
             </div>
             <div class="explanation2">
                 <p class="label">Solar Panel Prediction</p>
@@ -80,7 +95,11 @@
         <div class="top-footer">
             <div class="info-1">
                 <div class="img-footer-logo">
+<<<<<<< Updated upstream
                     <img src="/property/contactUs-asset/logoSkearth.png" alt="">
+=======
+                    <img src="../property/contactUs-asset/logoSkearth.png" alt="">
+>>>>>>> Stashed changes
                 </div>
                 <div class="address">
                     <p>ini rencananya <br> slogan ajaa</p>
@@ -105,10 +124,17 @@
                     <p>Follow Us More!</p>
                 </div>
                 <div class="icon-footer">
+<<<<<<< Updated upstream
                   <img src="/property/contactUs-asset/youtube-icon.png" />
                   <img src="/property/contactUs-asset/twitter-icon.png" />
                   <img src="/property/contactUs-asset/instagram-icon.png" />
                   <img src="/property/contactUs-asset/facebook-icon.png" />
+=======
+                    <img src="../property/contactUs-asset/youtube-icon.png" alt="">
+                    <img src="../property/contactUs-asset/twitter-icon.png" alt="">
+                    <img src="../property/contactUs-asset/instagram-icon.png" alt="">
+                    <img src="../property/contactUs-asset/facebook-icon.png" alt="">
+>>>>>>> Stashed changes
                 </div>
             </div>
         </div>
