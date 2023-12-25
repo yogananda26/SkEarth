@@ -1,0 +1,24 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: whitesmoke;
+}
+
+.container {
+    margin-left: 40px;
+    margin-right:40px;
+    padding-top: 80px;
+    padding-bottom: 20px;
+    text-align: justify;
+}
+
+.h1,h2,h3 {
+    margin-top: 30px;
+}
+
+p {
+    line-height: 1.8;
+}
+
+li {
+    margin-left: 40px;
+}
