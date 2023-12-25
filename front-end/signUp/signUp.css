@@ -1,3 +1,7 @@
+* {
+  font-family: 'Inter', sans-serif;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -71,7 +75,7 @@ p {
 
 .checkbox-field {
   margin: 20px;
-  margin-left: 50px;
+  margin-left: 25px;
 }
 
 .checkbox-field label {
@@ -117,6 +121,7 @@ a {
 }
 
 a:hover {
+  color: #95CEF6;
   text-decoration: underline;
 }
 

@@ -15,6 +15,7 @@ const route_solar = require('../router/solar-panel');
 const route_UV = require('../router/uv-index');
 const route_auth = require("../router/auth");
 const route_air_polution = require("../router/air-polution");
+const route_terms_condition = require("../router/terms-condition");
 
 // this is for accesing the route/ and using the middleware
 app.use(express.static('./front-end'));
@@ -27,6 +28,7 @@ app.use('/api/v1/solar',route_solar);
 app.use('/api/v1/air-polution', route_air_polution); 
 app.use('/api/v1/report-FnQ',route_report)
 app.use('/auth', route_auth);
+app.use('/terms-condition', route_terms_condition);
 
 
 // this is for handling the error
