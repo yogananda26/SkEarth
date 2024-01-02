@@ -7,6 +7,7 @@ require('dotenv').config();
 
 
 // this is for accessing the data in every route
+const user = require("../router/user");
 const route_message = require('../router/message');
 const route_forecast = require('../router/forecast');
 const route_news = require('../router/news');
@@ -20,6 +21,7 @@ const route_terms_condition = require("../router/terms-condition");
 // this is for accesing the route/ and using the middleware
 app.use(express.static('./front-end'));
 app.use(express.json(), express.urlencoded());
+app.use('/user', user); 
 app.use('/api/v1/message',route_message);
 app.use('/api/v1/forecast',route_forecast)
 app.use('/api/v1/uv-index',route_UV);
