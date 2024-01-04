@@ -3,25 +3,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="../header.css">
 </head>
 <body>
-    <form id="input_form">
-        <label for="inputtext">InputText : </label>
-        <input type="text" id="city_input" placeholder="Input Your City">
-        <button id="btn_input" type="submit">Submit</button>
-    </form>
-    <div id="weatherData"></div>
-    <div id="lineGraph"></div>
+    <div class="header">
+        <div class="left-header">
+            <img src="../property/skearth-logo/skearth-logo-black.png" alt="skearth-logo">
+        </div>
+        <div class="center-header">
+            <a href = "homepage.html" class="headerbutton" id="home-button">Home</a>
+            <div class="dropdown">
+                <button onclick="dropFunction('dropdown-list1')" class="dropbtn">Features</button>
+                <div id="dropdown-list1" class="dropdown-content">
+                  <a href="#">Weather Forecast</a>
+                  <a href="#">Air Pollution</a>
+                  <a href="../uv-index/uv-index.html">UV - Index</a>
+                  <a href="#">Solar Panel</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button onclick="dropFunction('dropdown-list2')" class="dropbtn">More</button>
+                <div id="dropdown-list2" class="dropdown-content">
+                  <a href="#">News</a>
+                  <a href="#">Chat</a>
+                </div>
+            </div>
+            <a href = "" class="headerbutton" id="user-button"></a>
+        </div>
+        <div class="right-header">
+            <input type="text", placeholder="Search">
+            <img src="../property/header-asset/search-logo.png" alt="search-logo">
+        </div>
+    </div>
+    <div id="content">
+        <div id="content-container">
+            <div id="content-left">
+    
+            </div>
+            <div id="content-mid">
+    
+            </div>
+            <div id="content-right">
+                <div id="trends-for-you"></div>
+                <div id="who-to-follow"></div>
 
-    <!-- this is for axios thing -->
-    <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="index.js"></script>
-   
+            </div>
+        </div>
+    </div>
 </body>
 </html>
