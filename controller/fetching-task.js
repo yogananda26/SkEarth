@@ -1,7 +1,7 @@
 // this is for fetching the API forecast 
 const {async_wrapper} = require('../middleware/async-wrapper');
 const {bad_request} = require("../error/driver-error");
-const { json } = require('express');
+
 
 
 const GetUV_index = async_wrapper(async(req, res)=>{ 
@@ -17,9 +17,10 @@ const GetUV_index = async_wrapper(async(req, res)=>{
             let result;
             let uv_result;
     
-            uv_result = obj["hourly"].map(({uvi})=>{ 
+            uv_result = obj.hourly.map(({uvi})=>{ 
                 return uvi
             })
+
             res.status(200).json(uv_result);
         })
 })
@@ -35,10 +36,10 @@ const GetAirPolution = async_wrapper(async(req, res)=>{
             return result.json();
         })
         .then((obj)=>{
-            let result = obj['list'].map(({components})=>{
-                return components
-            })
-            return res.json(result);
+            // let result = obj['list'].map(({components})=>{
+            //     return components
+            // })
+            return res.json(obj);
         })
 })
 

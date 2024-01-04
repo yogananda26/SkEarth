@@ -15,5 +15,3 @@ const resolve = async(e)=>{
     })
 }
 resolve();
-
-// console.log(localStorage.getItem('token'))

@@ -30,7 +30,7 @@ app.use('/api/v1/solar',route_solar);
 app.use('/api/v1/air-polution', route_air_polution); 
 app.use('/api/v1/report-FnQ',route_report)
 app.use('/auth', route_auth);
-app.use('/terms-condition', route_terms_condition);
+
 
 
 // this is for handling the error
