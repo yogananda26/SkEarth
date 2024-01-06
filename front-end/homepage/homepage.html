@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../header.css">
     <link rel="stylesheet" href="homepage.css">
     <link rel="stylesheet" href="../footer.css">
-    <script src="../header.js"></script>
 </head>
 <body>
     <div class="header">
@@ -28,8 +27,8 @@
             <div class="dropdown">
                 <button onclick="dropFunction('dropdown-list2')" class="dropbtn">More</button>
                 <div id="dropdown-list2" class="dropdown-content">
-                  <a href="#">News</a>
-                  <a href="#">Chat</a>
+                  <a href="../latest-news-page/latest-news.html">News</a>
+                  <a href="../chat-page/chat.html">Chat</a>
                 </div>
             </div>
             <a href = "" class="headerbutton" id="user-button"></a>
@@ -42,10 +41,10 @@
     <div class="jumbotron">
         <div class="content">
             <p class="time">06:00 PM</p>
-            <p class="place">Sentul City</p>
-            <p class="date">December 06, 2023</p>
+            <p class="place" id="loc-tag">Sentul City</p>
+            <p class="date" id="loc-tag">December 06, 2023</p>
             <img class="weather" src="../property/weather-logo/sunny-logo.png" alt="">
-            <p class="explanation">Sunny</p>
+            <p class="explanation" id="loc-tag">Sunny</p>
             <a class="jumbotron-details-button" href="../weather-forecast-page/weather-forecast.html">View Details</a>
         </div>
     </div>
@@ -137,6 +136,6 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   ></script>
-    <script src="./homepage.js"></script>
+  <script src="../header.js"></script>
 </body>
 </html>
