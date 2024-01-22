@@ -1,3 +1,4 @@
+//drop down list dan inactivate drop down list ketika kita menekan drop down button yang lainnya 
 function dropFunction(dropdownlist){
     document.getElementById(dropdownlist).classList.toggle("show");
     if(dropdownlist == "dropdown-list1"){
@@ -16,6 +17,7 @@ function dropFunction(dropdownlist){
     }
 }
 
+//inactivate drop down ketika kita menekan diluar drop down button
 window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
         var dropdown = document.getElementsByClassName("dropdown-content");
