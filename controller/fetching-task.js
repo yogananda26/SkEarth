@@ -1,10 +1,11 @@
 // this is for fetching the API forecast 
 const {async_wrapper} = require('../middleware/async-wrapper');
 const {bad_request} = require("../error/driver-error");
+const {reqbodyrequirement} = require('../middleware/GetLonLat');
 
 
 const GetUV_index = async_wrapper(async(req, res)=>{ 
-    const {latitude, longitude}  = req.body.requirement; 
+    const {latitude, longitude}  = reqbodyrequirement; 
     const API_URL = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=metric&appid=${process.env.API_KEY}`;
 
     fetch(API_URL)
