@@ -1,27 +1,381 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Air Pollution</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="air-pollution.css">
 </head>
-<body>
-    <form id="input_form">
-        <label for="inputtext">InputText : </label>
-        <input type="text" id="city_input" placeholder="Input Your City">
-        <button id="btn_input" type="submit">Submit</button>
-    </form>
-    <div id="weatherData"></div>
-    <div id="lineGraph"></div>
+<body class="bg-light">
+    <div class="container">
+        <div class="d-flex flex-row">   
+            <div class="d-flex flex-column p-5">
+                <div class="box-left mb-5">
+                    <p class="fw-bold left-title">Live AQI country ranking</p>
+                    <p class="text-center fs-5 fw-bold">Real-time world country ranking</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 20%;">#</td>
+                                <th>COUNTRY</td>
+                                <th class="text-center">US AQI</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>PAKISTAN</td>
+                                <td class="text-center">166</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>INDIA</td>
+                                <td class="text-center">157</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>BOSNIA</td>
+                                <td class="text-center">145</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>VIETNAM</td>
+                                <td class="text-center">121</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>UZBESKISTAN</td>
+                                <td class="text-center">101</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>CHINA</td>
+                                <td class="text-center">88</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>KUWAIT</td>
+                                <td class="text-center">65</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>MYANMAR</td>
+                                <td class="text-center">61</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>BANGLADESH</td>
+                                <td class="text-center">55</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>INDONESIA</td>
+                                <td class="text-center">48</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-    <!-- this is for axios thing -->
-    <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="index.js"></script>
-   
+                <div class="box-left">
+                    <p class="fw-bold left-title">Live AQI city ranking</p>
+                    <p class="text-center fs-5 fw-bold">Real-time Indonesia city ranking</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 20%;">#</td>
+                                <th>CITY</td>
+                                <th class="text-center">US AQI</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>PEKANBARU</td>
+                                <td class="text-center">166</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>JAKARTA</td>
+                                <td class="text-center">157</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>PALEMBANG</td>
+                                <td class="text-center">145</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>MAKASSAR</td>
+                                <td class="text-center">121</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>BEKASI</td>
+                                <td class="text-center">101</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>SURABAYA</td>
+                                <td class="text-center">88</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>CIREBON</td>
+                                <td class="text-center">65</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>DENPASAR</td>
+                                <td class="text-center">61</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>MEDAN</td>
+                                <td class="text-center">55</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>TANGERANG</td>
+                                <td class="text-center">48</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="d-flex flex-column p-5">
+                <div class="box-right upper-box mb-5">
+                    <h1>Bogor</h1>
+                    <input type="text" class="search-input" placeholder="Type any place to see air pollution...">
+                    <div class="upper-box-content">
+                        <div class="upper-content-left">
+                            <div class="content-left-one">
+                                <h5 class="mb-4">AQI US</h5>
+                                <h2>49</h2>
+                            </div>
+                            <div class="content-left-two">
+                                <p>LIVE AQI INDEX</p>
+                                <h1>Good</h1>
+                            </div>
+                        </div>
+                        <div class="upper-content-right">
+                            <h1>EM</h1>
+                            <h1>OT</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-right mb-5 p-5">
+                    <h3>Guide air pollution index</h3>
+                    <div class="content-guide">
+                        <div class="guide">
+                            <div class="box-guide bg-success rounded-4">
+                            </div>
+                            <div class="text-guide">
+                                <p class="title-guide text-success fw-bold">Good</p>
+                                <p class="desc-guide">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+
+                        <div class="guide">
+                            <div class="box-guide bg-warning rounded-4">
+                            </div>
+                            <div class="text-guide">
+                                <p class="title-guide text-warning fw-bold">Moderate</p>
+                                <p class="desc-guide">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+
+                        <div class="guide">
+                            <div class="box-guide bg-danger rounded-4">
+                            </div>
+                            <div class="text-guide">
+                                <p class="title-guide text-danger fw-bold">Unhealthy</p>
+                                <p class="desc-guide">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+
+                        <div class="guide">
+                            <div class="box-guide bg-hazardous rounded-4">
+                            </div>
+                            <div class="text-guide">
+                                <p class="title-guide text-hazardous fw-bold">Hazardous</p>
+                                <p class="desc-guide">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-right middle-box mb-5 p-5">
+                    <h3>Air Pollution Index</h3>
+                    <div id="chartContainer" style="height: 225px; width: 65%;"></div>
+                    <div class="level-boxes">
+                        <div class="level-box">
+                            <div class="title-upper-level">
+                                <p>level of</p>
+                                <p class="ms-2">CO2</p>
+                            </div>
+                            <div class="progress" style="height: 5px; width: 75%; background-color: rgb(226, 60, 199);">
+                                <div class="progress-bar" role="progressbar" aria-label="Success example" style="width: 80%; background-color: blueviolet;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="desc-upper-level text-center">
+                                <p class="fs-10">130</p>
+                                <p class="fs-8">PPM</p>
+                            </div>
+                        </div>
+
+                        <div class="level-box">
+                            <div class="title-upper-level">
+                                <p>level of</p>
+                                <p class="ms-2">NH3</p>
+                            </div>
+                            <div class="progress" style="height: 5px; width: 75%; background-color: rgb(226, 60, 199);">
+                                <div class="progress-bar" role="progressbar" aria-label="Success example" style="width: 60%; background-color: blueviolet;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="desc-upper-level text-center">
+                                <p class="fs-10">12</p>
+                                <p class="fs-8">PPM</p>
+                            </div>
+                        </div>
+
+                        <div class="level-box">
+                            <div class="title-upper-level">
+                                <p>level of</p>
+                                <p class="ms-2">NO2</p>
+                            </div>
+                            <div class="progress" style="height: 5px; width: 75%; background-color: rgb(92, 116, 219)">
+                                <div class="progress-bar" role="progressbar" aria-label="Success example" style="width: 80%; background-color: rgb(55, 66, 167);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="desc-upper-level text-center">
+                                <p class="fs-10">120</p>
+                                <p class="fs-8">PPM</p>
+                            </div>
+                        </div>
+
+                        <div class="level-box">
+                            <div class="title-upper-level">
+                                <p>level of</p>
+                                <p class="ms-2">SO2</p>
+                            </div>
+                            <div class="progress" style="height: 5px; width: 75%; background-color: rgb(92, 116, 219)">
+                                <div class="progress-bar" role="progressbar" aria-label="Success example" style="width: 80%; background-color: rgb(55, 66, 167);" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="desc-upper-level text-center">
+                                <p class="fs-10">10</p>
+                                <p class="fs-8">PPM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-right bottom-box">
+                    <h3>Bogor air quality Index (AQI) forecast</h3>
+                    <div class="border border-info m-4">
+                        <table class="table-forecast">
+                            <thead>
+                                <tr>
+                                    <th style="width: 25%;">Day</th>
+                                    <th>Pollution Index</th>
+                                    <th style="width: 25%;" class="ps-3">AQI level</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Monday, Nov 24</td>
+                                    <td class="bg-warning rounded ps-2 pe-2 text-light">Moderate</td>
+                                    <td class="ps-3">81 AQI US</td>
+                                </tr>
+                                <tr>
+                                    <td>Thuesday, Nov 25</td>
+                                    <td class="bg-warning rounded ps-2 pe-2 text-light">Moderate</td>
+                                    <td class="ps-3">75 AQI US</td>
+                                </tr>
+                                <tr>
+                                    <td>Wednesday, Nov 26</td>
+                                    <td class="bg-success rounded ps-2 pe-2 text-light">Good</td>
+                                    <td class="ps-3">58 AQI US</td>
+                                </tr>
+                                <tr>
+                                    <td>Today, Nov 27</td>
+                                    <td class="bg-success rounded ps-2 pe-2 text-light">Good</td>
+                                    <td class="ps-3">49 AQI US</td>
+                                </tr>
+                                <tr>
+                                    <td>Friday, Nov 28</td>
+                                    <td class="bg-success rounded ps-2 pe-2 text-light">Good</td>
+                                    <td class="ps-3">54 AQI US</td>
+                                </tr>
+                                <tr>
+                                    <td>Saturday, Nov 29</td>
+                                    <td class="bg-warning rounded ps-2 pe-2 text-light">Moderate</td>
+                                    <td class="ps-3">65 AQI US</td>
+                                </tr>
+                                <tr>
+                                    <td>Sunday, Nov 30</td>
+                                    <td class="bg-warning rounded ps-2 pe-2 text-light">Moderate</td>
+                                    <td class="ps-3">66 AQI US</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script>
+        window.onload = function () {
+        
+        var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            theme: "light2",
+            axisX:{
+                lineThickness: 0,
+                tickThickness: 0,
+                labelFormatter: function(){
+                    return " ";
+                }
+            },
+            axisY:{
+                lineThickness: 0,
+                gridThickness: 0,
+                tickLength: 0,
+                labelFormatter: function(){
+                    return " ";
+                }
+            },
+            data: [{        
+                type: "spline",
+                markerType: "none",
+                dataPoints: [
+                    { y: 470 },
+                    { y: 475},
+                    { y: 500},
+                    { y: 510 },
+                    { y: 530 },
+                    { y: 550 },
+                    { y: 540 },
+                    { y: 550 },
+                    { y: 535 },
+                    { y: 540 }
+                ]
+            }]
+        });
+
+        for(var i = 0; i < chart.options.data[0].dataPoints.length; i++) {
+            console.log(chart.options.data[0].dataPoints[i])
+            if(chart.options.data[0].dataPoints[i].y === 0){
+                chart.options.data[0].dataPoints[i].indexLabel = "";
+            }
+        }
+
+        chart.render();
+        
+        }
+    </script>
 </body>
 </html>
