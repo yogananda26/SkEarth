@@ -5,7 +5,7 @@ const GetLonLat = require("../middleware/GetLonLat")
 const calculate_unix = require("../middleware/Calculate_unix")
 router
     .route('/')
-    .get(GetLonLat, calculate_unix, GetAirPolution)
-    .post(); 
+    .post(GetLonLat, calculate_unix, GetAirPolution)
+    .get(); 
 
 module.exports = router; 

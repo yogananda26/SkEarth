@@ -30,3 +30,20 @@ window.onclick = function(event) {
         }
     }
 }
+
+const user_document = document.getElementById('user-button')
+const resolve = async(e)=>{
+    var token = localStorage.getItem("token");
+    axios.get("/user", {
+        headers: {
+            'Authorization': 'Bearer ' + token
+        }
+    })  
+    .then((result)=>{
+        user_document.innerHTML = result.data.name;
+    })
+    .catch((e)=>{
+        user_document.innerHTML = 'User';
+    })
+}
+resolve();

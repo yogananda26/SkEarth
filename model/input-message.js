@@ -14,5 +14,4 @@ const message_schema = new mongoose.Schema(
     }
 }, {timestamps : true})
 
-
 module.exports = mongoose.model('History_Chat', message_schema); 

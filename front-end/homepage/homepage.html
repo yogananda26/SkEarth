@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../header.css">
     <link rel="stylesheet" href="homepage.css">
     <link rel="stylesheet" href="../footer.css">
-    <script src="../header.js"></script>
 </head>
 <body>
     <div class="header">
@@ -21,18 +20,18 @@
                 <div id="dropdown-list1" class="dropdown-content">
                   <a href="#">Weather Forecast</a>
                   <a href="#">Air Pollution</a>
-                  <a href="#">UV - Index</a>
+                  <a href="../uv-index/uv-index.html">UV - Index</a>
                   <a href="#">Solar Panel</a>
                 </div>
             </div>
             <div class="dropdown">
                 <button onclick="dropFunction('dropdown-list2')" class="dropbtn">More</button>
                 <div id="dropdown-list2" class="dropdown-content">
-                  <a href="#">News</a>
-                  <a href="#">Chat</a>
+                  <a href="../latest-news-page/latest-news.html">News</a>
+                  <a href="../chat-page/chat.html">Chat</a>
                 </div>
             </div>
-            <a href = "" class="headerbutton" id="user-button">User</a>
+            <a href = "" class="headerbutton" id="user-button"></a>
         </div>
         <div class="right-header">
             <input type="text", placeholder="Search">
@@ -42,10 +41,10 @@
     <div class="jumbotron">
         <div class="content">
             <p class="time">06:00 PM</p>
-            <p class="place">Sentul City</p>
-            <p class="date">December 06, 2023</p>
+            <p class="place" id="loc-tag">Sentul City</p>
+            <p class="date" id="loc-tag">December 06, 2023</p>
             <img class="weather" src="../property/weather-logo/sunny-logo.png" alt="">
-            <p class="explanation">Sunny</p>
+            <p class="explanation" id="loc-tag">Sunny</p>
             <a class="jumbotron-details-button" href="../weather-forecast-page/weather-forecast.html">View Details</a>
         </div>
     </div>
@@ -105,14 +104,14 @@
                 <ul>
                     <li><a class="not-active-footer" href="Home.html">Home</a></li>
                     <li><a class="not-active-footer" href="Menu.html">Menu</a></li>
-                    <li><a class="footer-active" href="/front-end/contact-us-page/contact-us.html">Contact Us</a></li>
+                    <li><a class="footer-active" href="../contact-us-page/contact-us.html">Contact Us</a></li>
                 </ul>
             </div>
             <div class="menu-footer-2">
                 <ul>
                     <li><a class="not-active-footer" href="our-outlet.html">Outlet</a></li>
                     <li><a class="not-active-footer" href="about-us.html">About Us</a></li>
-                    <li><a class="not-active-footer" href="/front-end/faq-page/faq.html">Privacy Policy & FAQ</a></li>
+                    <li><a class="not-active-footer" href="../faq-page/faq.html">Privacy Policy & FAQ</a></li>
                 </ul>
             </div>
             <div class="menu-follow-us">
@@ -131,5 +130,12 @@
             <p>&copy; 2023 Skearth.com by PT Skearth Indonesia Tbk. | All rights reserved.</p>
         </div>
     </footer>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="../header.js"></script>
 </body>
 </html>
