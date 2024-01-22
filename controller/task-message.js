@@ -15,6 +15,9 @@ const get_all_message = async_wrapper(async(req, res)=>{
     res.status(200).json(res_message);
 })
 const delete_message = async_wrapper(async(req, res)=>{ 
+    // this is for extract the user 
+    const{UserID, name} = req.user
+    
     const value = await message.findOneAndDelete({_id : userID}); 
     res.status(200).json({status : 'success' , msg : `success deleted your message ${userID}`});
 })
@@ -30,13 +33,13 @@ const update_message = async_wrapper(async(req, res, next)=> {
     res.status(200).json({msg : `you updatted the user with id : ${userID}`}, person);
 })
 // this is for searching the unique message
-const get_some_message = async_wrapper(async(req, res)=>{ 
-    const { userID } = req.params;
+const get_unique_message = async_wrapper(async(req, res)=>{ 
+    const { UserID } = req.params;
     const search = await message.find({ 
-        _id : userID
+        _id : UserID
     })
     console.log("this is testing");
-    res.status(200).json({id : Number(userID),data: search});
+    res.status(200).json({id : Number(UserID),data: search});
 })
 
 
@@ -45,5 +48,5 @@ module.exports = {
     delete_message,
     get_all_message,
     update_message,
-    get_some_message
+    get_unique_message
 }
