@@ -36,6 +36,10 @@ const logIn = async_wrapper(async(req, res, next)=>{
     const token = await user.create_JWT();
     res.status(StatusCodes.ACCEPTED).json({token : token});
 })
+const get_user = async_wrapper(async(req,res,next)=>{ 
+    const user_info = req.user; 
+    res.json(user_info); 
+})
 module.exports ={
-    logIn, signUp
+    logIn, signUp, get_user
 }

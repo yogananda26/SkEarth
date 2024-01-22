@@ -23,7 +23,7 @@ formDOM.addEventListener('submit', async(e)=>{
        window.location.href = '/homepage/homepage.html'
     }catch(e){ 
         localStorage.removeItem('token');
-        testing.textContent = e.response.data.msg
+        alert(e.response.data.msg); 
     }
 })
 

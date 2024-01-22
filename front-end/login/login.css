@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Inter', sans-serif;
 }
 
 .container {
@@ -98,6 +99,13 @@ input[type=email] {
   font-size: 20px;
 }
 
+a {
+  color: #333;
+  text-decoration: none;
+  font-size: 17px;
+}
+
 a:hover {
+  color: #95CEF6;
   text-decoration: underline;
 }

@@ -37,12 +37,12 @@ body{
     height: 100px;
     margin: 20px 0px 20px 0px;
 }
-
-p{
+#loc-tag{
     font-size: 30px;
     margin-bottom: 3px;
     font-weight: bold;
 }
+
 
 .time{
     font-size: 70px;
