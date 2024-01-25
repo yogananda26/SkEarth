@@ -28,6 +28,10 @@ const User = new mongoose.Schema({
         name : {
             default : null, 
             type: String
+        },
+        UserID : { 
+            type : mongoose.Types.ObjectId, 
+            required : [true, 'please provide userID']
         }
     }, {timestamps : true})
 

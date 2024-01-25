@@ -13,7 +13,7 @@
             <img src="../property/skearth-logo/skearth-logo-black.png" alt="skearth-logo">
         </div>
         <div class="center-header">
-            <a href = "/front-end/homepage/homepage.html" class="headerbutton" id="home-button">Home</a>
+            <a href = "../homepage/homepage.html" class="headerbutton" id="home-button">Home</a>
             <div class="dropdown">
                 <button onclick="dropFunction('dropdown-list1')" class="dropbtn">Features</button>
                 <div id="dropdown-list1" class="dropdown-content">
@@ -40,10 +40,21 @@
     <div id="content">
         <div id="content-container">
             <div id="content-left">
-    
+                <!--this is for displaying all user in that chat -->
+                <div class="top-5-user" style="display: flex; flex-direction: column;" >
+                
+                </div>
             </div>
+
             <div id="content-mid">
-    
+                <div class="input-user-message">
+                    <form action="#">
+                        <label for="message-user">Input Here</label>
+                        <input type="text" placeholder="what you are thinking now">
+                        <button type="submit" class="button">hallo</button>
+                    </form>
+                </div>
+                <div id="conten"></div>
             </div>
             <div id="content-right">
                 <div id="trends-for-you"></div>
@@ -92,6 +103,7 @@
             <p>&copy; 2023 Skearth.com by PT Skearth Indonesia Tbk. | All rights reserved.</p>
         </div>
     </footer>
+    <!--  -->
     <script
     src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
     integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
@@ -99,5 +111,6 @@
     referrerpolicy="no-referrer"
   ></script>
     <script src="../header.js"></script>
+    <script src="chat.js"></script>
 </body>
 </html>

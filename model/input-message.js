@@ -1,5 +1,17 @@
 const mongoose = require('mongoose'); 
 
+
+const replay_schema = new mongoose.Schema({ 
+    comment: {
+        type : String,
+        default : 'There is no Comment Available'
+    }, 
+    replyBy : {
+        type : mongoose.Types.ObjectId
+    }
+}, {timestamps: true})
+
+
 const message_schema = new mongoose.Schema(
 { 
     content:{
@@ -11,7 +23,11 @@ const message_schema = new mongoose.Schema(
         type: mongoose.Types.ObjectId, 
         required : [true, "please provide user"], 
         ref : 'User'
-    }
+    }, 
+    reply : [{
+        type : replay_schema, 
+        default : () => ({})
+    }]
 }, {timestamps : true})
 
 module.exports = mongoose.model('History_Chat', message_schema); 

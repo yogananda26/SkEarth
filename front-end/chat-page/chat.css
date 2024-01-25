@@ -16,7 +16,7 @@
 #content-left{ 
     width: 300px;
     height: 500px;
-    background-color: rgb(153, 153, 153);
+    background-color: rgb(225, 225, 225);
     border-radius: 10px;
     position: -webkit-sticky;
     position: sticky;
@@ -27,21 +27,21 @@
 #content-mid{
     width: 800px;
     height: 2000px;
-    background-color: rgb(153, 153, 153);
+    background-color: rgb(225, 225, 225);
     border-radius: 20px;
 }
 
 #content-right{ 
     width: 300px; 
     height :inherit;
-    background-color : rgb(153, 153, 153); 
+    background-color : rgb(255, 255, 255); 
     border-radius: 10px;
     margin-right: 5px;
 }
 #trends-for-you{
     height: 600px;
     width: 100%;
-    background-color: black;
+    background-color: rgb(225,225, 225);
     border-radius: 10px;
 }
 #who-to-follow{
@@ -50,7 +50,7 @@
     position: sticky;
     position: -webkit-sticky;
     top : 100px; 
-    background-color: yellow;
+    background-color: rgb(182, 182, 182);
     border-radius: 10px;
 }
 

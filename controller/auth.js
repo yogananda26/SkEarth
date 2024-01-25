@@ -40,6 +40,11 @@ const get_user = async_wrapper(async(req,res,next)=>{
     const user_info = req.user; 
     res.json(user_info); 
 })
+
+const get_all_user = async_wrapper(async(req, res)=>{  
+    const result = await User.find({});
+    res.status(200).json(result);
+})
 module.exports ={
-    logIn, signUp, get_user
+    logIn, signUp, get_user, get_all_user
 }

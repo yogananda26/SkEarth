@@ -36,17 +36,43 @@ const update_message = async_wrapper(async(req, res, next)=> {
 const get_unique_message = async_wrapper(async(req, res)=>{ 
     const { UserID } = req.params;
     const search = await message.find({ 
-        _id : UserID
+        createdBy : UserID
     })
-    console.log("this is testing");
-    res.status(200).json({id : Number(UserID),data: search});
+    console.log(UserID);
+    res.status(200).json({id : UserID ,data: search});
 })
 
+const replies_the_message = async_wrapper(async(req, res, next)=>{ 
+    const {commentID} = req.params; 
+    const parent = await message.findOne({
+        _id : commentID
+    })
+    const {comment} = req.body
+    parent.reply.push({
+        replyBy : req.user.UserID, 
+        comment : comment
+    })
+    console.log(Array.isArray(parent.reply))
+    // this is for saving the document 
+    const updated = parent.save();
+
+    res.status(200).json(parent)
+})
+const show_all_replies = async_wrapper(async(req, res, next)=>{ 
+    const {commentID} = req.params; 
+    const data = await message.findOne({
+        _id : commentID
+    })
+    console.log(data)
+    res.status(200).json(data);
+})
 
 module.exports = { 
     make_message,
     delete_message,
     get_all_message,
     update_message,
-    get_unique_message
+    get_unique_message, 
+    replies_the_message, 
+    show_all_replies
 }
