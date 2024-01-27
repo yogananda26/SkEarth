@@ -17,13 +17,13 @@ router
 
 router
     .route("/unique/:UserID")
-    .get(authentication, get_unique_message)
+    .post(authentication, get_unique_message)
     .patch(authentication, update_message)
     .delete(authentication, delete_message);
 
 router
     .route("/comment/:commentID")
-    .get(authentication, show_all_replies)
-    .post(authentication, replies_the_message)
+    .get(show_all_replies)
+    .post(replies_the_message)
 
 module.exports = router; 

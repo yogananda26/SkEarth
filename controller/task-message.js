@@ -1,7 +1,8 @@
 
 const message = require('../model/input-message'); 
 const {async_wrapper} = require('../middleware/async-wrapper')
-const {bad_request} = require('../error/driver-error')
+const {bad_request} = require('../error/driver-error');
+const { json } = require('express');
 
 // this is the task
 const make_message = async_wrapper(async(req, res)=>{
@@ -12,6 +13,7 @@ const make_message = async_wrapper(async(req, res)=>{
 })
 const get_all_message = async_wrapper(async(req, res)=>{  
     const res_message = await message.find({});
+    // this is for finding the message that user make
     res.status(200).json(res_message);
 })
 const delete_message = async_wrapper(async(req, res)=>{ 
@@ -35,11 +37,26 @@ const update_message = async_wrapper(async(req, res, next)=> {
 // this is for searching the unique message
 const get_unique_message = async_wrapper(async(req, res)=>{ 
     const { UserID } = req.params;
-    const search = await message.find({ 
+    const result = await message.find({ 
         createdBy : UserID
     })
-    console.log(UserID);
-    res.status(200).json({id : UserID ,data: search});
+    // this is for searching the comment for every comment
+    const search_all_comment = await message.find({})
+    const all_message = [];
+
+    result.map((data)=>{
+        all_message.push(data) ; 
+    })
+    search_all_comment.forEach((result)=>{
+        result.reply.map((data)=>{
+            if(data.replyBy == UserID){ 
+                all_message.push(data);
+            }
+        })
+    })
+    // this si for destructing
+    
+    res.status(200).json(all_message);
 })
 
 const replies_the_message = async_wrapper(async(req, res, next)=>{ 
@@ -54,16 +71,16 @@ const replies_the_message = async_wrapper(async(req, res, next)=>{
     })
     console.log(Array.isArray(parent.reply))
     // this is for saving the document 
-    const updated = parent.save();
-
+    parent.save();
     res.status(200).json(parent)
 })
+
 const show_all_replies = async_wrapper(async(req, res, next)=>{ 
     const {commentID} = req.params; 
     const data = await message.findOne({
         _id : commentID
     })
-    console.log(data)
+    // console.log(data);
     res.status(200).json(data);
 })
 

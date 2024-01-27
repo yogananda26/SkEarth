@@ -12,7 +12,7 @@ const value = async() => {
         }).then(({data})=>{
             // this is for assign the text
 
-            tweet_container.innerHTML = data.map(({content, createdBy})=>{ 
+            tweet_container.innerHTML = data.map(({content, createdBy, _id})=>{ 
                 // this is for content thing
                 return ` <div id="chat-content-container" style="margin: 37px;">
                 <div id="header-content" style="display: flex; flex-direction: row;">
@@ -42,16 +42,14 @@ const value = async() => {
                         </button>
 
                     <!-- this is for comment button -->
-
-                        <button style="border:none; background: none;"> 
-                            <div id="other-comment" style="display: flex; flex-direction: row;  width: 80px;">
+                        <a href="./more_comment.html?commentID=${_id}">
+                            <div id="other-comment" style="display: flex; flex-direction: row;  width: 90px;">
                                 <div>
                                     <img src="./comment-icon-1024x964-julk98bl.png" alt="" style="height: 20px; width: 20px;">
                                 </div>
                                 <span style="margin: 2px 0px 0px 3px;">Comment</span>
                             </div>
-                        </button>
-
+                        </a>
                     <!-- this is for share button -->
 
                         <button style="border:none; background: none;">
@@ -65,7 +63,7 @@ const value = async() => {
                     </div>
                 </div>
             </div>` 
-            }).join(' ');
+            }).reverse().join(' ');
         })
     } catch (error) {
         console.log(error);
