@@ -63,7 +63,7 @@ function displayWeatherData(data) {
     console.log(aqiValues);
     weatherDataDiv.innerHTML = `
         <p>Air Quality Index (AQI): ${airQualityIndex}</p>
-        <canvas id="lineGraph" width="400" height="200"></canvas>
+        <canvas id="lineGraph" width="auto" height="auto"></canvas>
     `;
 
     createLineGraph(timestamps, aqiValues);

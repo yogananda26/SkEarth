@@ -5,7 +5,7 @@ const {async_wrapper} = require("./async-wrapper");
 
 const authentication = async_wrapper(async(req, res, next)=>{ 
     const header_token = req.headers.authorization; 
-    console.log(req.headers.authorization);
+    // console.log(req.headers.authorization);
 
     if(!header_token || !header_token.startsWith('Bearer ')){ 
         throw new auth_error("You dont have permission to access this page, please login first")
@@ -15,7 +15,7 @@ const authentication = async_wrapper(async(req, res, next)=>{
         const decode = jwt.verify(token, process.env.PRIVATE_CODE); 
         const {UserID, name} = decode;
         req.user = {UserID , name};
-        console.log(decode);
+        // console.log(decode);
         next()
     }catch(err){ 
         throw new auth_error("You dont have permission to access this page")
