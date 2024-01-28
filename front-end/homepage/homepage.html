@@ -7,35 +7,38 @@
     <link rel="stylesheet" href="../header.css">
     <link rel="stylesheet" href="homepage.css">
     <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
 </head>
 <body>
     <div class="header">
         <div class="left-header">
             <img src="../property/skearth-logo/skearth-logo-black.png" alt="skearth-logo">
         </div>
-        <div class="center-header">
-            <a href = "homepage.html" class="headerbutton" id="home-button">Home</a>
-            <div class="dropdown">
-                <button onclick="dropFunction('dropdown-list1')" class="dropbtn">Features</button>
-                <div id="dropdown-list1" class="dropdown-content">
-                  <a href="#">Weather Forecast</a>
-                  <a href="#">Air Pollution</a>
-                  <a href="../uv-index/uv-index.html">UV - Index</a>
-                  <a href="#">Solar Panel</a>
+        <div class="big-centerr">
+            <button onclick="menuFunction('center')" class="big-center" id="burger"></button>
+            <div class="center-header" id="center">
+                <a href="homepage.html" class="dropbtn" id="home-button">Home</a>
+                <div class="dropdown">
+                    <button onclick="dropFunction('dropdown-list1')" class="dropbtn">Features</button>
+                    <div id="dropdown-list1" class="dropdown-content">
+                        <a href="../weather-forecast-page/weather-forecast.html">Weather Forecast</a>
+                        <a href="../air-pollution-page/air-pollution.html">Air Pollution</a>
+                        <a href="../uv-index/uv-index.html">UV - Index</a>
+                        <a href="../solar-panel-page/solar-panel.html">Solar Panel</a>
+                    </div>
                 </div>
-            </div>
-            <div class="dropdown">
-                <button onclick="dropFunction('dropdown-list2')" class="dropbtn">More</button>
-                <div id="dropdown-list2" class="dropdown-content">
-                  <a href="../latest-news-page/latest-news.html">News</a>
-                  <a href="../chat-page/chat.html">Chat</a>
+                <div class="dropdown">
+                    <button onclick="dropFunction('dropdown-list2')" class="dropbtn">More</button>
+                    <div id="dropdown-list2" class="dropdown-content">
+                        <a href="../latest-news-page/latest-news.html">News</a>
+                        <a href="../chat-page/chat.html">Chat</a>
+                    </div>
                 </div>
+                <button onclick = "" class="dropbtn" id="user-button">User</button>
             </div>
-            <a href = "" class="headerbutton" id="user-button"></a>
         </div>
         <div class="right-header">
             <input type="text", placeholder="Search">
-            <img src="../property/header-asset/search-logo.png" alt="search-logo">
         </div>
     </div>
     <div class="jumbotron">
@@ -49,6 +52,7 @@
         </div>
     </div>
     <div class="full-content-container">
+        <p class="title-features">Our Features</p>
         <div class="content-container">
             <div class="explanation2">
                 <p class="label">Weather Forecast</p>
