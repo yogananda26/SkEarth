@@ -24,12 +24,20 @@ const User = new mongoose.Schema({
         required:[true, "please provide your password"],
         minlength : 1
     },
-    following : new mongoose.Schema({
+    bio : {
+        type : String, 
+        default : `hello there`
+    }, 
+    following : [new mongoose.Schema({
         name : {
             default : null, 
             type: String
+        },
+        UserID : { 
+            type : mongoose.Types.ObjectId, 
+            required : [true, 'please provide follower userID']
         }
-    }, {timestamps : true})
+    }, {timestamps : true})]
 
 }, {timestamps: true})
 

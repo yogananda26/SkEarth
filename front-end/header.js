@@ -47,3 +47,35 @@ const resolve = async(e)=>{
     })
 }
 resolve();
+
+function menuFunction(bigcenter){
+    if (document.getElementById(bigcenter).classList.contains('show')) {
+        document.getElementById(bigcenter).classList.remove('show');
+        var dropdown = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdown.length; i++) {
+            var openDropdown = dropdown[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+        document.getElementById(bigcenter).onfocus = false
+        // document.getElementById('burger').style.background = "url('../../front-end/property/header-asset/menu-icon.png')";
+    }
+    else{
+        document.getElementById(bigcenter).classList.toggle("show");
+    }
+}
+
+window.onclick = function(event) {
+    if (!event.target.matches('.big-center') && !event.target.matches('.dropbtn')) {
+        var dropdown = document.getElementsByClassName("center-header");
+        var i;
+        for (i = 0; i < dropdown.length; i++) {
+            var openDropdown = dropdown[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
