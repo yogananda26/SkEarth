@@ -44,6 +44,42 @@ const GetAirPolution = async_wrapper(async (req, res) => {
         })
 })
 
+const GetForecastAirPolution = async_wrapper(async (req, res) => {
+    const { longitude, latitude } = req.body.requirement;
+    const API_URL = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=${latitude}&lon=${longitude}&appid=${process.env.API_KEY}`;
+
+    fetch(API_URL)
+        .then((result) => {
+            if (!result) throw new bad_request("something error in GetForecastAirPolution");
+            return result.json();
+        })
+        .then((obj) => {
+            return res.json(obj);
+            // let result = obj['list'].map(({components})=>{
+            //     return components
+            // })
+            // return res.json(result);
+        })
+})
+
+const GetCurrentAirPolution = async_wrapper(async (req, res) => {
+    const { longitude, latitude } = req.body.requirement;
+    const API_URL = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=${process.env.API_KEY}`;
+
+    fetch(API_URL)
+        .then((result) => {
+            if (!result) throw new bad_request("something error in GetCurrentAirPolution");
+            return result.json();
+        })
+        .then((obj) => {
+            return res.json(obj);
+            // let result = obj['list'].map(({components})=>{
+            //     return components
+            // })
+            // return res.json(result);
+        })
+})
+
 
 const GetCurrent_weather = async_wrapper(async (req, res) => {
 
@@ -51,5 +87,9 @@ const GetCurrent_weather = async_wrapper(async (req, res) => {
 
 
 module.exports = {
-    GetUV_index, GetCurrent_weather, GetAirPolution
+    GetUV_index, 
+    GetCurrent_weather, 
+    GetAirPolution, 
+    GetForecastAirPolution, 
+    GetCurrentAirPolution
 }
