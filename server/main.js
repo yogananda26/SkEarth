@@ -1,9 +1,9 @@
 // this is a basic of server in node js 
-const express = require('express'); 
+const express = require('express');
 const app = express();
 const database = require('../database/main');
-const {get_error} = require('../middleware/throws-error');
-require('dotenv').config(); 
+const { get_error } = require('../middleware/throws-error');
+require('dotenv').config();
 
 
 // this is for accessing the data in every route
@@ -12,7 +12,7 @@ const route_message = require('../router/message');
 const route_forecast = require('../router/forecast');
 const route_news = require('../router/news');
 const route_report = require('../router/report');
-const route_solar = require('../router/solar-panel'); 
+const route_solar = require('../router/solar-panel');
 const route_UV = require('../router/uv-index');
 const route_auth = require("../router/auth");
 const route_air_polution = require("../router/air-polution");
@@ -37,16 +37,17 @@ app.use('/auth', route_auth);
 app.use(get_error);
 
 // this is for making the connection to localhost on port 1234
-app.listen(2000 ,()=>{ ``
-console.log('this is your server side is running .... '); 
+app.listen(2000, () => {
+    ``
+    console.log('this is your server side is running .... ');
 });
 
 // invoked the database
-const connect = async(url)=>{ 
-    try{ 
-        await database(url); 
+const connect = async (url) => {
+    try {
+        await database(url);
         console.log("your database successfull yeah");
-    }catch(err){ 
+    } catch (err) {
         console.log(err)
     }
 }
