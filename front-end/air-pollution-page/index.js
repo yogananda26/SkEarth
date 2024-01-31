@@ -14,6 +14,53 @@ const header_forecast = document.getElementById("header-forecast");
 const historic_aqi = document.getElementById("historical-aqi");
 const image_aqi = document.getElementById("image-level-aqi");
 
+const cityData = [
+    { name: 'New York', lat: 40.7128, lon: -74.0060 },
+    { name: 'London', lat: 51.5074, lon: -0.1278 },
+    { name: 'Jakarta', lat: -6.200000, lon: 106.816666 },
+    { name: 'Bogor', lat: -6.595038, lon: 106.816635 },
+    { name: 'Surabaya', lat: -7.250445, lon: 112.768845 },
+    { name: 'Makassar', lat: -6.271194, lon: 106.894547 },
+    { name: 'Serang', lat: -6.120000, lon: 106.150276 },
+    { name: 'Semarang', lat: -6.966667, lon: 110.416664 },
+    { name: 'Pekanbaru', lat: 0.510440, lon: 101.438309 },
+    { name: 'Manokwari', lat: -0.861453, lon: 134.062042 }
+    // Add more cities as needed
+];
+
+const cityList = document.getElementById('city-list');
+
+async function fetchAirQualityData(city) {
+    const url = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${city.lat}&lon=${city.lon}&appid=${`e46690909f598a98eae95c84a266ab48`}`;
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return data.list[0].main.aqi; // Assuming you want the current AQI
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        return null;
+    }
+}
+
+async function displayRanking() {
+    cityList.innerHTML = '';
+    const rankedCities = await Promise.all(cityData.map(async (city) => {
+        const aqi = await fetchAirQualityData(city);
+        return { city, aqi }; // Store city and AQI in an object
+    }));
+
+    rankedCities.sort((a, b) => b.aqi - a.aqi); // Sort based on AQI (lower = better)
+
+    rankedCities.forEach((city, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+        <span class="rank">${index + 1}.</span>
+        ${city.city.name} - AQI: <span class="aqi">${city.aqi}</span>
+      `;
+        cityList.appendChild(li);
+    });
+}
+
 formDom.addEventListener('submit', async (e) => {
     e.preventDefault();
     try {
@@ -30,6 +77,7 @@ formDom.addEventListener('submit', async (e) => {
                 city_name: city_input.value
             })
         content_aqi.style.display = "flex";
+        displayRanking();
         displayContentHeader(data2.data);
         displayImageAQI(data2.data);
         displayCarbonData(data1.data);
@@ -264,7 +312,7 @@ function displayForecastData(data1, data2, data3) {
         forecast4.innerText = `Very Poor`;
     }
 
-    if (data3.list[1].main.aqi == 1) {
+    if (data3.list[48].main.aqi == 1) {
         forecast5.style.backgroundColor = "rgb(110, 226, 154)";
         forecast5.innerText = `Good`;
     } else if (data3.list[48].main.aqi == 2) {
@@ -298,19 +346,19 @@ function displayForecastData(data1, data2, data3) {
         forecast6.innerText = `Very Poor`;
     }
 
-    if (data3.list[95].main.aqi == 1) {
+    if (data3.list[91].main.aqi == 1) {
         forecast7.style.backgroundColor = "rgb(110, 226, 154)";
         forecast7.innerText = `Good`;
-    } else if (data3.list[95].main.aqi == 2) {
+    } else if (data3.list[91].main.aqi == 2) {
         forecast7.style.backgroundColor = "rgb(255, 255, 153)";
         forecast7.innerText = `Fair`;
-    } else if (data3.list[95].main.aqi == 3) {
+    } else if (data3.list[91].main.aqi == 3) {
         forecast7.style.backgroundColor = "rgb(255, 153, 0)";
         forecast7.innerText = `Moderate`;
-    } else if (data3.list[95].main.aqi == 4) {
+    } else if (data3.list[91].main.aqi == 4) {
         forecast7.style.backgroundColor = "rgb(255, 102, 0)";
         forecast7.innerText = `Poor`;
-    } else if (data3.list[95].main.aqi == 5) {
+    } else if (data3.list[91].main.aqi == 5) {
         forecast7.style.backgroundColor = "rgb(153, 51, 102)";
         forecast7.innerText = `Very Poor`;
     }
@@ -352,7 +400,7 @@ function forecastAQIData(data1, data2, data3) {
     const date4 = new Date(data3.list[24].dt * 1000);
     const date5 = new Date(data3.list[48].dt * 1000);
     const date6 = new Date(data3.list[72].dt * 1000);
-    const date7 = new Date((data3.list[95].dt + 50000) * 1000);
+    const date7 = new Date((data3.list[91].dt + 50000) * 1000);
 
     dateForecast1.innerText = date1.toDateString();
     dateForecast2.innerText = date2.toDateString();
@@ -368,5 +416,5 @@ function forecastAQIData(data1, data2, data3) {
     forecast4.innerText = `Level ${data3.list[24].main.aqi}`;
     forecast5.innerText = `Level ${data3.list[48].main.aqi}`;
     forecast6.innerText = `Level ${data3.list[72].main.aqi}`;
-    forecast7.innerText = `Level ${data3.list[95].main.aqi}`;
+    forecast7.innerText = `Level ${data3.list[91].main.aqi}`;
 }
