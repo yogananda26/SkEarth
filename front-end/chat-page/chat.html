@@ -3,9 +3,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="chat.css">
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../header.css">
     <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="chat.css">
+   
+
+
 </head>
 <body>
     <div class="header">
@@ -13,12 +18,12 @@
             <img src="../property/skearth-logo/skearth-logo-black.png" alt="skearth-logo">
         </div>
         <div class="center-header">
-            <a href = "../homepage/homepage.html" class="headerbutton" id="home-button">Home</a>
+            <a href = "homepage.html" class="headerbutton" id="home-button">Home</a>
             <div class="dropdown">
                 <button onclick="dropFunction('dropdown-list1')" class="dropbtn">Features</button>
                 <div id="dropdown-list1" class="dropdown-content">
                   <a href="#">Weather Forecast</a>
-                  <a href="#">Air Pollution</a>
+                  <a href="../air-pollution-page/air-pollution.html">Air Pollution</a>
                   <a href="../uv-index/uv-index.html">UV - Index</a>
                   <a href="#">Solar Panel</a>
                 </div>
@@ -26,8 +31,8 @@
             <div class="dropdown">
                 <button onclick="dropFunction('dropdown-list2')" class="dropbtn">More</button>
                 <div id="dropdown-list2" class="dropdown-content">
-                  <a href="#">News</a>
-                  <a href="#">Chat</a>
+                  <a href="../latest-news-page/latest-news.html">News</a>
+                  <a href="../chat-page/chat.html">Chat</a>
                 </div>
             </div>
             <a href = "" class="headerbutton" id="user-button"></a>
@@ -47,11 +52,27 @@
             </div>
 
             <div id="content-mid">
-                <div class="input-user-message">
-                    <form action="#">
-                        <label for="message-user">Input Here</label>
-                        <input type="text" placeholder="what you are thinking now">
-                        <button type="submit" class="button">hallo</button>
+                <div class="input-user-message" style="margin: 20px;">
+                    <form class="form_input" action="#">
+                        <div class="mb-3" style="width: inherit; display: flex; justify-content: center; flex-direction: column; align-items: center;">
+
+                            <!-- this is for user profile -->
+                            <div id="icon-user" style="height:46px;width: 46px; background-color: black; border-radius: 100px;
+                            margin-right: 7px;"></div>
+
+                            <!-- this is for user input -->
+                            <label for="exampleFormControlInput1" class="form-label">Input User</label>
+                            <div style="width: 600px; height: auto;">
+                                <textarea id="input-user" class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                            </div>
+
+                        </div>
+                        <div style="width: inherit; display: flex; justify-content: space-between; ">
+                            <div style="margin-left: 30px;">
+                                <p class="lead"> i know your life is <mark>worthy</mark></h6>
+                            </div>
+                            <button type="submit" class="btn btn-secondary">Post</button>
+                        </div>
                     </form>
                 </div>
                 <div id="conten"></div>
@@ -59,7 +80,6 @@
             <div id="content-right">
                 <div id="trends-for-you"></div>
                 <div id="who-to-follow"></div>
-
             </div>
         </div>
     </div>
@@ -110,7 +130,10 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script type="module" src="chat.js"></script>
     <script src="../header.js"></script>
-    <script src="chat.js"></script>
+    <script></script>
 </body>
 </html>

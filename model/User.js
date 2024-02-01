@@ -51,7 +51,7 @@ User.methods.create_JWT = function() {
         UserID : this._id,
         name : this.name
     },process.env.PRIVATE_CODE,{ 
-        expiresIn : '30d' 
+        expiresIn : '2d' 
     })
     return token; 
 }
