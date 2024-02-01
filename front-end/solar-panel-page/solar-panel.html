@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skearth - Solar Panel</title>
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="solar-panel.css">
+    <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    <script src="solar-panel.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="left-header">
+            <img src="../property/skearth-logo/skearth-logo-black.png" alt="skearth-logo">
+        </div>
+        <div class="big-centerr">
+            <button onclick="menuFunction('center')" class="big-center" id="burger"></button>
+            <div class="center-header" id="center">
+                <a href="homepage.html" class="dropbtn" id="home-button">Home</a>
+                <div class="dropdown">
+                    <button onclick="dropFunction('dropdown-list1')" class="dropbtn">Features</button>
+                    <div id="dropdown-list1" class="dropdown-content">
+                        <a href="../weather-forecast-page/weather-forecast.html">Weather Forecast</a>
+                        <a href="../air-pollution-page/air-pollution.html">Air Pollution</a>
+                        <a href="../uv-index/uv-index.html">UV - Index</a>
+                        <a href="../solar-panel-page/solar-panel.html">Solar Panel</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button onclick="dropFunction('dropdown-list2')" class="dropbtn">More</button>
+                    <div id="dropdown-list2" class="dropdown-content">
+                        <a href="../latest-news-page/latest-news.html">News</a>
+                        <a href="../chat-page/chat.html">Chat</a>
+                    </div>
+                </div>
+                <button onclick="" class="dropbtn" id="user-button">User</button>
+            </div>
+        </div>
+        <div class="right-header">
+            <input type="text" , placeholder="Search">
+        </div>
+    </div>
+    <div class="jumbotron">
+        <div class="content">
+            <p class="place">Sentul City</p>
+            <input type="text" , placeholder="Type any location to see Solar Irradiation Statistic View...">
+            <p class="jumbotron-title">Current Solar Irradiation (Wh/m^2)</p>
+            <img class="panelImg" src="../../property/solar-asset/SolarPanel.png" alt="">
+            <div class="solar-irradiation">
+                <div class="ghi">
+                    <p class="title">
+                        GHI
+                    </p>
+                    <p class="value">
+                        10
+                    </p>
+                    <div class="popupl" onclick="myFunctionl()">
+                        <img src="../../property/solar-asset/information.png" alt="">
+                        <span class="popuptextl" id="myPopupl">GHI = Global Horizontal Irradiation</span>
+                    </div>
+                </div>
+                <div class="dni">
+                    <p class="title">
+                        DNI
+                    </p>
+                    <p class="value">
+                        15
+                    </p>
+                    <div class="popupm" onclick="myFunctionm()">
+                        <img src="../../property/solar-asset/information.png" alt="">
+                        <span class="popuptextm" id="myPopupm">DNI = Direct Normal Irradiation</span>
+                    </div>
+                </div>
+                <div class="dhi">
+                    <p class="title">
+                        DHI
+                    </p>
+                    <p class="value">
+                        20
+                    </p>
+                    <div class="popupr" onclick="myFunctionr()">
+                        <img src="../../property/solar-asset/information.png" alt="">
+                        <span class="popuptextr" id="myPopupr">DHI = Diffuse Horizontal Irradiation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="forecast">
+        <div class="content-forecast">
+            <div class="left">
+                <div class="AM">
+                    <p class="title">AM</p>
+                    <div class="hourly">
+                        <div class="a">
+                            <table class="table">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">Time</th>
+                                        <th scope="col">GHI</th>
+                                        <th scope="col">DNI</th>
+                                        <th scope="col">DHI</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">5:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">6:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="b">
+                            <table class="table">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">Time</th>
+                                        <th scope="col">GHI</th>
+                                        <th scope="col">DNI</th>
+                                        <th scope="col">DHI</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">7:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">8:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">9:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">10:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">11:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">12:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <p class="description">These Are Information for Today’s Solar Irradiation</p>
+                <div class="PM">
+                    <p class="title">PM</p>
+                    <div class="hourly">
+                        <div class="a">
+                            <table class="table">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">Time</th>
+                                        <th scope="col">GHI</th>
+                                        <th scope="col">DNI</th>
+                                        <th scope="col">DHI</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">5:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">6:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="b">
+                            <table class="table">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">Time</th>
+                                        <th scope="col">GHI</th>
+                                        <th scope="col">DNI</th>
+                                        <th scope="col">DHI</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">7:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">8:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">9:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">10:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">11:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">12:00</th>
+                                        <td>10</td>
+                                        <td>30</td>
+                                        <td>15</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <p class="title">Forecast</p>
+                <img src="../../property/solar-asset/ClockSolar.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="top-footer">
+            <div class="info-1">
+                <div class="img-footer-logo">
+                    <img src="../property/contactUs-asset/logoSkearth.png" alt="">
+                </div>
+                <div class="address">
+                    <p>ini rencananya <br> slogan ajaa</p>
+                </div>
+            </div>
+            <div class="menu-footer-1">
+                <ul>
+                    <li><a class="not-active-footer" href="Home.html">Home</a></li>
+                    <li><a class="not-active-footer" href="Menu.html">Menu</a></li>
+                    <li><a class="footer-active" href="../contact-us-page/contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="menu-footer-2">
+                <ul>
+                    <li><a class="not-active-footer" href="our-outlet.html">Outlet</a></li>
+                    <li><a class="not-active-footer" href="about-us.html">About Us</a></li>
+                    <li><a class="not-active-footer" href="../faq-page/faq.html">Privacy Policy & FAQ</a></li>
+                </ul>
+            </div>
+            <div class="menu-follow-us">
+                <div class="follow-us-text">
+                    <p>Follow Us More!</p>
+                </div>
+                <div class="icon-footer">
+                    <img src="../property/contactUs-asset/youtube-icon.png" alt="">
+                    <img src="../property/contactUs-asset/twitter-icon.png" alt="">
+                    <img src="../property/contactUs-asset/instagram-icon.png" alt="">
+                    <img src="../property/contactUs-asset/facebook-icon.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            <p>&copy; 2023 Skearth.com by PT Skearth Indonesia Tbk. | All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../header.js"></script>
+</body>
+
+</html>

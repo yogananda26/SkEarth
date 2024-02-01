@@ -1,137 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <script src="https://kit.fontawesome.com/4d9121ebec.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="contact-us.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <script src="https://kit.fontawesome.com/4d9121ebec.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="contact-us.css">
 </head>
+
 <body>
-    <div class="container mt-5 p-4">
-        <div class="d-flex">
-          <div class="left-content w-75 pe-5">
-            <p class="desc p-desc">
-                SkEarth is the perfect place to get all your weather information, <br>
-                from real-time forecasts to provide users with a comprehensive <br>
-                and easy-to-understand overview of the current weather conditions around the world. <br>
-            </p>
-  
-            <div class="info">
-  
-              <div class="email">
-                <h3>Our Email</h3>
-                <p class="p-desc">Main Email : sizzles@gmail.com</p>
-                <p class="p-desc">Inquiries : infosizzles@gmail.com</p>
-              </div>
-  
-              <div class="medsoc">
-                <h3>Follow Us</h3>
-                <img src="../property/contactUs-asset/youtube-icon.png" />
-                <img src="../property/contactUs-asset/twitter-icon.png" />
-                <img src="../property/contactUs-asset/instagram-icon.png" />
-                <img src="../property/contactUs-asset/facebook-icon.png" />
-              </div>
-            </div>
+  <div class="header">
+    <div class="left-header">
+      <img src="../property/skearth-logo/skearth-logo-black.png" alt="skearth-logo">
+    </div>
+    <div class="big-centerr">
+      <button onclick="menuFunction('center')" class="big-center" id="burger"></button>
+      <div class="center-header" id="center">
+        <a href="homepage.html" class="dropbtn" id="home-button">Home</a>
+        <div class="dropdown">
+          <button onclick="dropFunction('dropdown-list1')" class="dropbtn">Features</button>
+          <div id="dropdown-list1" class="dropdown-content">
+            <a href="../weather-forecast-page/weather-forecast.html">Weather Forecast</a>
+            <a href="../air-pollution-page/air-pollution.html">Air Pollution</a>
+            <a href="../uv-index/uv-index.html">UV - Index</a>
+            <a href="../solar-panel-page/solar-panel.html">Solar Panel</a>
           </div>
-          <div class="right-content w-50">
-            <form>
-              <div class="mb-4">
-                <label class="form-label">Name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Input your name"
-                />
-              </div>
-              <div class="mb-4">
-                <label class="form-label">Message</label>
-                <textarea class="form-control" placeholder="Input your message" rows="5"></textarea>
-              </div>
-              <div class="text-center">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">SEND</button>   
-              </div>
-              <div class="modal fade" id="exampleModal" role="dialog" aria-labelledby="modallabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">
-                        Thank you
-                      </h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
+        </div>
+        <div class="dropdown">
+          <button onclick="dropFunction('dropdown-list2')" class="dropbtn">More</button>
+          <div id="dropdown-list2" class="dropdown-content">
+            <a href="../latest-news-page/latest-news.html">News</a>
+            <a href="../chat-page/chat.html">Chat</a>
+          </div>
+        </div>
+        <button onclick="" class="dropbtn" id="user-button">User</button>
+      </div>
+    </div>
+    <div class="right-header">
+      <input type="text" , placeholder="Search">
+    </div>
+  </div>
+  <div class="container mt-5 p-4">
+    <div class="d-flex">
+      <div class="left-content w-75 pe-5">
+        <p class="desc p-desc">
+          SkEarth is the perfect place to get all your weather information, <br>
+          from real-time forecasts to provide users with a comprehensive <br>
+          and easy-to-understand overview of the current weather conditions around the world. <br>
+        </p>
 
-                    <div class="modal-body">
-                      <form>
-                        <div class="form-group">
-                          <label>
-                            Succesfully Sent! <br> 
-                            We'll contact you soon
-                          </label>
-                        </div>
-                      </form>
-                    </div>
+        <div class="info">
 
-                    <div class="modal-footer">
-                      <button type="ok" class="btn btn-prim">
-                          OK
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </form>
+          <div class="email">
+            <h3>Our Email</h3>
+            <p class="p-desc">Main Email : sizzles@gmail.com</p>
+            <p class="p-desc">Inquiries : infosizzles@gmail.com</p>
+          </div>
+
+          <div class="medsoc">
+            <h3>Follow Us</h3>
+            <img src="../property/contactUs-asset/youtube-icon.png" />
+            <img src="../property/contactUs-asset/twitter-icon.png" />
+            <img src="../property/contactUs-asset/instagram-icon.png" />
+            <img src="../property/contactUs-asset/facebook-icon.png" />
           </div>
         </div>
       </div>
-      
-    <footer>
-        <div class="top-footer">
-            <div class="info-1">
-                <div class="img-footer-logo">
-                    <img src="/property/contactUs-asset/logoSkearth.png" alt="">
+      <div class="right-content w-50">
+        <form>
+          <div class="mb-4">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" placeholder="Input your name" />
+          </div>
+          <div class="mb-4">
+            <label class="form-label">Message</label>
+            <textarea class="form-control" placeholder="Input your message" rows="5"></textarea>
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">SEND</button>
+          </div>
+          <div class="modal fade" id="exampleModal" role="dialog" aria-labelledby="modallabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">
+                    Thank you
+                  </h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
-                <div class="address">
-                    <p>ini rencananya <br> slogan ajaa</p>
-                </div>
-            </div>
-            <div class="menu-footer-1">
-                <ul>
-                    <li><a class="not-active-footer" href="../homepage/homepage.html">Home</a></li>
-                    <li><a class="not-active-footer" href="Menu.html">Menu</a></li>
-                    <li><a class="footer-active" href="/front-end/contact-us-page/contact-us.html">Contact Us</a></li>
-                </ul>
-            </div> 
-            <div class="menu-footer-2">
-                <ul>
-                    <li><a class="not-active-footer" href="our-outlet.html">Outlet</a></li>
-                    <li><a class="not-active-footer" href="about-us.html">About Us</a></li>
-                    <li><a class="not-active-footer" href="/front-end/faq-page/faq.html">Privacy Policy & FAQ</a></li>
-                </ul>
-            </div>
-            <div class="menu-follow-us">
-                <div class="follow-us-text">
-                    <p>Follow Us More!</p>
-                </div>
-                <div class="icon-footer">
-                  <img src="/property/contactUs-asset/youtube-icon.png" />
-                  <img src="/property/contactUs-asset/twitter-icon.png" />
-                  <img src="/property/contactUs-asset/instagram-icon.png" />
-                  <img src="/property/contactUs-asset/facebook-icon.png" />
-                </div>
-            </div>
-        </div>
-        <div class="bottom-footer">
-            <p>&copy; 2023 Skearth.com by PT Skearth Indonesia Tbk. | All rights reserved.</p>
-        </div>
-    </footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label>
+                        Succesfully Sent! <br>
+                        We'll contact you soon
+                      </label>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="ok" class="btn btn-prim">
+                    OK
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="top-footer">
+      <div class="info-1">
+        <div class="img-footer-logo">
+          <img src="../property/contactUs-asset/logoSkearth.png" alt="">
+        </div>
+        <div class="address">
+          <p>ini rencananya <br> slogan ajaa</p>
+        </div>
+      </div>
+      <div class="menu-footer-1">
+        <ul>
+          <li><a class="not-active-footer" href="Home.html">Home</a></li>
+          <li><a class="not-active-footer" href="Menu.html">Menu</a></li>
+          <li><a class="footer-active" href="../contact-us-page/contact-us.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="menu-footer-2">
+        <ul>
+          <li><a class="not-active-footer" href="our-outlet.html">Outlet</a></li>
+          <li><a class="not-active-footer" href="about-us.html">About Us</a></li>
+          <li><a class="not-active-footer" href="../faq-page/faq.html">Privacy Policy & FAQ</a></li>
+        </ul>
+      </div>
+      <div class="menu-follow-us">
+        <div class="follow-us-text">
+          <p>Follow Us More!</p>
+        </div>
+        <div class="icon-footer">
+          <img src="../property/contactUs-asset/youtube-icon.png" alt="">
+          <img src="../property/contactUs-asset/twitter-icon.png" alt="">
+          <img src="../property/contactUs-asset/instagram-icon.png" alt="">
+          <img src="../property/contactUs-asset/facebook-icon.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="bottom-footer">
+      <p>&copy; 2023 Skearth.com by PT Skearth Indonesia Tbk. | All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="../header.js"></script>
 </body>
+
 </html>
