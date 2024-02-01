@@ -42,6 +42,8 @@ const get_unique_message = async_wrapper(async(req, res)=>{
     })
     // this is for searching the comment for every comment
     const search_all_comment = await message.find({})
+
+    // for storage the unique reply and message that user make before
     const all_message = [];
 
     result.map((data)=>{
@@ -54,7 +56,7 @@ const get_unique_message = async_wrapper(async(req, res)=>{
             }
         })
     })
-    // this si for destructing
+    // this for destructing
     
     res.status(200).json(all_message);
 })

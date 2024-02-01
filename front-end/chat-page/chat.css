@@ -1,7 +1,4 @@
-*{ 
-    box-sizing: content-box;
-}
-#content-container{ 
+#content-container{     
     height: auto; 
     width: auto;
     display: flex;
@@ -27,7 +24,7 @@
 
 #content-mid{
     width: 800px;
-    height: 2000px;
+    height: auto;
     background-color: rgb(225, 225, 225);
     border-radius: 20px;
 }

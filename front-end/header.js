@@ -39,8 +39,8 @@ const resolve = async(e)=>{
             'Authorization': 'Bearer ' + token
         }
     })  
-    .then((result)=>{
-        user_document.innerHTML = result.data.name;
+    .then(({data})=>{
+        user_document.innerHTML = data[0].name;
     })
     .catch((e)=>{
         user_document.innerHTML = 'User';

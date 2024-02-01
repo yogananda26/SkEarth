@@ -38,7 +38,8 @@ const logIn = async_wrapper(async(req, res, next)=>{
 })
 const get_user = async_wrapper(async(req,res,next)=>{ 
     const user_info = req.user; 
-    res.json(user_info); 
+    const result = await User.find({_id : user_info.UserID})
+    res.json(result);
 })
 
 const get_all_user = async_wrapper(async(req, res)=>{  
