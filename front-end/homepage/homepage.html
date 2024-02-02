@@ -1,145 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Skearth - homepage</title>
-    <link rel="stylesheet" href="../header.css">
-    <link rel="stylesheet" href="homepage.css">
-    <link rel="stylesheet" href="../footer.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
-</head>
-<body>
+    <link rel="stylesheet" href="../header.css" />
+    <link rel="stylesheet" href="homepage.css" />
+    <link rel="stylesheet" href="../footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
     <div class="header">
-        <div class="left-header">
-            <img src="../property/skearth-logo/skearth-logo-black.png" alt="skearth-logo">
-        </div>
-        <div class="big-centerr">
-            <button onclick="menuFunction('center')" class="big-center" id="burger"></button>
-            <div class="center-header" id="center">
-                <a href="homepage.html" class="dropbtn" id="home-button">Home</a>
-                <div class="dropdown">
-                    <button onclick="dropFunction('dropdown-list1')" class="dropbtn">Features</button>
-                    <div id="dropdown-list1" class="dropdown-content">
-                        <a href="../weather-forecast-page/weather-forecast.html">Weather Forecast</a>
-                        <a href="../air-pollution-page/air-pollution.html">Air Pollution</a>
-                        <a href="../uv-index/uv-index.html">UV - Index</a>
-                        <a href="../solar-panel-page/solar-panel.html">Solar Panel</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button onclick="dropFunction('dropdown-list2')" class="dropbtn">More</button>
-                    <div id="dropdown-list2" class="dropdown-content">
-                        <a href="../latest-news-page/latest-news.html">News</a>
-                        <a href="../chat-page/chat.html">Chat</a>
-                    </div>
-                </div>
-                <button onclick = "" class="dropbtn" id="user-button">User</button>
+      <div class="left-header">
+        <img
+          src="../property/skearth-logo/skearth-logo-black.png"
+          alt="skearth-logo"
+        />
+      </div>
+      <div class="big-centerr">
+        <button
+          onclick="menuFunction('center')"
+          class="big-center"
+          id="burger"
+        ></button>
+        <div class="center-header" id="center">
+          <a href="homepage.html" class="dropbtn" id="home-button">Home</a>
+          <div class="dropdown">
+            <button onclick="dropFunction('dropdown-list1')" class="dropbtn">
+              Features
+            </button>
+            <div id="dropdown-list1" class="dropdown-content">
+              <a href="../weather-forecast-page/weather-forecast.html"
+                >Weather Forecast</a
+              >
+              <a href="../air-pollution-page/air-pollution.html"
+                >Air Pollution</a
+              >
+              <a href="../uv-index/uv-index.html">UV - Index</a>
+              <a href="../solar-panel-page/solar-panel.html">Solar Panel</a>
             </div>
+          </div>
+          <div class="dropdown">
+            <button onclick="dropFunction('dropdown-list2')" class="dropbtn">
+              More
+            </button>
+            <div id="dropdown-list2" class="dropdown-content">
+              <a href="../latest-news-page/latest-news.html">News</a>
+              <a href="../chat-page/chat.html">Chat</a>
+            </div>
+          </div>
+          <button onclick="login()" class="dropbtn" id="user-button">
+            User
+          </button>
         </div>
-        <div class="right-header">
-            <input type="text", placeholder="Search">
-        </div>
+      </div>
+      <div class="right-header">
+        <input type="text" , placeholder="Search" />
+      </div>
     </div>
     <div class="jumbotron">
-        <div class="content">
-            <p class="time">06:00 PM</p>
-            <p class="place" id="loc-tag">Sentul City</p>
-            <p class="date" id="loc-tag">December 06, 2023</p>
-            <img class="weather" src="../property/weather-logo/sunny-logo.png" alt="">
-            <p class="explanation" id="loc-tag">Sunny</p>
-            <a class="jumbotron-details-button" href="../weather-forecast-page/weather-forecast.html">View Details</a>
-        </div>
+      <div class="content">
+        <p class="time">06:00 PM</p>
+        <p class="place" id="loc-tag">Sentul City</p>
+        <p class="date" id="loc-tag">December 06, 2023</p>
+        <img
+          class="weather"
+          src="../property/weather-logo/sunny-logo.png"
+          alt=""
+        />
+        <p class="explanation" id="loc-tag">Sunny</p>
+        <a
+          class="jumbotron-details-button"
+          href="../weather-forecast-page/weather-forecast.html"
+          >View Details</a
+        >
+      </div>
     </div>
     <div class="full-content-container">
-        <p class="title-features">Our Features</p>
-        <div class="content-container">
-            <div class="explanation2">
-                <p class="label">Weather Forecast</p>
-                <p class="description">Ever wished you could predict the unpredictable? Now you can! Introducing our cutting-edge Weather Forecast Feature, designed to be your ultimate companion in planning your days with confidence.</p>
-                <a class="details-button" href="../weather-forecast-page/weather-forecast.html">Details</a>
-            </div>
-            <div class="image">
-                <img src="../property/home-page-asset/weather-image.jpg" alt="">
-            </div>
+      <p class="title-features">Our Features</p>
+      <div class="content-container">
+        <div class="explanation2">
+          <p class="label">Weather Forecast</p>
+          <p class="description">
+            Ever wished you could predict the unpredictable? Now you can!
+            Introducing our cutting-edge Weather Forecast Feature, designed to
+            be your ultimate companion in planning your days with confidence.
+          </p>
+          <a
+            class="details-button"
+            href="../weather-forecast-page/weather-forecast.html"
+            >Details</a
+          >
         </div>
-        <div class="content-container">
-            <div class="image">
-                <img src="../property/home-page-asset/airpollution-image.jpg" alt="">
-            </div>
-            <div class="explanation2">
-                <p class="label">Air Pollution Index</p>
-                <p class="description">Stay ahead of environmental changes with real-time updates on air quality tailored to your location. Make informed decisions about outdoor activities, plan your routes wisely, and safeguard your well-being.</p>
-                <a class="details-button" href="../air-pollution-page/air-pollution.html">Details</a>
-            </div>
+        <div class="image">
+          <img src="../property/home-page-asset/weather-image.jpg" alt="" />
         </div>
-        <div class="content-container">
-            <div class="explanation2">
-                <p class="label">UV Index Prediction</p>
-                <p class="description">This tool offers real-time insights into the ultraviolet radiation levels specific to your location. Whether you're planning a day at the beach or a casual stroll in the park, our UV Index Feature ensures you stay sun-safe.</p>
-                <a class="details-button" href="../uv-index/uv-index.html">Details</a>
-            </div>
-            <div class="image">
-                <img src="../property/home-page-asset/uv-image.jpg" alt="">
-            </div>
+      </div>
+      <div class="content-container">
+        <div class="image">
+          <img
+            src="../property/home-page-asset/airpollution-image.jpg"
+            alt=""
+          />
         </div>
-        <div class="content-container">
-            <div class="image">
-                <img src="../property/home-page-asset/solarpanel-image.jpg" alt="">
-            </div>
-            <div class="explanation2">
-                <p class="label">Solar Panel Prediction</p>
-                <p class="description">This feature forecasts the optimal moments for solar energy production at your location. Maximize the efficiency of your solar panels, reduce energy costs, and embrace sustainability effortlessly.</p>
-                <a class="details-button" href="../solar-panel-page/solar-panel.html">Details</a>
-            </div>
+        <div class="explanation2">
+          <p class="label">Air Pollution Index</p>
+          <p class="description">
+            Stay ahead of environmental changes with real-time updates on air
+            quality tailored to your location. Make informed decisions about
+            outdoor activities, plan your routes wisely, and safeguard your
+            well-being.
+          </p>
+          <a
+            class="details-button"
+            href="../air-pollution-page/air-pollution.html"
+            >Details</a
+          >
         </div>
+      </div>
+      <div class="content-container">
+        <div class="explanation2">
+          <p class="label">UV Index Prediction</p>
+          <p class="description">
+            This tool offers real-time insights into the ultraviolet radiation
+            levels specific to your location. Whether you're planning a day at
+            the beach or a casual stroll in the park, our UV Index Feature
+            ensures you stay sun-safe.
+          </p>
+          <a class="details-button" href="../uv-index/uv-index.html">Details</a>
+        </div>
+        <div class="image">
+          <img src="../property/home-page-asset/uv-image.jpg" alt="" />
+        </div>
+      </div>
+      <div class="content-container">
+        <div class="image">
+          <img src="../property/home-page-asset/solarpanel-image.jpg" alt="" />
+        </div>
+        <div class="explanation2">
+          <p class="label">Solar Panel Prediction</p>
+          <p class="description">
+            This feature forecasts the optimal moments for solar energy
+            production at your location. Maximize the efficiency of your solar
+            panels, reduce energy costs, and embrace sustainability
+            effortlessly.
+          </p>
+          <a class="details-button" href="../solar-panel-page/solar-panel.html"
+            >Details</a
+          >
+        </div>
+      </div>
     </div>
     <footer>
-        <div class="top-footer">
-            <div class="info-1">
-                <div class="img-footer-logo">
-                    <img src="../property/contactUs-asset/logoSkearth.png" alt="">
-                </div>
-                <div class="address">
-                    <p>ini rencananya <br> slogan ajaa</p>
-                </div>
-            </div>
-            <div class="menu-footer-1">
-                <ul>
-                    <li><a class="not-active-footer" href="Home.html">Home</a></li>
-                    <li><a class="not-active-footer" href="Menu.html">Menu</a></li>
-                    <li><a class="footer-active" href="../contact-us-page/contact-us.html">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="menu-footer-2">
-                <ul>
-                    <li><a class="not-active-footer" href="our-outlet.html">Outlet</a></li>
-                    <li><a class="not-active-footer" href="about-us.html">About Us</a></li>
-                    <li><a class="not-active-footer" href="../faq-page/faq.html">Privacy Policy & FAQ</a></li>
-                </ul>
-            </div>
-            <div class="menu-follow-us">
-                <div class="follow-us-text">
-                    <p>Follow Us More!</p>
-                </div>
-                <div class="icon-footer">
-                    <img src="../property/contactUs-asset/youtube-icon.png" alt="">
-                    <img src="../property/contactUs-asset/twitter-icon.png" alt="">
-                    <img src="../property/contactUs-asset/instagram-icon.png" alt="">
-                    <img src="../property/contactUs-asset/facebook-icon.png" alt="">
-                </div>
-            </div>
+      <div class="top-footer">
+        <div class="info-1">
+          <div class="img-footer-logo">
+            <img src="../property/contactUs-asset/logoSkearth.png" alt="" />
+          </div>
+          <div class="address">
+            <p>
+              ini rencananya <br />
+              slogan ajaa
+            </p>
+          </div>
         </div>
-        <div class="bottom-footer">
-            <p>&copy; 2023 Skearth.com by PT Skearth Indonesia Tbk. | All rights reserved.</p>
+        <div class="menu-footer-1">
+          <ul>
+            <li><a class="not-active-footer" href="Home.html">Home</a></li>
+            <li><a class="not-active-footer" href="Menu.html">Menu</a></li>
+            <li>
+              <a class="footer-active" href="../contact-us-page/contact-us.html"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
         </div>
+        <div class="menu-footer-2">
+          <ul>
+            <li>
+              <a class="not-active-footer" href="our-outlet.html">Outlet</a>
+            </li>
+            <li>
+              <a class="not-active-footer" href="about-us.html">About Us</a>
+            </li>
+            <li>
+              <a class="not-active-footer" href="../faq-page/faq.html"
+                >Privacy Policy & FAQ</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="menu-follow-us">
+          <div class="follow-us-text">
+            <p>Follow Us More!</p>
+          </div>
+          <div class="icon-footer">
+            <img src="../property/contactUs-asset/youtube-icon.png" alt="" />
+            <img src="../property/contactUs-asset/twitter-icon.png" alt="" />
+            <img src="../property/contactUs-asset/instagram-icon.png" alt="" />
+            <img src="../property/contactUs-asset/facebook-icon.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="bottom-footer">
+        <p>
+          &copy; 2023 Skearth.com by PT Skearth Indonesia Tbk. | All rights
+          reserved.
+        </p>
+      </div>
     </footer>
     <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
-  <script src="../header.js"></script>
-</body>
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="../header.js"></script>
+  </body>
 </html>

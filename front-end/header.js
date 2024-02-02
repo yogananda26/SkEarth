@@ -1,3 +1,6 @@
+// const { validate } = require("../model/User");
+const validation = document.getElementById("user-button");
+
 //drop down list dan inactivate drop down list ketika kita menekan drop down button yang lainnya 
 function dropFunction(dropdownlist){
     document.getElementById(dropdownlist).classList.toggle("show");
@@ -14,6 +17,12 @@ function dropFunction(dropdownlist){
         if (closedropdown.classList.contains('show')) {
             closedropdown.classList.remove('show');
         }
+    }
+}
+
+function login(){
+    if(!(localStorage.getItem('token'))){
+        window.location.href = "../login/login.html"; 
     }
 }
 
