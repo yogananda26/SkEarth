@@ -1,157 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Skearth - UV Index</title>
-    <link rel="stylesheet" href="../header.css">
-    <link rel="stylesheet" href="uv-index.css">
-    <link rel="stylesheet" href="../footer.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../header.css" />
+    <link rel="stylesheet" href="uv-index.css" />
+    <link rel="stylesheet" href="../footer.css" />
+  </head>
+  <body>
     <div class="header">
-        <div class="left-header">
-            <img src="../property/skearth-logo/skearth-logo-black.png" alt="skearth-logo">
-        </div>
-        <div class="big-centerr">
-            <button onclick="menuFunction('center')" class="big-center" id="burger"></button>
-            <div class="center-header" id="center">
-                <a href="homepage.html" class="dropbtn" id="home-button">Home</a>
-                <div class="dropdown">
-                    <button onclick="dropFunction('dropdown-list1')" class="dropbtn">Features</button>
-                    <div id="dropdown-list1" class="dropdown-content">
-                        <a href="../weather-forecast-page/weather-forecast.html">Weather Forecast</a>
-                        <a href="../air-pollution-page/air-pollution.html">Air Pollution</a>
-                        <a href="../uv-index/uv-index.html">UV - Index</a>
-                        <a href="../solar-panel-page/solar-panel.html">Solar Panel</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button onclick="dropFunction('dropdown-list2')" class="dropbtn">More</button>
-                    <div id="dropdown-list2" class="dropdown-content">
-                        <a href="../latest-news-page/latest-news.html">News</a>
-                        <a href="../chat-page/chat.html">Chat</a>
-                    </div>
-                </div>
-                <button onclick = "" class="dropbtn" id="user-button">User</button>
+      <div class="left-header">
+        <img
+          src="../property/skearth-logo/skearth-logo-black.png"
+          alt="skearth-logo"
+        />
+      </div>
+      <div class="big-centerr">
+        <button
+          onclick="menuFunction('center')"
+          class="big-center"
+          id="burger"
+        ></button>
+        <div class="center-header" id="center">
+          <a href="homepage.html" class="dropbtn" id="home-button">Home</a>
+          <div class="dropdown">
+            <button onclick="dropFunction('dropdown-list1')" class="dropbtn">
+              Features
+            </button>
+            <div id="dropdown-list1" class="dropdown-content">
+              <a href="../weather-forecast-page/weather-forecast.html"
+                >Weather Forecast</a
+              >
+              <a href="../air-pollution-page/air-pollution.html"
+                >Air Pollution</a
+              >
+              <a href="../uv-index/uv-index.html">UV - Index</a>
+              <a href="../solar-panel-page/solar-panel.html">Solar Panel</a>
             </div>
+          </div>
+          <div class="dropdown">
+            <button onclick="dropFunction('dropdown-list2')" class="dropbtn">
+              More
+            </button>
+            <div id="dropdown-list2" class="dropdown-content">
+              <a href="../latest-news-page/latest-news.html">News</a>
+              <a href="../chat-page/chat.html">Chat</a>
+            </div>
+          </div>
+          <button onclick="" class="dropbtn" id="user-button">User</button>
         </div>
-        <div class="right-header">
-            <input type="text", placeholder="Search">
-        </div>
+      </div>
+      <div class="right-header">
+        <input type="text" , placeholder="Search" />
+      </div>
     </div>
     <div class="jumbotron">
-        <div class="content">
-            <p class="place">Sentul City</p>
-            <input type="text", placeholder="Type any place to see UV-Index ...">
+      <div class="content">
+        <p class="place">Sentul City</p>
+        <input type="text" , placeholder="Type any place to see UV-Index ..." />
+        <div class="uv-level-content">
+          <div class="uv-container-left">
+            <p class="jumbotron-header">UV Index</p>
+            <hr />
+            <p class="jumbotron-text">3</p>
+          </div>
+          <div class="uv-container-mid">
+            <p class="jumbotron-header">Category</p>
+            <hr />
+            <p class="jumbotron-text">Good</p>
+          </div>
         </div>
+      </div>
     </div>
     <div class="guide">
-        <p class="title">Guide</p>
-        <p class="description">Here's some information to help you understand the information we provide</p>
-        <img src="../property/uvindex-asset/uv-photo.png" alt="">
-        <table>
-            <tr>
-                <th class="category" style="width : 15%;">UV Level Category</th>
-                <th class="index" style="width : 10%;">Index</th>
-                <th class="explanation" style="width : 75%">Explanation</th>
-            </tr>
-            <tr>
-                <td class="low">LOW</td>
-                <td class="score">"<3"</td>
-                <td class="explanation">
-                    You can safely enjoy being outside. Wear sunglasses on bright 
-                    days. If you burn easily, cover up and use sunscreen SPF 30+. In 
-                    winter, reflection off snow can nearly double UV strength.
-                </td>
-            </tr>
-            <tr>
-                <td class="moderate">MODERATE</td>
-                <td class="score">3-5</td>
-                <td class="explanation">
-                    Take precautions if you will be outside, such as wearing hat and 
-                    sunglasses and using sunscreen SPF 30+. Reduce your exposure 
-                    to the sun's most intense UV radiation by seeking shade during
-                    mid day hours.
-                </td>
-            </tr>
-            <tr>
-                <td class="high">HIGH</td>
-                <td class="score">6-7</td>
-                <td class="explanation">
-                    Protection againts sun damage is needed. Wear a wide-brimmed 
-                    hat and sunglasses, use sunscreen SPF 30+, wearing long sleeved 
-                    shirt and pants.
-                </td>
-            </tr>
-            <tr>
-                <td class="veryhigh">VERY HIGH</td>
-                <td class="score">8-10</td>
-                <td class="explanation">
-                    Protection againts sun damage is needed. Take steps to reduce
-                    sun exposure. A shirt, hat, and sunscreen are must, and be sure 
-                    you seek shade.
-                </td>
-            </tr>
-            <tr>
-                <td class="extreme">EXTREME</td>
-                <td class="score">">11"</td>
-                <td class="explanation">
-                    UV is dangerous and has the potential to damage skin and eyes. 
-                    Avoid direct contact with UV rays and must use sunscreen, hat, 
-                    long-sleeved shirt, and long pants.
-                </td>
-            </tr>
-        </table>
+      <p class="title">Guide</p>
+      <p class="description">
+        Here's some information to help you understand the information we
+        provide
+      </p>
+      <img src="../property/uvindex-asset/uv-photo.png" alt="" />
+      <table>
+        <tr>
+          <th class="category" style="width: 15%">UV Level Category</th>
+          <th class="index" style="width: 10%">Index</th>
+          <th class="explanation" style="width: 75%">Explanation</th>
+        </tr>
+        <tr>
+          <td class="low">LOW</td>
+          <td class="score">"<3"</td>
+          <td class="explanation">
+            You can safely enjoy being outside. Wear sunglasses on bright days.
+            If you burn easily, cover up and use sunscreen SPF 30+. In winter,
+            reflection off snow can nearly double UV strength.
+          </td>
+        </tr>
+        <tr>
+          <td class="moderate">MODERATE</td>
+          <td class="score">3-5</td>
+          <td class="explanation">
+            Take precautions if you will be outside, such as wearing hat and
+            sunglasses and using sunscreen SPF 30+. Reduce your exposure to the
+            sun's most intense UV radiation by seeking shade during mid day
+            hours.
+          </td>
+        </tr>
+        <tr>
+          <td class="high">HIGH</td>
+          <td class="score">6-7</td>
+          <td class="explanation">
+            Protection againts sun damage is needed. Wear a wide-brimmed hat and
+            sunglasses, use sunscreen SPF 30+, wearing long sleeved shirt and
+            pants.
+          </td>
+        </tr>
+        <tr>
+          <td class="veryhigh">VERY HIGH</td>
+          <td class="score">8-10</td>
+          <td class="explanation">
+            Protection againts sun damage is needed. Take steps to reduce sun
+            exposure. A shirt, hat, and sunscreen are must, and be sure you seek
+            shade.
+          </td>
+        </tr>
+        <tr>
+          <td class="extreme">EXTREME</td>
+          <td class="score">">11"</td>
+          <td class="explanation">
+            UV is dangerous and has the potential to damage skin and eyes. Avoid
+            direct contact with UV rays and must use sunscreen, hat,
+            long-sleeved shirt, and long pants.
+          </td>
+        </tr>
+      </table>
     </div>
     <footer>
-        <div class="top-footer">
-            <div class="info-1">
-                <div class="img-footer-logo">
-                    <img src="/property/contactUs-asset/logoSkearth.png" alt="">
-                </div>
-                <div class="address">
-                    <p>ini rencananya <br> slogan ajaa</p>
-                </div>
-            </div>
-            <div class="menu-footer-1">
-                <ul>
-                    <li><a class="not-active-footer" href="Home.html">Home</a></li>
-                    <li><a class="not-active-footer" href="Menu.html">Menu</a></li>
-                    <li><a class="footer-active" href="../contact-us-page/contact-us.html">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="menu-footer-2">
-                <ul>
-                    <li><a class="not-active-footer" href="our-outlet.html">Outlet</a></li>
-                    <li><a class="not-active-footer" href="about-us.html">About Us</a></li>
-                    <li><a class="not-active-footer" href="../faq-page/faq.html">Privacy Policy & FAQ</a></li>
-                </ul>
-            </div>
-            <div class="menu-follow-us">
-                <div class="follow-us-text">
-                    <p>Follow Us More!</p>
-                </div>
-                <div class="icon-footer">
-                    <img src="../property/contactUs-asset/youtube-icon.png" alt="">
-                    <img src="../property/contactUs-asset/twitter-icon.png" alt="">
-                    <img src="../property/contactUs-asset/instagram-icon.png" alt="">
-                    <img src="../property/contactUs-asset/facebook-icon.png" alt="">
-                </div>
-            </div>
+      <div class="top-footer">
+        <div class="info-1">
+          <div class="img-footer-logo">
+            <img src="/property/contactUs-asset/logoSkearth.png" alt="" />
+          </div>
+          <div class="address">
+            <p>
+              ini rencananya <br />
+              slogan ajaa
+            </p>
+          </div>
         </div>
-        <div class="bottom-footer">
-            <p>&copy; 2023 Skearth.com by PT Skearth Indonesia Tbk. | All rights reserved.</p>
+        <div class="menu-footer-1">
+          <ul>
+            <li><a class="not-active-footer" href="Home.html">Home</a></li>
+            <li><a class="not-active-footer" href="Menu.html">Menu</a></li>
+            <li>
+              <a class="footer-active" href="../contact-us-page/contact-us.html"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
         </div>
+        <div class="menu-footer-2">
+          <ul>
+            <li>
+              <a class="not-active-footer" href="our-outlet.html">Outlet</a>
+            </li>
+            <li>
+              <a class="not-active-footer" href="about-us.html">About Us</a>
+            </li>
+            <li>
+              <a class="not-active-footer" href="../faq-page/faq.html"
+                >Privacy Policy & FAQ</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="menu-follow-us">
+          <div class="follow-us-text">
+            <p>Follow Us More!</p>
+          </div>
+          <div class="icon-footer">
+            <img src="../property/contactUs-asset/youtube-icon.png" alt="" />
+            <img src="../property/contactUs-asset/twitter-icon.png" alt="" />
+            <img src="../property/contactUs-asset/instagram-icon.png" alt="" />
+            <img src="../property/contactUs-asset/facebook-icon.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="bottom-footer">
+        <p>
+          &copy; 2023 Skearth.com by PT Skearth Indonesia Tbk. | All rights
+          reserved.
+        </p>
+      </div>
     </footer>
 
-
     <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="../header.js"></script>
-</body>
+  </body>
 </html>

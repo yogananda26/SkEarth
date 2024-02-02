@@ -71,7 +71,58 @@
         font-size: 20px;
     }
 
-    .jumbotron p{
+    .uv-level-content{
+        margin-top: 20px;
+        width: 50%;
+        height: 40%;
+        border-radius: 30px;
+        background-color: greenyellow;
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .uv-level-content .uv-container-left{
+        width: 40%;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        border-right: 2px solid;
+        border-color: black;
+    }
+
+    .jumbotron-header{
+        font-size: 40px;
+        height: 30%;
+        display: flex;
+        align-items: center;
+    }
+
+    .jumbotron-text{
+        font-size: 40px;
+        height: 50%;
+        display: flex;
+        align-items: center;
+    }
+
+    hr{
+        width: 100%;
+    }
+
+    .uv-level-content .uv-container-mid{
+        width: 60%;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .jumbotron .place{
         font-size: 50px;
         margin: 5% 0px 10px 0px;
         font-weight: bold;
