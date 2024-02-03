@@ -14,53 +14,6 @@ const header_forecast = document.getElementById("header-forecast");
 const historic_aqi = document.getElementById("historical-aqi");
 const image_aqi = document.getElementById("image-level-aqi");
 
-const cityData = [
-    { name: 'New York', lat: 40.7128, lon: -74.0060 },
-    { name: 'London', lat: 51.5074, lon: -0.1278 },
-    { name: 'Jakarta', lat: -6.200000, lon: 106.816666 },
-    { name: 'Bogor', lat: -6.595038, lon: 106.816635 },
-    { name: 'Surabaya', lat: -7.250445, lon: 112.768845 },
-    { name: 'Makassar', lat: -6.271194, lon: 106.894547 },
-    { name: 'Serang', lat: -6.120000, lon: 106.150276 },
-    { name: 'Semarang', lat: -6.966667, lon: 110.416664 },
-    { name: 'Pekanbaru', lat: 0.510440, lon: 101.438309 },
-    { name: 'Manokwari', lat: -0.861453, lon: 134.062042 }
-    // Add more cities as needed
-];
-
-const cityList = document.getElementById('city-list');
-
-async function fetchAirQualityData(city) {
-    const url = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${city.lat}&lon=${city.lon}&appid=${`e46690909f598a98eae95c84a266ab48`}`;
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        return data.list[0].main.aqi; // Assuming you want the current AQI
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        return null;
-    }
-}
-
-async function displayRanking() {
-    cityList.innerHTML = '';
-    const rankedCities = await Promise.all(cityData.map(async (city) => {
-        const aqi = await fetchAirQualityData(city);
-        return { city, aqi }; // Store city and AQI in an object
-    }));
-
-    rankedCities.sort((a, b) => b.aqi - a.aqi); // Sort based on AQI (lower = better)
-
-    rankedCities.forEach((city, index) => {
-        const li = document.createElement('li');
-        li.innerHTML = `
-        <span class="rank">${index + 1}.</span>
-        ${city.city.name} - AQI: <span class="aqi">${city.aqi}</span>
-      `;
-        cityList.appendChild(li);
-    });
-}
-
 formDom.addEventListener('submit', async (e) => {
     e.preventDefault();
     try {
@@ -77,7 +30,7 @@ formDom.addEventListener('submit', async (e) => {
                 city_name: city_input.value
             })
         content_aqi.style.display = "flex";
-        displayRanking();
+        displayAirQualityRanking();
         displayContentHeader(data2.data);
         displayImageAQI(data2.data);
         displayCarbonData(data1.data);
@@ -92,6 +45,105 @@ formDom.addEventListener('submit', async (e) => {
     }
     // console.log(city_input.value);
 })
+
+const displayAirQualityRanking = async () => {
+    const rankingBody = document.getElementById('ranking-body');
+    const rankingCity = document.getElementById('ranking-city');
+
+    rankingCity.innerHTML = '';
+    rankingBody.innerHTML = '';
+    const rowt = rankingCity.insertRow();
+    rowt.insertCell(0).textContent = 'LOADING BABY';
+    rankingCity.innerHTML = 'LOADING BABY';
+
+    const cities = [
+        { name: 'Tokyo', country: 'Japan' }, { name: 'Delhi', country: 'India' }, { name: 'Beijing', country: 'China' }, { name: 'Moscow', country: 'Russia' },
+        { name: 'Cairo', country: 'Egypt' }, { name: 'Paris', country: 'France' }, { name: 'Berlin', country: 'Germany' }, { name: 'London', country: 'United Kingdom' },
+        { name: 'Rome', country: 'Italy' }, { name: 'Madrid', country: 'Spain' }, { name: 'Lisbon', country: 'Portugal' }, { name: 'Amsterdam', country: 'Netherlands' },
+        { name: 'Brussels', country: 'Belgium' }, { name: 'Vienna', country: 'Austria' }, { name: 'Dublin', country: 'Ireland' }, { name: 'Athens', country: 'Greece' },
+        { name: 'Stockholm', country: 'Sweden' }, { name: 'Oslo', country: 'Norway' }, { name: 'Copenhagen', country: 'Denmark' }, { name: 'Helsinki', country: 'Finland' },
+        { name: 'Warsaw', country: 'Poland' }, { name: 'Prague', country: 'Czech Republic' }, { name: 'Budapest', country: 'Hungary' }, { name: 'Bratislava', country: 'Slovakia' },
+        { name: 'Ljubljana', country: 'Slovenia' }, { name: 'Zagreb', country: 'Croatia' }, { name: 'Belgrade', country: 'Serbia' }, { name: 'Sofia', country: 'Bulgaria' },
+        { name: 'Bucharest', country: 'Romania' }, { name: 'Warsaw', country: 'Poland' }, { name: 'Kiev', country: 'Ukraine' }, { name: 'Ankara', country: 'Turkey' },
+        { name: 'Istanbul', country: 'Turkey' }, { name: 'Athens', country: 'Greece' }, { name: 'Tbilisi', country: 'Georgia' }, { name: 'Yerevan', country: 'Armenia' },
+        { name: 'Baku', country: 'Azerbaijan' }, { name: 'Tehran', country: 'Iran' }, { name: 'Baghdad', country: 'Iraq' }, { name: 'Riyadh', country: 'Saudi Arabia' },
+        { name: 'Kuwait City', country: 'Kuwait' }, { name: 'Doha', country: 'Qatar' }, { name: 'Abu Dhabi', country: 'United Arab Emirates' },
+        { name: 'Muscat', country: 'Oman' }, { name: 'Manama', country: 'Bahrain' }, { name: 'Jerusalem', country: 'Israel' }, { name: 'Amman', country: 'Jordan' },
+        { name: 'Manila', country: 'Philippines' }, { name: 'Seoul', country: 'South Korea' }, { name: 'Hanoi', country: 'Vietnam' }, { name: 'Bangkok', country: 'Thailand' },
+        { name: 'Jakarta', country: 'Indonesia' }, { name: 'Canberra', country: 'Australia' }, { name: 'Wellington', country: 'New Zealand' }, { name: 'Ottawa', country: 'Canada' },
+        { name: 'Washington, D.C.', country: 'United States' }, { name: 'Mexico City', country: 'Mexico' }
+    ];
+
+    const indonesiaCities = [
+        { name: 'Jakarta' }, { name: 'Surabaya' }, { name: 'Bandung' }, { name: 'Medan' }, { name: 'Semarang' }, { name: 'Makassar' }, { name: 'Palembang' },
+        { name: 'Depok' }, { name: 'Tangerang' }, { name: 'South Tangerang' }, { name: 'Bekasi' }, { name: 'Bogor' }, { name: 'Padang' }, { name: 'Bandar Lampung' },
+        { name: 'Malang' }, { name: 'Pekanbaru' }, { name: 'Denpasar' }, { name: 'Banjarmasin' }, { name: 'Yogyakarta' }, { name: 'Batam' },
+        { name: 'Samarinda' }, { name: 'Cilegon' }, { name: 'Pontianak' }, { name: 'Manado' }, { name: 'Balikpapan' }, { name: 'Jambi' }, { name: 'Serang' },
+        { name: 'Banda Aceh' }, { name: 'Ambon' }, { name: 'Palu' }, { name: 'Kupang' }, { name: 'Mataram' }, { name: 'Ternate' }, { name: 'Manokwari' },
+        { name: 'Jayapura' }, { name: 'Kendari' }, { name: 'Gorontalo' }, { name: 'Samarinda' }, { name: 'Tanjungpinang' }, { name: 'Tanjung Balai' },
+        { name: 'Pematangsiantar' }, { name: 'Binjai' }, { name: 'Tanjung Morawa' }, { name: 'Deli Serdang' }, { name: 'Lubuk Pakam' }, { name: 'Tebing Tinggi' },
+        { name: 'Pekanbaru' }, { name: 'Padang' }, { name: 'Solok' }, { name: 'Sawahlunto' }, { name: 'Payakumbuh' }, { name: 'Pariaman' }, { name: 'Bukittinggi' },
+        { name: 'Lubuk Basung' }, { name: 'Amlapura' }, { name: 'Karangasem' }, { name: 'Bangli' }, { name: 'Negara' }, { name: 'SINGARAJA' }, { name: 'Tabanan' },
+        { name: 'Klungkung' }, { name: 'Gianyar' }, { name: 'Denpasar' }, { name: 'Kupang' }, { name: 'Atambua' }, { name: 'Larantuka' }, { name: 'Lewoleba' },
+        { name: 'Maumere' }, { name: 'Ende' }, { name: 'Ruteng' }, { name: 'Bajawa' }, { name: 'Borong' }, { name: 'Sikka' }, { name: 'Flores Timur' },
+        { name: 'Manggarai' }, { name: 'Rote' }, { name: 'Ndao' }, { name: 'Manggarai Barat' }, { name: 'Manggarai Timur' }, { name: 'Manggarai Tengah' },
+        { name: 'Sumba Barat' }, { name: 'Sumba Barat Daya' }, { name: 'Sumba Tengah' }, { name: 'Sumba Timur' }, { name: 'Timor Tengah Selatan' },
+        { name: 'Timor Tengah Utara' }, { name: 'Sabu Raijua' }, { name: 'Rote Ndao' }, { name: 'Gresik' }, { name: 'Banyuwangi' }, { name: 'Tuban' }
+    ];
+
+    rankingCity.innerHTML = '';
+    rankingBody.innerHTML = '';
+
+    const sortedCountries = [];
+    const sortedCities = [];
+
+    for (const city of cities) {
+        try {
+            const datas = await axios.post("/api/v1/air-polution/current",
+                {
+                    city_name: city.name
+                })
+            const airQualityIndex = datas.data.list[0].main.aqi;
+
+            sortedCountries.push({ name: city.name, index: airQualityIndex, country: city.country });
+        } catch (error) {
+            console.error(`Error fetching air quality data for ${city.name}: ${error.message}`);
+        }
+    }
+
+    for (const citys of indonesiaCities) {
+        try {
+            const datas = await axios.post("/api/v1/air-polution/current",
+                {
+                    city_name: citys.name
+                })
+            const airQualityIndex = datas.data.list[0].main.aqi;
+
+            sortedCities.push({ name: citys.name, index: airQualityIndex });
+        } catch (error) {
+            console.error(`Error fetching air quality data for ${citys.name}: ${error.message}`);
+        }
+    }
+
+    sortedCountries.sort((a, b) => b.index - a.index);
+    sortedCities.sort((a, b) => b.index - a.index);
+
+    for (let i = 0; i < 10; i++) {
+        const city = sortedCountries[i];
+        const row = rankingBody.insertRow();
+        row.insertCell(0).textContent = i + 1;
+        row.insertCell(1).textContent = city.country;
+        row.insertCell(2).textContent = city.index;
+    }
+
+    for (let i = 0; i < 10; i++) {
+        const citys = sortedCities[i];
+        const rows = rankingCity.insertRow();
+        rows.insertCell(0).textContent = i + 1;
+        rows.insertCell(1).textContent = citys.name;
+        rows.insertCell(2).textContent = citys.index;
+    }
+};
 
 function createColorAqi(datas) {
     aqi_category.innerHTML = '';
@@ -113,7 +165,7 @@ function createColorAqi(datas) {
         aqi_category.innerText = "Poor";
     } else {
         content_aqi.style.backgroundColor = "rgb(153, 51, 102)";
-        sub_content_aqi.style.backgroundColor = "rgb(215, 89, 152)";
+        sub_content_aqi.style.backgroundColor = "rgb(215, 80, 152)";
         aqi_category.innerText = "Very Poor";
     }
 }
@@ -346,19 +398,19 @@ function displayForecastData(data1, data2, data3) {
         forecast6.innerText = `Very Poor`;
     }
 
-    if (data3.list[91].main.aqi == 1) {
+    if (data3.list[83].main.aqi == 1) {
         forecast7.style.backgroundColor = "rgb(110, 226, 154)";
         forecast7.innerText = `Good`;
-    } else if (data3.list[91].main.aqi == 2) {
+    } else if (data3.list[83].main.aqi == 2) {
         forecast7.style.backgroundColor = "rgb(255, 255, 153)";
         forecast7.innerText = `Fair`;
-    } else if (data3.list[91].main.aqi == 3) {
+    } else if (data3.list[83].main.aqi == 3) {
         forecast7.style.backgroundColor = "rgb(255, 153, 0)";
         forecast7.innerText = `Moderate`;
-    } else if (data3.list[91].main.aqi == 4) {
+    } else if (data3.list[83].main.aqi == 4) {
         forecast7.style.backgroundColor = "rgb(255, 102, 0)";
         forecast7.innerText = `Poor`;
-    } else if (data3.list[91].main.aqi == 5) {
+    } else if (data3.list[83].main.aqi == 5) {
         forecast7.style.backgroundColor = "rgb(153, 51, 102)";
         forecast7.innerText = `Very Poor`;
     }
@@ -400,7 +452,7 @@ function forecastAQIData(data1, data2, data3) {
     const date4 = new Date(data3.list[24].dt * 1000);
     const date5 = new Date(data3.list[48].dt * 1000);
     const date6 = new Date(data3.list[72].dt * 1000);
-    const date7 = new Date((data3.list[91].dt + 50000) * 1000);
+    const date7 = new Date((data3.list[83].dt + 50000) * 1000);
 
     dateForecast1.innerText = date1.toDateString();
     dateForecast2.innerText = date2.toDateString();
@@ -416,5 +468,5 @@ function forecastAQIData(data1, data2, data3) {
     forecast4.innerText = `Level ${data3.list[24].main.aqi}`;
     forecast5.innerText = `Level ${data3.list[48].main.aqi}`;
     forecast6.innerText = `Level ${data3.list[72].main.aqi}`;
-    forecast7.innerText = `Level ${data3.list[91].main.aqi}`;
+    forecast7.innerText = `Level ${data3.list[83].main.aqi}`;
 }

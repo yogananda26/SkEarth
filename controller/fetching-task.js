@@ -76,6 +76,10 @@ const GetCurrentAirPolution = async_wrapper(async (req, res) => {
             //     return components
             // })
             // return res.json(result);
+            // let result = obj['list'].map(({main})=>{
+            //     return main.aqi
+            // })
+            // return res.json(result);
         })
 })
 
