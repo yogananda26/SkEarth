@@ -21,9 +21,7 @@ a {
   text-decoration: none;
 }
 
-li {
-  list-style: none;
-}
+
 
 button {
   cursor: pointer;
@@ -33,7 +31,7 @@ button {
 /* container css */
 
 .container{
-  max-width: 1160px;
+  padding-top: 100px;
 }
 
 .opening, li{
@@ -77,24 +75,28 @@ ol li::marker {
   font-size: 21px;
   }  
 
-.box{
-  flex: 45%;
-  align-self: flex-start;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--secondaryColor);
-  padding: 20px 50px;
-  margin: 10px;
-  max-width: 450px;
-  align-items: center;
-  border-radius: 2em;
-}
+  .box{
+    flex: 45%;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondaryColor);
+    padding: 20px 20px;
+    margin: 10px;
+    max-width: 450px;
+    align-items: center;
+    border-radius: 2em;
+  }
 
 .top-box{
+  /* background-color: var(--secondaryColor); */
+  /* padding: 20px 20px; */
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
+  /* border-radius: 2em; */
+
 }
 
 .question{
@@ -109,9 +111,10 @@ ol li::marker {
 
 .plus{
   background-color: rgba(255, 200, 0, 255);
-  padding: 5px 15px;
+  padding: 0px 5px 5px 5px;
   cursor: pointer;
   background-color: var(--mainColor);
+  height: 32px;
 }
 
 .button-back a{
@@ -129,7 +132,10 @@ ol li::marker {
 }
 
 .show{
+  /* background-color: var(--secondaryColor); */
   display: block;
+  /* border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em ; */
 }
 
 .black-text{
@@ -218,3 +224,7 @@ hr{
   margin-bottom: 0px;
 }
   
+
+#row-question {
+  padding: 0 4rem;
+}

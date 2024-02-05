@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Privacy Policy</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
@@ -11,68 +11,165 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <script src="https://kit.fontawesome.com/4d9121ebec.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../header.css">
     <link rel="stylesheet" href="faq.css" >
     
   <body>
+    
+
+    <div class="header">
+        <div class="left-header">
+            <img src="../property/skearth-logo/skearth-logo-black.png" alt="skearth-logo">
+        </div>
+        <div class="center-header">
+            <a href = "homepage.html" class="headerbutton" id="home-button">Home</a>
+            <div class="dropdown">
+                <button onclick="dropFunction('dropdown-list1')" class="dropbtn">Features</button>
+                <div id="dropdown-list1" class="dropdown-content">
+                  <a href="#">Weather Forecast</a>
+                  <a href="#">Air Pollution</a>
+                  <a href="../uv-index/uv-index.html">UV - Index</a>
+                  <a href="#">Solar Panel</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button onclick="dropFunction('dropdown-list2')" class="dropbtn">More</button>
+                <div id="dropdown-list2" class="dropdown-content">
+                  <a href="../latest-news-page/latest-news.html">News</a>
+                  <a href="../chat-page/chat.html">Chat</a>
+                </div>
+            </div>
+            <a href = "" class="headerbutton" id="user-button"></a>
+        </div>
+        <div class="right-header">
+            <input type="text", placeholder="Search">
+            <img src="../property/header-asset/search-logo.png" alt="search-logo">
+        </div>
+    </div>
     <div class="container">
         <h3>Our Privacy Practices</h3>
         <p class="opening">It's important that you read our full statement or notice to understand what information we hold, how we may use it, and what your right are, but if you don't have time to read it all now, here is a quick summary:</p>
-        <ol>
+        <ul>
             <li>We collect information about our customers and users of our services along with our employees, franchisees, development agents and other third parties. The information collected is either personal information (such as your contact information) or non-personal (such as webpages accessed).</li>
             <li>We only collect the information we need or that would be useful to us to provide you with possible service and experience.</li>
             <li>We do our very best to keeep personal information secure.</li>
-        </ol>
+        </ul>
 
-        <h3>Frequently Asked Questions</h3>
+        <h3 class="my-3">Frequently Asked Questions</h3>
+        <div class="faq">
+            <div class="row row-cols-xl-2 row-cols-xxl-2 row-cols-lg-2 row-cols-md-2 row-cols-sm-1" id="row-question">
+                <div class="left-faq">
+                    <div class="col mb-3">
+                        <div class="box">
+                            <div class="top-box">
+                                <div class="question">
+                                    <p>How to be a sizzle member?</p>
+                                </div>
+                                <div class="plus" id="plus-1" onclick="show(this)">
+                                    <p id="text-plus-1">+</p>
+                                </div>
+                            </div>
+                            <div class="content" id="1">
+                                <hr>
+                                <p>Sign up by filling out the registration form. This may involve providing your name, email address, phone number, and other personal details. Read and agree to the terms and conditions of the loyalty program.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col mb-3">
+                        <div class="box">
+                            <div class="top-box">
+                                <div class="question">
+                                    <p>How do I order via Online?</p>
+                                </div>
+                                <div class="plus" id="plus-3" onclick="show(this)">
+                                    <p id="text-plus-3">+</p>
+                                </div>
+                            </div>
+                            <div class="content" id="3">
+                                <hr>
+                                <p>Select the items you want to order and add them to your cart. Make sure to check the quantities and any special instructions you may have for your order. When you have finished adding items to your cart, proceed to the checkout page. Here you will be asked to provide your delivery or pickup information, payment details, and any additional instructions. Double-check all the information you have provided and confirm your order</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col mb-3">
+                        <div class="box">
+                            <div class="top-box">
+                                <div class="question">
+                                    <p>How we do delivery?</p>
+                                </div>
+                                <div class="plus" id="plus-5" onclick="show(this)">
+                                    <p id="text-plus-5">+</p>
+                                </div>
+                            </div>
+                            <div class="content" id="5">
+                                <hr>
+                                <p> Delivery is an essential part of the food industry, especially during these unprecedented times. To ensure that our customers can enjoy their favorite cuisine in the comfort of their own homes, we offer delivery services. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right-faq">
+                    <div class="col mb-3">
+                        <div class="box">
+                            <div class="top-box">
+                                <div class="question">
+                                    <p>How to customize my order?</p>
+                                </div>
+                                <div class="plus" id="plus-2" onclick="show(this)">
+                                    <p id="text-plus-2">+</p>
+                                </div>
+                            </div>
+                            <div class="content" id="2">
+                                <hr>
+                                <p>You can give special instructions to customize your order. You can add it in notes before you checkout</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col mb-3">
+                        <div class="box">
+                            <div class="top-box">
+                                <div class="question">
+                                    <p>Where do I find Sizzle's outlet?</p>
+                                </div>
+                                <div class="plus" id="plus-4" onclick="show(this)">
+                                    <p id="text-plus-4">+</p>
+                                </div>
+                            </div>
+                            <div class="content" id="4">
+                                <hr>
+                                <p>You can use the outlet menu to search for the nearest outlet location to your current or desired location.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col mb-3">
+                        <div class="box">
+                            <div class="top-box">
+                                <div class="question">
+                                    <p>Can I make a reservation?</p>
+                                </div>
+                                <div class="plus" id="plus-6" onclick="show(this)">
+                                    <p id="text-plus-6">+</p>
+                                </div>
+                            </div>
+                            <div class="content" id="6">
+                                <hr>
+                                <p>You can make a reservation over the phone, or in-person at the restaurant.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="faq">
             <div class="left-faq">
-              <div class="box">
-                  <div class="top-box">
-                      <div class="question">
-                          <p>How to be a sizzle member?</p>
-                      </div>
-                      <div class="plus" id="plus-1" onclick="show(this)">
-                          <p id="text-plus-1">+</p>
-                      </div>
-                  </div>
-                  <div class="content" id="1">
-                      <hr>
-                      <p>Sign up by filling out the registration form. This may involve providing your name, email address, phone number, and other personal details. Read and agree to the terms and conditions of the loyalty program.</p>
-                  </div>
-              </div>
-
-              <div class="box">
-                <div class="top-box">
-                    <div class="question">
-                        <p>How do I order via Online?</p>
-                    </div>
-                    <div class="plus" id="plus-3" onclick="show(this)">
-                        <p id="text-plus-3">+</p>
-                    </div>
-                </div>
-                <div class="content" id="3">
-                    <hr>
-                    <p>Select the items you want to order and add them to your cart. Make sure to check the quantities and any special instructions you may have for your order. When you have finished adding items to your cart, proceed to the checkout page. Here you will be asked to provide your delivery or pickup information, payment details, and any additional instructions. Double-check all the information you have provided and confirm your order</p>
-                </div>
-              </div>
-
-              <div class="box">
-                <div class="top-box">
-                    <div class="question">
-                        <p>How we do delivery?</p>
-                    </div>
-                    <div class="plus" id="plus-5" onclick="show(this)">
-                        <p id="text-plus-5">+</p>
-                    </div>
-                </div>
-                <div class="content" id="5">
-                    <hr>
-                    <p> Delivery is an essential part of the food industry, especially during these unprecedented times. To ensure that our customers can enjoy their favorite cuisine in the comfort of their own homes, we offer delivery services. </p>
-                </div>
-              </div>
+            
              <div class="tombol-tombol">
                 <!-- <button class="button-back">
                     <a href="Home.html">Back</a>
@@ -83,54 +180,12 @@
             </div>
 
             <div class="right-faq">
-              <div class="box">
-                  <div class="top-box">
-                      <div class="question">
-                          <p>How to customize my order?</p>
-                      </div>
-                      <div class="plus" id="plus-2" onclick="show(this)">
-                          <p id="text-plus-2">+</p>
-                      </div>
-                  </div>
-                  <div class="content" id="2">
-                      <hr>
-                      <p>You can give special instructions to customize your order. You can add it in notes before you checkout</p>
-                  </div>
-              </div>
-
-              <div class="box">
-                  <div class="top-box">
-                      <div class="question">
-                          <p>Where do I find Sizzle's outlet?</p>
-                      </div>
-                      <div class="plus" id="plus-4" onclick="show(this)">
-                          <p id="text-plus-4">+</p>
-                      </div>
-                  </div>
-                  <div class="content" id="4">
-                      <hr>
-                      <p>You can use the outlet menu to search for the nearest outlet location to your current or desired location.</p>
-                  </div>
-              </div>
-
-              <div class="box">
-                  <div class="top-box">
-                      <div class="question">
-                          <p>Can I make a reservation?</p>
-                      </div>
-                      <div class="plus" id="plus-6" onclick="show(this)">
-                          <p id="text-plus-6">+</p>
-                      </div>
-                  </div>
-                  <div class="content" id="6">
-                      <hr>
-                      <p>You can make a reservation over the phone, or in-person at the restaurant.</p>
-                  </div>
-              </div>
+             
             </div>
         </div>
     </div>
     <footer>
+      
         <div class="top-footer">
             <div class="info-1">
                 <div class="img-footer-logo">
@@ -181,6 +236,7 @@
 
             if(!document.getElementById(id).classList.contains('show')){
                 document.getElementById(id).classList.add('show');
+                // document.getElementById(id).classList.add('p-3');
                 document.getElementById('text-' + props.id).classList.add('black-text');
                 document.getElementById('text-' + props.id).innerHTML = "-";
             }else{
