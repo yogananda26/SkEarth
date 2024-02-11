@@ -1,16 +1,12 @@
 const express = require('express'); 
 const router = express.Router();
+const {fetch_news} = require("../controller/fetching-news")
 
 
 
 // this is for routing 
 router
     .route('/')
-    .get((req, res)=>{ 
-        console.log("this is for get in news"); 
-    })
-    .post((req, res)=>{ 
-        console.log("this is post for news");
-    })
+    .get(fetch_news)
 
 module.exports = router;  

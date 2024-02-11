@@ -1,7 +1,7 @@
 var chartDays = new CanvasJS.Chart("chartContainerDays", {            
     backgroundColor: "rgba(255,255,255,0.1)",
     axisY: {
-        maximum: 45,
+        maximum: 50,
         minimum: 0,
         gridThickness: 0,
         tickLength: 0,
@@ -29,7 +29,7 @@ var chartDays = new CanvasJS.Chart("chartContainerDays", {
 		dataPoints: [
 			{ label: "3:00 PM", y: 32, name: "cloudy" },
 			{ label: " ", y: 10, name: "rainy" },
-			{ label: "4:00 PM", y: 1, name: "stormy" },
+			{ label: "4:00 PM", y: 10, name: "stormy" },
 			{ label: " ", y: 26, name: "stormy" },
 			{ label: "5:00 PM", y: 32, name: "cloudy" },
 			{ label: " ", y: 34, name: "sunny" },
@@ -48,14 +48,22 @@ addImages(chartDays, "chartContainerDays");
 function addImages(chartDays) {
 	for(var i = 0; i < chartDays.data[0].dataPoints.length; i++){
 		var dpsName = chartDays.data[0].dataPoints[i].name;
-		if(dpsName == "cloudy"){
-			images.push($("<img>").attr("src", "http://localhost:2000/weather-forecast-page/cloudy.png"));
-		} else if(dpsName == "rainy"){
-		images.push($("<img>").attr("src", "http://localhost:2000/weather-forecast-page/rainy.png"));
-		} else if(dpsName == "sunny"){
-			images.push($("<img>").attr("src", "http://localhost:2000/weather-forecast-page/sunny.png"));
-		} else if(dpsName == "stormy"){
-			images.push($("<img>").attr("src", "http://localhost:2000/weather-forecast-page/stormy.png"));
+		if(dpsName == "clearskyday"){
+			images.push($("<img>").attr("src", "http://localhost:2000/weather-forecast-page/cleaar-sky-day.png"));
+		} else if(dpsName == "clearskynight"){
+		images.push($("<img>").attr("src", "http://localhost:2000/weather-forecast-page/clear-sky-night.png"));
+		} else if(dpsName == "fewcloudsday"){
+			images.push($("<img>").attr("src", "http://localhost:2000/weather-forecast-page/fewcloudsday.png"));
+		} else if(dpsName == "fewcloudsnight"){
+			images.push($("<img>").attr("src", "http://localhost:2000/weather-forecast-page/fewcloudsnight.png"));
+		} else if(dpsName == "scatteredclouds"){
+			images.push($("<img>").attr("src", "http://localhost:2000/weather-forecast-page/scattered-clouds.png"));
+		} else if(dpsName == "rain"){
+			images.push($("<img>").attr("src", "http://localhost:2000/weather-forecast-page/rain.png"));
+		} else if(dpsName == "showerrain"){
+			images.push($("<img>").attr("src", "http://localhost:2000/weather-forecast-page/shower-rain.png"));
+		} else if(dpsName == "thunderstorm"){
+			images.push($("<img>").attr("src", "http://localhost:2000/weather-forecast-page/thunderstorm.png"));
 		}
     
 
@@ -76,19 +84,28 @@ function positionImage(image, index) {
 }
 
 $( window ).resize(function() {
-	var cloudyCounter = 0, rainyCounter = 0, sunnyCounter = 0, stormyCounter = 0;    
+	var clearskydayCounter = 0, clearskynightCounter = 0, fewcloudsdayCounter = 0, fewcloudsnightCounter = 0, 
+    scatteredcloudsCounter = 0, rainCounter = 0, showerrainCounter = 0, thunderstorm = 0;    
 	var imageCenter = 0;
 	for(var i=0;i<chartDays.data[0].dataPoints.length;i++) {
 		imageCenter = chartDays.axisX[0].convertValueToPixel(chartDays.data[0].dataPoints[i].x) - 20;
-		if(chartDays.data[0].dataPoints[i].name == "cloudy") {					
-			$(".cloudy").eq(cloudyCounter++).css({ "left": imageCenter});
-		} else if(chartDays.data[0].dataPoints[i].name == "rainy") {
-			$(".rainy").eq(rainyCounter++).css({ "left": imageCenter});  
-		} else if(chartDays.data[0].dataPoints[i].name == "sunny") {
-			$(".sunny").eq(sunnyCounter++).css({ "left": imageCenter});  
-		} else if(chartDays.data[0].dataPoints[i].name == "stormy") {
-			$(".stormy").eq(stormyCounter++).css({ "left": imageCenter});  
-		}                
+		if(chartDays.data[0].dataPoints[i].name == "clearskyday") {					
+			$(".cloudy").eq(clearskydayCounter++).css({ "left": imageCenter});
+		} else if(chartDays.data[0].dataPoints[i].name == "clearskynight") {
+			$(".rainy").eq(clearskynightCounter++).css({ "left": imageCenter});  
+		} else if(chartDays.data[0].dataPoints[i].name == "fewcloudsday") {
+			$(".sunny").eq(fewcloudsdayCounter++).css({ "left": imageCenter});  
+		} else if(chartDays.data[0].dataPoints[i].name == "fewcloudsnight") {
+			$(".stormy").eq(fewcloudsnightCounter++).css({ "left": imageCenter});  
+		} else if(chartDays.data[0].dataPoints[i].name == "scatteredclouds") {
+			$(".rainHeavily").eq(scatteredcloudsCounter++).css({ "left": imageCenter});  
+		} else if(chartDays.data[0].dataPoints[i].name == "rain") {
+			$(".sunny").eq(rainCounter++).css({ "left": imageCenter});  
+		} else if(chartDays.data[0].dataPoints[i].name == "showerrain") {
+			$(".stormy").eq(showerrainCounter++).css({ "left": imageCenter});  
+		} else if(chartDays.data[0].dataPoints[i].name == "thunderstorm") {
+			$(".rainHeavily").eq(thunderstormCounter++).css({ "left": imageCenter});  
+		}                 
 	}
 });
 

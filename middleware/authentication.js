@@ -20,7 +20,6 @@ const authentication = async_wrapper(async(req, res, next)=>{
     }catch(err){ 
         throw new auth_error("You dont have permission to access this page")
     }
-
 })
 
 module.exports = { 

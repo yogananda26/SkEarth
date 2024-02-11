@@ -1,7 +1,7 @@
 const express = require('express'); 
 const router = express.Router();
 const GetLonLat = require("../middleware/GetLonLat");
-const {GetUV_index} = require("../controller/fetching-task");
+const {GetUV_index} = require("../controller/fetching-weather");
 
 
 // this is for routing 

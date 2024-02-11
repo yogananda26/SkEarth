@@ -5,7 +5,7 @@ const { bad_request } = require("../error/driver-error");
 
 const GetUV_index = async_wrapper(async (req, res) => {
     const { latitude, longitude } = req.body.requirement;
-    const API_URL = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&units=metric&appid=${process.env.API_KEY}`;
+    const API_URL = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=metric&appid=${process.env.API_KEY}`;
 
     fetch(API_URL)
         .then((result) => {
@@ -13,15 +13,32 @@ const GetUV_index = async_wrapper(async (req, res) => {
             return result.json();
         })
         .then((obj) => {
-            let result;
-            let uv_result;
-    
-            uv_result = obj.hourly.map(({uvi})=>{ 
+        
+            // this is for forecast
+            uv_forecast = obj.hourly.map(({uvi})=>{ 
                 return uvi
             })
-            res.status(200).json(uv_result);
+            uv_current = obj.current.uvi; 
+            const hasil = {
+                "uv_current" : uv_current, 
+                "uv_forecast_4_days" : uv_forecast
+            }
+            // this is for result
+            res.status(200).json(hasil);
         })
 })
+
+
+const get_air_polution = async(res, req, next) => {
+    const { longitude, latitude } = req.body.requirement;
+    const url = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=${process.env.API_KEY}`;
+    const response = await fetch(url);
+    if(!response){
+        throw new bad_request("failed for fetching the API_get_air_polution")
+    }
+    const data = await response.json();
+    return res.status(200).json(data.list[0].main.aqi); // Assuming you want the current AQI
+}
 
 const GetAirPolution = async_wrapper(async (req, res) => {
     const { longitude, latitude } = req.body.requirement;
@@ -83,7 +100,6 @@ const GetCurrentAirPolution = async_wrapper(async (req, res) => {
         })
 })
 
-
 const GetCurrent_weather = async_wrapper(async (req, res) => {
     const {longitude, latitude} = req.body.requirement;
     const API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.API_KEY}`;
@@ -95,8 +111,6 @@ const GetCurrent_weather = async_wrapper(async (req, res) => {
         })
         .then((obj) => {
             return res.json(obj);
-
-
         })
 })
 
@@ -111,8 +125,6 @@ const GetForecast_weather = async_wrapper(async (req, res) => {
         })
         .then((obj) => {
             return res.json(obj);
-
-            
         })
 })
 
