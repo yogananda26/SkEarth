@@ -18,17 +18,21 @@ const GetUV_index = async_wrapper(async (req, res) => {
             uv_result = obj.hourly.map(({uvi})=>{ 
                 return uvi
             })
-            // this is for current
-            uv_current = obj.current.uvi;
-
-            const hasil = {
-                'uv_forecast_4_days' : uv_result,
-                'uv_current' : uv_current
-            }
-
-            res.status(200).json(hasil);
+            res.status(200).json(uv_result);
         })
 })
+
+
+const get_air_polution = async(res, req, next) => {
+    const { longitude, latitude } = req.body.requirement;
+    const url = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=${process.env.API_KEY}`;
+    const response = await fetch(url);
+    if(!response){
+        throw new bad_request("failed for fetching the API_get_air_polution")
+    }
+    const data = await response.json();
+    return res.status(200).json(data.list[0].main.aqi); // Assuming you want the current AQI
+}
 
 const GetAirPolution = async_wrapper(async (req, res) => {
     const { longitude, latitude } = req.body.requirement;
@@ -90,7 +94,6 @@ const GetCurrentAirPolution = async_wrapper(async (req, res) => {
         })
 })
 
-
 const GetCurrent_weather = async_wrapper(async (req, res) => {
     const {longitude, latitude} = req.body.requirement;
     const API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.API_KEY}`;
@@ -102,8 +105,6 @@ const GetCurrent_weather = async_wrapper(async (req, res) => {
         })
         .then((obj) => {
             return res.json(obj);
-
-
         })
 })
 
@@ -118,8 +119,6 @@ const GetForecast_weather = async_wrapper(async (req, res) => {
         })
         .then((obj) => {
             return res.json(obj);
-
-            
         })
 })
 

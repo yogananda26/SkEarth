@@ -121,7 +121,10 @@ form_action.addEventListener("submit", async(e)=>{
         console.log(e)
     }
 })
-
+const get_user_name = async() =>{
+    const {name} = axios.get('/user');
+    return name
+}
 
 
 const timeDiff = ( tstart, tend ) => {

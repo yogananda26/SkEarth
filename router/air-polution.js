@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const {GetAirPolution, 
     GetForecastAirPolution,
-    GetCurrentAirPolution} = require("../controller/fetching-task")
+    GetCurrentAirPolution} = require("../controller/fetching-weather")
 const GetLonLat = require("../middleware/GetLonLat")
 const calculate_unix = require("../middleware/Calculate_unix")
 router

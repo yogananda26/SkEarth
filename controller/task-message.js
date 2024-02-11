@@ -1,7 +1,7 @@
 
 const message = require('../model/input-message'); 
 const {async_wrapper} = require('../middleware/async-wrapper')
-const {bad_request} = require('../error/driver-error');
+const {bad_request, auth_error} = require('../error/driver-error');
 const { json } = require('express');
 
 // this is the task
@@ -62,7 +62,10 @@ const get_unique_message = async_wrapper(async(req, res)=>{
 })
 
 const replies_the_message = async_wrapper(async(req, res, next)=>{ 
-    const {commentID} = req.params; 
+    const {commentID} = req.params;
+    if(!commentID){
+        throw new bad_request("your message never found or created before");
+    } 
     const parent = await message.findOne({
         _id : commentID
     })
