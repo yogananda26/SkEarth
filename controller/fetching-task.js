@@ -5,7 +5,7 @@ const { bad_request } = require("../error/driver-error");
 
 const GetUV_index = async_wrapper(async (req, res) => {
     const { latitude, longitude } = req.body.requirement;
-    const API_URL = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&units=metric&appid=${process.env.API_KEY}`;
+    const API_URL = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=metric&appid=${process.env.API_KEY}`;
 
     fetch(API_URL)
         .then((result) => {
@@ -13,13 +13,20 @@ const GetUV_index = async_wrapper(async (req, res) => {
             return result.json();
         })
         .then((obj) => {
-            let result;
-            let uv_result;
-    
+        
+            // this is for forecast
             uv_result = obj.hourly.map(({uvi})=>{ 
                 return uvi
             })
-            res.status(200).json(uv_result);
+            // this is for current
+            uv_current = obj.current.uvi;
+
+            const hasil = {
+                'uv_forecast_4_days' : uv_result,
+                'uv_current' : uv_current
+            }
+
+            res.status(200).json(hasil);
         })
 })
 
