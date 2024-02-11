@@ -15,10 +15,16 @@ const GetUV_index = async_wrapper(async (req, res) => {
         .then((obj) => {
         
             // this is for forecast
-            uv_result = obj.hourly.map(({uvi})=>{ 
+            uv_forecast = obj.hourly.map(({uvi})=>{ 
                 return uvi
             })
-            res.status(200).json(uv_result);
+            uv_current = obj.current.uvi; 
+            const hasil = {
+                "uv_current" : uv_current, 
+                "uv_forecast_4_days" : uv_forecast
+            }
+            // this is for result
+            res.status(200).json(hasil);
         })
 })
 
