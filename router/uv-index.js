@@ -7,10 +7,7 @@ const {GetUV_index} = require("../controller/fetching-weather");
 // this is for routing 
 router
     .route('/')
-    .get(GetLonLat,GetUV_index)
-    .post((req, res)=>{
-        console.log("this is for posting uv-index");
-        res.end();
-    })
+    .get()
+    .post(GetLonLat,GetUV_index)
     
 module.exports = router;
