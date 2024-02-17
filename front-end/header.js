@@ -28,7 +28,7 @@ function login(){
 
 //inactivate drop down ketika kita menekan diluar drop down button
 window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
+    if (!event.target.matches('dropbtn')) {
         var dropdown = document.getElementsByClassName("dropdown-content");
         var i;
         for (i = 0; i < dropdown.length; i++) {

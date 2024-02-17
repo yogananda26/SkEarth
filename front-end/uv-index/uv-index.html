@@ -23,7 +23,9 @@
           id="burger"
         ></button>
         <div class="center-header" id="center">
-          <a href="../homepage/homepage.html" class="dropbtn" id="home-button">Home</a>
+          <a href="../homepage/homepage.html" class="dropbtn" id="home-button"
+            >Home</a
+          >
           <div class="dropdown">
             <button onclick="dropFunction('dropdown-list1')" class="dropbtn">
               Features
@@ -52,23 +54,28 @@
         </div>
       </div>
       <div class="right-header">
-        <input type="text" , placeholder="Search" />
+        <input type="text" id="input" , placeholder="Search" />
       </div>
     </div>
     <div class="jumbotron">
       <div class="content">
-        <p class="place">Sentul City</p>
-        <input type="text" , placeholder="Type any place to see UV-Index ..." />
-        <div class="uv-level-content">
-          <div class="uv-container-left">
+        <p class="place" id="region">Sentul City</p>
+        <form id="input_1">
+          <input
+            type="text"
+            id="region_input"
+            ,
+            placeholder="Type any place to see UV-Index ..."
+          />
+          <button type="submit"><img src="../property/header-asset/search-logo.png" alt=""></button>
+        </form>
+        <div class="uv-level-content" id="uv_level_content">
+          <div class="uv-container-left" id="uv_level_content_left">
             <p class="jumbotron-header">UV Index</p>
-            <hr />
-            <p class="jumbotron-text">3</p>
+            <p class="jumbotron-text" id="level"></p>
           </div>
           <div class="uv-container-mid">
-            <p class="jumbotron-header">Category</p>
-            <hr />
-            <p class="jumbotron-text">Good</p>
+            <p class="jumbotron-text" id="category"></p>
           </div>
         </div>
       </div>
@@ -200,5 +207,6 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="../header.js"></script>
+    <script src="uv-index.js"></script>
   </body>
 </html>
