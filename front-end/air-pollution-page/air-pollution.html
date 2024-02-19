@@ -45,132 +45,83 @@
             <input type="text" , placeholder="Search">
         </div>
     </div>
-
-
-    <div class="container py-5">
-
-        <div class="row py-5">
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12">
-                <div class=" mb-5 rounded-3 bg-white p-3">
-                    <p class="fw-bold left-title">Live AQI country ranking</p>
-                    <p class=" fs-5 fw-bold">Real-time world country ranking</p>
-                    <ul id="city-list"></ul>
-                </div>
-            </div>
-
-            <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-12 col-sm-12">
-
-                <div class="bg-white rounded-3 upper-box mb-5">
-                    <h1 id="header-city"></h1>
-                    <form id="input_form">
-                        <div>
-                            <input type="text" class="search-input" id="search-input"
-                                placeholder="Type any place to see air pollution...">
-                            <button id="btn_input" type="submit"><i class="fa fa-search"></i></button>
+    <div class="top-contain">
+        <div class="container">
+            <div class="d-flex flex-row" id="container-body">
+                <div class="top-ranking sticky-top-ranking">
+                    <div class="d-flex flex-column p-5">
+                        <div class="box-left mb-5">
+                            <p class="fw-bold left-title">Live AQI Country Ranking</p>
+                            <p class="text-left fs-6 fw-bold">Real-Time World Country Ranking</p>
+                            <table id="ranking-table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Countries</th>
+                                        <th>AQI</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ranking-body"></tbody>
+                            </table>
                         </div>
-                        <!-- <button id="btn_input" type="submit">Submit</button> -->
-                    </form>
-                    <div class="upper-box-content" id="content-aqi">
-                        <div class="upper-content-left">
-                            <div class="content-left-one" id="sub-content-aqi">
-                                <h5 class="mb-4">AQI</h5>
-                                <h2 id="header-aqi"></h2>
-                            </div>
-                            <div class="content-left-two">
-                                <p>LIVE AQI INDEX</p>
-                                <h1 id="aqi-category"></h1>
-                            </div>
-                        </div>
-                        <div class="upper-content-right">
-                            <img id="image-level-aqi" src="../property/airPolution-asset/emoji-fair.png">
+
+                        <div class="box-left">
+                            <p class="fw-bold left-title">Live AQI City Ranking</p>
+                            <p class="text-left fs-6 fw-bold">Real-Time Indonesia City Ranking</p>
+                            <table id="table-city">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>City Name</th>
+                                        <th>AQI</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ranking-city"></tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-            </div>
 
-
-            <!-- Sticky -->
-            <div class="sticky-xxl-top sticky-xl-top sticky-lg-top col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12"
-                style="top:15%;">
-                <div class="bg-white p-3 rounded shadow-sm">
-                    <p class="fw-bold left-title">Live AQI city ranking</p>
-                    <p class="text-center fs-5 fw-bold">Real-time Indonesia city ranking</p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th style="width: 20%;">#</td>
-                                <th>CITY</td>
-                                <th class="text-center">US AQI</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>PEKANBARU</td>
-                                <td class="text-center">166</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>JAKARTA</td>
-                                <td class="text-center">157</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>PALEMBANG</td>
-                                <td class="text-center">145</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>MAKASSAR</td>
-                                <td class="text-center">121</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>BEKASI</td>
-                                <td class="text-center">101</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>SURABAYA</td>
-                                <td class="text-center">88</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>CIREBON</td>
-                                <td class="text-center">65</td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>DENPASAR</td>
-                                <td class="text-center">61</td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>MEDAN</td>
-                                <td class="text-center">55</td>
-                            </tr>
-                            <tr>
-                                <td>10</td>
-                                <td>TANGERANG</td>
-                                <td class="text-center">48</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-12 col-sm-12">
-                <div class="bg-white rounded-3 mb-5 p-5 shadow-sm">
-                    <h3>Guide Air Quality Index (AQI)</h3>
-                    <div class="content-guide">
-                        <div class="guide">
-                            <div class="box-guide-good">
+                <div class="d-flex flex-column p-5">
+                    <div class="box-right upper-box mb-5">
+                        <h1 id="header-city"></h1>
+                        <form id="input_form">
+                            <div>
+                                <input type="text" class="search-input" id="search-input"
+                                    placeholder="Type any place to see air pollution...">
+                                <button id="btn_input" type="submit"><i class="fa fa-search"></i></button>
                             </div>
-                            <div class="text-guide">
-                                <p class="title-guide text-good fw-bold">Good (LEVEL 1)</p>
-                                <p class="desc-guide">Fresh air, deep breaths, outdoor fun (healthy for everyone).</p>
+                            <!-- <button id="btn_input" type="submit">Submit</button> -->
+                        </form>
+                        <div class="upper-box-content" id="content-aqi">
+                            <div class="upper-content-left">
+                                <div class="content-left-one" id="sub-content-aqi">
+                                    <h5 class="mb-4">AQI</h5>
+                                    <h2 id="header-aqi"></h2>
+                                </div>
+                                <div class="content-left-two">
+                                    <p>LIVE AQI INDEX</p>
+                                    <h1 id="aqi-category"></h1>
+                                </div>
+                            </div>
+                            <div class="upper-content-right">
+                                <img id="image-level-aqi" src="">
                             </div>
                         </div>
+                    </div>
+
+                    <div class="box-right mb-5 p-5">
+                        <h3>Guide Air Quality Index (AQI)</h3>
+                        <div class="content-guide">
+                            <div class="guide">
+                                <div class="box-guide-good">
+                                </div>
+                                <div class="text-guide">
+                                    <p class="title-guide text-good fw-bold">Good (LEVEL 1)</p>
+                                    <p class="desc-guide">Fresh air, deep breaths, outdoor fun (healthy for everyone).
+                                    </p>
+                                </div>
+                            </div>
 
                             <div class="guide">
                                 <div class="box-guide-fair">
@@ -215,27 +166,18 @@
                         </div>
                     </div>
 
-            </div>
-
-            <div class="offset-xxl-4 offset-xl-4 offset-lg-4 col-xxl-8 col-xl-8 col-lg-8 col-md-12 col-sm-12">
-                <div class="bg-white middle-box mb-5 p-5">
-                    <h3 id="historical-aqi">Historical Air Quality Index (AQI)</h3>
-                    <!-- <div id="chartContainer" style="height: 225px; width: 65%;"></div> -->
-                    <div id="weatherData"></div>
-                    <div id="lineGraph"></div>
-                    <div class="row">
-                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6  p-3">
-
-                            <div class="border border-3 rounded-3 p-2">
+                    <div class="box-right middle-box mb-5 p-5">
+                        <h3 id="historical-aqi">Historical Air Quality Index (AQI)</h3>
+                        <div id="weatherData"></div>
+                        <div id="lineGraph"></div>
+                        <div class="level-boxes" id="levelData">
+                            <div class="level-box">
                                 <div class="title-upper-level">
                                     <p>level of</p>
                                     <p class="ms-2">CO2</p>
                                 </div>
                                 <div class="progress"
                                     style="height: 5px; width: 75%; background-color: rgb(226, 60, 199);">
-                                    <div class="progress-bar" role="progressbar" aria-label="Success example"
-                                        style="width: 80%; background-color: blueviolet;" aria-valuenow="25"
-                                        aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                                 <div class="desc-upper-level text-center">
                                     <p class="fs-10" id="co2-text"></p>
@@ -243,20 +185,13 @@
                                 </div>
                             </div>
 
-                        </div>
-
-                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 p-3">
-
-                            <div class="border border-3 rounded-3 p-2">
+                            <div class="level-box">
                                 <div class="title-upper-level">
                                     <p>level of</p>
                                     <p class="ms-2">O3</p>
                                 </div>
                                 <div class="progress"
                                     style="height: 5px; width: 75%; background-color: rgb(226, 60, 199);">
-                                    <div class="progress-bar" role="progressbar" aria-label="Success example"
-                                        style="width: 60%; background-color: blueviolet;" aria-valuenow="25"
-                                        aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                                 <div class="desc-upper-level text-center">
                                     <p class="fs-10" id="o3-text"></p>
@@ -264,21 +199,13 @@
                                 </div>
                             </div>
 
-
-                        </div>
-
-                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 p-3">
-
-                            <div class="border border-3 rounded-3 p-2">
+                            <div class="level-box">
                                 <div class="title-upper-level">
                                     <p>level of</p>
                                     <p class="ms-2">NO2</p>
                                 </div>
                                 <div class="progress"
                                     style="height: 5px; width: 75%; background-color: rgb(92, 116, 219)">
-                                    <div class="progress-bar" role="progressbar" aria-label="Success example"
-                                        style="width: 80%; background-color: rgb(55, 66, 167);" aria-valuenow="25"
-                                        aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                                 <div class="desc-upper-level text-center">
                                     <p class="fs-10" id="no2-text"></p>
@@ -286,147 +213,111 @@
                                 </div>
                             </div>
 
-                        </div>
-
-                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6  p-3">
-
-                            <div class="border border-3 rounded-3 p-2">
-
+                            <div class="level-box">
                                 <div class="title-upper-level">
                                     <p>level of</p>
                                     <p class="ms-2">SO2</p>
                                 </div>
                                 <div class="progress"
                                     style="height: 5px; width: 75%; background-color: rgb(92, 116, 219)">
-                                    <div class="progress-bar" role="progressbar" aria-label="Success example"
-                                        style="width: 80%; background-color: rgb(55, 66, 167);" aria-valuenow="25"
-                                        aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                                 <div class="desc-upper-level text-center">
                                     <p class="fs-10" id="so2-text"></p>
                                     <p class="fs-8">PPM</p>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="offset-xxl-4 offset-xl-4 offset-lg-4 col-xxl-8 col-xl-8 col-lg-8 col-md-12 col-sm-12">
-                <div class="bg-white p-5 rounded-5" id="forecast-container">
-                    <h3 id="header-forecast">Air Quality Index (AQI) Forecast</h3>
-                    <div class="border border-info m-4">
-                        <table class="table-forecast">
-                            <thead>
-                                <tr>
-                                    <th style="width: 25%;">Day</th>
-                                    <th>Pollution Index</th>
-                                    <th style="width: 25%;" class="ps-3">AQI level</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td id="forecast1-date"></td>
-                                    <td class="bg-color-forecast1 rounded ps-2 pe-2 text-light" id="bg-color-forecast1">
-                                    </td>
-                                    <td class="ps-3" id="forecast1-aqi"></td>
-                                </tr>
-                                <tr>
-                                    <td id="forecast2-date"></td>
-                                    <td class="bg-color-forecast2 rounded ps-2 pe-2 text-light" id="bg-color-forecast2">
-                                    </td>
-                                    <td class="ps-3" id="forecast2-aqi"></td>
-                                </tr>
-                                <tr>
-                                    <td id="forecast3-date"></td>
-                                    <td class="bg-color-forecast3 rounded ps-2 pe-2 text-light" id="bg-color-forecast3">
-                                    </td>
-                                    <td class="ps-3" id="forecast3-aqi"></td>
-                                </tr>
-                                <tr>
-                                    <td id="forecast4-date"></td>
-                                    <td class="bg-color-forecast4 rounded ps-2 pe-2 text-light" id="bg-color-forecast4">
-                                    </td>
-                                    <td class="ps-3" id="forecast4-aqi"></td>
-                                </tr>
-                                <tr>
-                                    <td id="forecast5-date"></td>
-                                    <td class="bg-color-forecast5 rounded ps-2 pe-2 text-light" id="bg-color-forecast5">
-                                    </td>
-                                    <td class="ps-3" id="forecast5-aqi"></td>
-                                </tr>
-                                <tr>
-                                    <td id="forecast6-date"></td>
-                                    <td class="bg-color-forecast6 rounded ps-2 pe-2 text-light" id="bg-color-forecast6">
-                                    </td>
-                                    <td class="ps-3" id="forecast6-aqi"></td>
-                                </tr>
-                                <tr>
-                                    <td id="forecast7-date"></td>
-                                    <td class="bg-color-forecast7 rounded ps-2 pe-2 text-light" id="bg-color-forecast7">
-                                    </td>
-                                    <td class="ps-3" id="forecast7-aqi"></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="box-right bottom-box" id="forecast-container">
+                        <h3 id="header-forecast">Air Quality Index (AQI) Forecast</h3>
+                        <div class="border border-info m-4">
+                            <table class="table-forecast">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 25%;">Day</th>
+                                        <th>Pollution Index</th>
+                                        <th style="width: 25%;" class="ps-3">AQI level</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td id="forecast1-date"></td>
+                                        <td class="bg-color-forecast1 rounded ps-2 pe-2 text-light"
+                                            id="bg-color-forecast1">
+                                        </td>
+                                        <td class="ps-3" id="forecast1-aqi"></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="forecast2-date"></td>
+                                        <td class="bg-color-forecast2 rounded ps-2 pe-2 text-light"
+                                            id="bg-color-forecast2">
+                                        </td>
+                                        <td class="ps-3" id="forecast2-aqi"></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="forecast3-date"></td>
+                                        <td class="bg-color-forecast3 rounded ps-2 pe-2 text-light"
+                                            id="bg-color-forecast3">
+                                        </td>
+                                        <td class="ps-3" id="forecast3-aqi"></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="forecast4-date"></td>
+                                        <td class="bg-color-forecast4 rounded ps-2 pe-2 text-light"
+                                            id="bg-color-forecast4">
+                                        </td>
+                                        <td class="ps-3" id="forecast4-aqi"></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="forecast5-date"></td>
+                                        <td class="bg-color-forecast5 rounded ps-2 pe-2 text-light"
+                                            id="bg-color-forecast5">
+                                        </td>
+                                        <td class="ps-3" id="forecast5-aqi"></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="forecast6-date"></td>
+                                        <td class="bg-color-forecast6 rounded ps-2 pe-2 text-light"
+                                            id="bg-color-forecast6">
+                                        </td>
+                                        <td class="ps-3" id="forecast6-aqi"></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="forecast7-date"></td>
+                                        <td class="bg-color-forecast7 rounded ps-2 pe-2 text-light"
+                                            id="bg-color-forecast7">
+                                        </td>
+                                        <td class="ps-3" id="forecast7-aqi"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="offset-xxl-4 offset-xl-4 offset-lg-4 col-xxl-8 col-xl-8 col-lg-8 col-md-12 col-sm-12">
-                <div class="bg-white p-5 rounded-5">
-                    <h3 id="header-forecast">How to Protect from Air Pollution?</h3>
-                    <div class="row">
-                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-3">
-
-                            <div class="border border-2 rounded shadow-sm">
-                                <div class="d-flex justify-content-center">
-                                    <img class="image-info" src="../property/airPolution-asset/mask.png">
-
-                                </div>
-
+                    <div class="box-right bottom-box">
+                        <h3 id="header-forecast">How to Protect from Air Pollution?</h3>
+                        <div class="info-boxes">
+                            <div class="info-box">
+                                <img class="image-info" src="../property/airPolution-asset/mask.png">
                                 <h3 class="image-text">Wear an Mask</h3>
                             </div>
 
-                        </div>
-
-                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-3">
-                            <div class="border border-2 rounded shadow-sm">
-
-                                <div class="d-flex justify-content-center">
-                                    <img class="image-info" src="../property/airPolution-asset/air-purifier.png">
-
-                                </div>
+                            <div class="info-box">
+                                <img class="image-info" src="../property/airPolution-asset/air-purifier.png">
                                 <h3 class="image-text">Use an Air Purifier</h3>
                             </div>
 
-
-                        </div>
-
-                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-3">
-                            <div class="border border-2 rounded shadow-sm">
-
-                                <div class="d-flex justify-content-center">
-                                    <img class="image1-info" src="../property/airPolution-asset/bus.png">
-
-                                </div>
-
+                            <div class="info-box">
+                                <img class="image1-info" src="../property/airPolution-asset/bus.png">
                                 <h3 class="image-text">Use Public Transportation</h3>
-
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
-
     </div>
-
     <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

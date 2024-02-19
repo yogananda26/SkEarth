@@ -9,7 +9,7 @@ require('dotenv').config();
 // this is for accessing the data in every route
 const user = require("../router/user");
 const route_message = require('../router/message');
-const route_forecast = require('../router/forecast');
+const route_weather = require('../router/weather');
 const route_news = require('../router/news');
 const route_report = require('../router/report');
 const route_solar = require('../router/solar-panel');
@@ -23,7 +23,7 @@ app.use(express.static('./front-end'));
 app.use(express.json(), express.urlencoded());
 app.use('/user', user); 
 app.use('/api/v1/message',route_message);
-app.use('/api/v1/forecast',route_forecast)
+app.use('/api/v1/weather',route_weather);
 app.use('/api/v1/uv-index',route_UV);
 app.use('/api/v1/news',route_news); 
 app.use('/api/v1/solar',route_solar);
