@@ -14,6 +14,10 @@ const header_forecast = document.getElementById("header-forecast");
 const historic_aqi = document.getElementById("historical-aqi");
 const image_aqi = document.getElementById("image-level-aqi");
 
+window.onload = function () {
+    displayAirQualityRanking();
+}
+
 formDom.addEventListener('submit', async (e) => {
     e.preventDefault();
     try {
@@ -30,7 +34,6 @@ formDom.addEventListener('submit', async (e) => {
                 city_name: city_input.value
             })
         content_aqi.style.display = "flex";
-        displayAirQualityRanking();
         displayContentHeader(data2.data);
         displayImageAQI(data2.data);
         displayCarbonData(data1.data);
@@ -183,7 +186,7 @@ function createLineGraph(labels, pollutionData) {
                 borderWidth: 1,
                 fill: false,
                 pointRadius: 0,
-                borderWidth: 5
+                borderWidth: 2
             }]
         },
         options: {
@@ -206,7 +209,8 @@ function createLineGraph(labels, pollutionData) {
                     beginAtZero: true
                 }
             }
-        }
+        },
+        animationEnabled: true
     });
 }
 

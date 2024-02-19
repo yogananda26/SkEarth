@@ -1,12 +1,12 @@
-const express = require("express"); 
+const express = require("express");
 const router = express.Router();
 const { GetForecast_weather,
-    GetCurrent_weather} = require("../controller/fetching-task")
+    GetCurrent_weather } = require("../controller/fetching-weather")
 const GetLonLat = require("../middleware/GetLonLat")
 
 router
     .route('/')
-    .post(GetLonLat); 
+    .post(GetLonLat);
 router
     .route('/current')
     .post(GetLonLat, GetCurrent_weather);

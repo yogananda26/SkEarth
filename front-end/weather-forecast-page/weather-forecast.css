@@ -7,7 +7,21 @@
     background-color: rgb(245, 245, 245);
 }
 
+#header-fore, #header-fores {
+    padding-bottom: 35px;
+}
+#desc-wind {
+    padding-top: 25px;
+}
+#head-wind {
+    padding-top: 25px;
+    font-size: 28px;
+}
 
+#humid-title,
+#humid-desc {
+    text-align: center;
+}
 
 .box-title {
     font-size: 34px;
@@ -56,7 +70,7 @@ input[type="search"]:focus {
     outline: none;
 }
 
-.canvasjs-chart-credit{
+.canvasjs-chart-credit {
     visibility: hidden;
 }
 
