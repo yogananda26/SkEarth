@@ -61,50 +61,21 @@
     </div>
     <div class="comment-details">
       <span class="round-dot"></span>
-      <p class="username">I Made Ananta Yoga</p>
+      <p style="color: white;" class="username">I Made Ananta Yoga</p>
     </div>
-    <p class="comment">What's Happening Today...</p>
+    <!-- <p class="comment" style="color: white;">What's Happening Today...</p> -->
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <form id="input_1">
+        <input placeholder="Share your stories and experiences here !" />
+        <button type="submit" class="submit">Post</button>
+      </form>
+    </div>
     <div class="comment-replys">
       <div class="title">
-        <p>Comment</p>
+        <p style="color: white;">Comment</p>
       </div>
       <div class="comment-replys-details">
-        <div class="comment-replys-unit">
-          <div class="comment-replys-unit-left">
-            <p class="username-reply">Dustin Biji Arasy</p>
-            <p class="user-reply-content">
-              This is so rainy today i cant feel it oh shit
-            </p>
-            <p class="hastag">#youdeservethis</p>
-          </div>
-          <div class="comment-replys-unit-right">
-            <button><img src="like.png" alt="" /></button>
-          </div>
-        </div>
-        <div class="comment-replys-unit">
-          <div class="comment-replys-unit-left">
-            <p class="username-reply">Dustin Biji Arasy</p>
-            <p class="user-reply-content">
-              This is so rainy today i cant feel it oh shit
-            </p>
-            <p class="hastag">#youdeservethis</p>
-          </div>
-          <div class="comment-replys-unit-right">
-            <button><img src="like.png" alt="" /></button>
-          </div>
-        </div>
-        <div class="comment-replys-unit">
-          <div class="comment-replys-unit-left">
-            <p class="username-reply">Dustin Biji Arasy</p>
-            <p class="user-reply-content">
-              This is so rainy today i cant feel it oh shit
-            </p>
-            <p class="hastag">#youdeservethis</p>
-          </div>
-          <div class="comment-replys-unit-right">
-            <button><img src="like.png" alt="" /></button>
-          </div>
-        </div>
+       <!-- all comment down here -->
       </div>
     </div>
     <footer>
@@ -165,6 +136,14 @@
         </p>
       </div>
     </footer>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
     <script src="../header.js"></script>
+    <script src="more_comment.js"></script>
+
   </body>
 </html>

@@ -5,16 +5,18 @@ var token = localStorage.getItem('token');
 const input_user = document.getElementById('input-user')
 
 
+
 // this is for extracting thing from database
 const value = async() => {
     try {
         axios.get('/api/v1/message', {
             headers : { 
-                'Authorization' : 'Bearer ' + localStorage.getItem('token')
+                'Authorization' : 'Bearer ' + token ,
             }
         }).then(({data})=>{
             // this is for assign the text
 
+    
             tweet_container.innerHTML = data.map(({content, createdBy, _id, updatedAt})=>{ 
                 // this is for content thing
                 return ` <div id="chat-content-container" style="margin: 37px;">
@@ -28,6 +30,9 @@ const value = async() => {
                 </div>
                 <div id="user-tweet" style="height: auto; width: auto; margin: 10px 0px 0px 53px">
                     <p  style="white-space: pre-wrap;">${content}</p>
+                    <div class="img-container" id=${_id}>
+                       
+                    </div>
                     <h6 style="margin-top: 5px;">${timeDiff(new Date(updatedAt).getTime(), new Date().getTime())} ago</h6>
                 </div>
                 <div id="other-reaction" style="height: auto; width: auto; display: flex; justify-content: center; margin-top:20px">
@@ -67,18 +72,84 @@ const value = async() => {
                 </div>
             </div>` 
             }).reverse().join(' ');
+
+            const container = document.querySelectorAll('.img-container'); 
+            container.forEach((item)=>{
+                let comment_id = item.getAttribute('id'); 
+                try{
+                    axios.get(`/api/v1/message/img/${comment_id}`).then((result)=>{
+                        
+                        const array = result.data.map(({filename, metadata})=>{
+                            return filename, metadata;
+                        })
+                        array.forEach(({name, type}) => {
+                            const types = type.split('/')[0];
+                            if(types === 'image'){
+                                var elem = document.createElement("img");
+                                elem.setAttribute("src", `http://localhost:2000/api/v1/message/img/render/${name}`);
+                                elem.setAttribute("height", "500");
+                                elem.setAttribute("width", "600");
+                                item.appendChild(elem)
+                            }
+                            if(types === 'video'){
+                                var elem = document.createElement("video");
+                                elem.setAttribute("src", `http://localhost:2000/api/v1/message/img/render/${name}`);
+                                elem.setAttribute("height", "500");
+                                elem.setAttribute("width", "300");
+                                elem.setAttribute("controls", true);
+                                item.appendChild(elem)
+                            }
+                        });
+                    })
+
+                    
+                }catch(e){
+                    console.log(e);
+                }
+            })
+            // testing();
+
         })
     } catch (error) {
         console.log(error);
     }
 }
+
 value();
+
+const testing = async()=>{
+    try{
+        const result = await axios.get('/api/v1/message/img'); 
+        const array = result.data.map(({filename, metadata})=>{
+            return filename, metadata;
+        })
+        // console.log(array)
+        var string = '';
+        array.forEach(({name, type}) => {
+            const types = type.split('/')[0];
+            if(types === 'image'){
+                string = string + `<img src="http://localhost:2000/api/v1/message/img/${name}" alt="">`
+            }
+            else if(types == 'video/mp4'){
+                string = string + `<video src="http://localhost:2000/api/v1/message/img/${name}" controls></video>`
+            }
+        });
+    }catch(e){
+        console.log(e);
+    }
+    return string;
+}
+
+// console.log(await testing());
+
+
+
 
 const fetch_5_user = async() =>{ 
     try{ 
         axios.get('/user/all-user', {
         headers : { 
-            'Authorization' : 'Bearer ' + localStorage.getItem('token')            
+            'Authorization' : 'Bearer ' + token         
         }})
         .then(({data})=>{
             top_5_user.innerHTML = data.map(({name, _id})=>{ 
@@ -103,21 +174,20 @@ fetch_5_user();
 // this is for add the message
 
 form_action.addEventListener("submit", async(e)=>{ 
-    console.log("this is for testing")
+
     e.preventDefault();
+    const fd = new FormData(form_action);
     try{ 
-        axios.post('/api/v1/message',{ 
-            'content' : input_user.value
-        }, 
-        {
+        axios.post('/api/v1/message', fd ,{
         headers : { 
-                'Authorization': 'Bearer ' + token
+                'Authorization': 'Bearer ' + token , 
+                'Content-type' : "multipart/form-data" ,
             }
-        })
+        })  
         .then(()=>{
             value();
         })
-    }catch(e){
+    }catch(e){  
         console.log(e)
     }
 })

@@ -3,20 +3,29 @@ const user_name = document.getElementById('user-name');
 const form_input = document.querySelector('.form-input');
 var token = localStorage.getItem("token");
 const params = window.location.search
-const id = new URLSearchParams(params).get('UserID'
+const id = new URLSearchParams(params).get('UserID');
 
-)
+
 // for determine the user
 const button_edit_user = document.getElementById('button_edit_user'); 
 const modal = document.getElementById('exampleModal')
-
 button_edit_user.style.visibility = "hidden";
+
+const show_message = async()=>{ 
+  axios.get(`/api/v1/message/unique/${id}`,{
+    headers: {
+      'Authorization': 'Bearer ' + token
+    }
+  })
+  .then(({data})=>{
+    console.log(data);
+  })
+} 
+
+show_message();
+
 // this is for setting the placeholder
-const redirect = async(e) =>{
-  redirect(`chat-page/user_profile.html?UserID=${id}`);
-  modal.visibility = "hidden";
-}
-const get = async(e)=>{
+const get = async()=>{
   axios.get("/user", {
       headers: {
           'Authorization': 'Bearer ' + token
@@ -53,4 +62,6 @@ form_input.addEventListener('submit', async(e)=>{
   window.location.href = `/chat-page/user_profile.html?UserID=${id}`; 
   modal.visibility = "hidden";
 })
+
+// this is for displaying the user message that he or her ever made 
 

@@ -4,7 +4,7 @@ const {auth_error} = require("../error/driver-error")
 const {async_wrapper} = require("./async-wrapper");
 
 const authentication = async_wrapper(async(req, res, next)=>{ 
-    const header_token = req.headers.authorization; 
+    const header_token = req.headers.authorization || req.headers.Authorization; 
     // console.log(req.headers.authorization);
 
     if(!header_token || !header_token.startsWith('Bearer ')){ 

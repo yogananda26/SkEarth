@@ -7,6 +7,10 @@ body{
     background-color: rgb(32, 50, 67);
 }
 
+footer{
+    background-color: white;
+}
+
 .content{
     padding-top: 60px;
     width: 100%;

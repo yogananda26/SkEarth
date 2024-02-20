@@ -127,6 +127,19 @@ const GetForecast_weather = async_wrapper(async (req, res) => {
             return res.json(obj);
         })
 })
+const solar_panel = async_wrapper(async(req, res, next)=>{
+    const {longitude, latitude} = req.body.requirement;
+
+    const API_URL = `https://api.openweathermap.org/energy/1.0/solar/data?lat=${latitude}&lon=${longitude}&date=2023-03-28&appid=${process.env.API_KEY}`; 
+    fetch(API_URL)
+        .then((result)=>{
+            if(!result) throw new bad_request("Error found in GetForecastWeather");
+            return result.json();
+        })
+        .then((obj)=>{
+            return res.json(obj);
+        })
+})
 
 
 module.exports = {
@@ -136,5 +149,6 @@ module.exports = {
     GetForecastAirPolution, 
     GetCurrentAirPolution,
     GetCurrent_weather,
-    GetForecast_weather
+    GetForecast_weather, 
+    solar_panel
 }

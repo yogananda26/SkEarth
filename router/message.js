@@ -1,29 +1,48 @@
 const express = require("express");
-const {make_message, 
-    delete_message, 
-    get_all_message,
-    update_message, 
-    get_unique_message,
-    show_all_replies,
-    replies_the_message
-} = require("../controller/task-message");
+const { make_message, 
+        delete_message, 
+        get_all_message,
+        update_message, 
+        get_unique_message,
+        show_all_replies,
+        replies_the_message
+} = require("../controller/Message_Control");
+
 const router = express.Router();
-const {authentication} = require("../middleware/authentication")
+const {authentication} = require("../middleware/authentication");
+
+const { upload_image,
+        search_img, 
+        render_image_video, 
+        delete_image
+} = require("../controller/GridFs_SetUp")
+
+const upload = require('../middleware/Multer')
+
+
 
 router 
     .route('/')
     .get(authentication, get_all_message)
-    .post(authentication, make_message); 
+    .post(authentication, upload.array('testing', 5) , make_message, upload_image); 
+
+router
+    .route('/img/:commentID')
+    .get(search_img)
+
+router
+    .route('/img/render/:filename')
+    .get(render_image_video);
 
 router
     .route("/unique/:UserID")
-    .post(authentication, get_unique_message)
+    .get(authentication, get_unique_message)
     .patch(authentication, update_message)
     .delete(authentication, delete_message);
 
 router
     .route("/comment/:commentID")
     .get(show_all_replies)
-    .post(replies_the_message)
+    .post(authentication, replies_the_message)
 
 module.exports = router; 

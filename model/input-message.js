@@ -17,7 +17,7 @@ const message_schema = new mongoose.Schema(
     content:{
         required : [true, "please input your message"],
         type:String, 
-        maxlength: [10000  , 'please not more than 1000 word']
+        maxlength: [10000  , 'please not more than 1000 word'],
     },
     createdBy : {
         type: mongoose.Types.ObjectId, 
@@ -30,4 +30,7 @@ const message_schema = new mongoose.Schema(
     }]
 }, {timestamps : true})
 
+message_schema.methods.get_id = async function(){
+    return `${this._id}`; 
+}
 module.exports = mongoose.model('History_Chat', message_schema); 
