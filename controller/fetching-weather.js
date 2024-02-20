@@ -101,7 +101,9 @@ const GetCurrentAirPolution = async_wrapper(async (req, res) => {
 })
 
 const GetCurrent_weather = async_wrapper(async (req, res) => {
+    
     const {longitude, latitude} = req.body.requirement;
+    
     const API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.API_KEY}`;
 
     fetch(API_URL)
@@ -140,6 +142,7 @@ const solar_panel = async_wrapper(async(req, res, next)=>{
             return res.json(obj);
         })
 })
+
 
 
 module.exports = {

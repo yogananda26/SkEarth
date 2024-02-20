@@ -131,34 +131,34 @@ function addImages(data) {
 			images.push($("<img>").attr("src", "../property/weather-logo/thunderstorm.png"));
 		} else if (dpsName == "Snow") {
 			dpsVal = dpsName;
-			images.push($("<img>").attr("src", "../property/weather-logo/13d@2x.png"));
+			images.push($("<img>").attr("src", "../property/weather-logo/snow.png"));
 		} else if (dpsName == "Mist") {
 			dpsVal = dpsName;
-			images.push($("<img>").attr("src", "../property/weather-logo/50d@2x.png"));
+			images.push($("<img>").attr("src", "../property/weather-logo/mist.png"));
 		} else if (dpsName == "Haze") {
 			dpsVal = dpsName;
-			images.push($("<img>").attr("src", "../property/weather-logo/50d@2x.png"));
+			images.push($("<img>").attr("src", "../property/weather-logo/mist.png"));
 		} else if (dpsName == "Smoke") {
 			dpsVal = dpsName;
-			images.push($("<img>").attr("src", "../property/weather-logo/50d@2x.png"));
+			images.push($("<img>").attr("src", "../property/weather-logo/mist.png"));
 		} else if (dpsName == "Fog") {
 			dpsVal = dpsName;
-			images.push($("<img>").attr("src", "../property/weather-logo/50d@2x.png"));
+			images.push($("<img>").attr("src", "../property/weather-logo/mist.png"));
 		} else if (dpsName == "Dust") {
 			dpsVal = dpsName;
-			images.push($("<img>").attr("src", "../property/weather-logo/50d@2x.png"));
+			images.push($("<img>").attr("src", "../property/weather-logo/mist.png"));
 		} else if (dpsName == "Sand") {
 			dpsVal = dpsName;
-			images.push($("<img>").attr("src", "../property/weather-logo/50d@2x.png"));
+			images.push($("<img>").attr("src", "../property/weather-logo/mist.png"));
 		} else if (dpsName == "Ash") {
 			dpsVal = dpsName;
-			images.push($("<img>").attr("src", "../property/weather-logo/50d@2x.png"));
+			images.push($("<img>").attr("src", "../property/weather-logo/mist.png"));
 		} else if (dpsName == "Squall") {
 			dpsVal = dpsName;
-			images.push($("<img>").attr("src", "../property/weather-logo/50d@2x.png"));
+			images.push($("<img>").attr("src", "../property/weather-logo/mist.png"));
 		} else if (dpsName == "Tornado") {
 			dpsVal = dpsName;
-			images.push($("<img>").attr("src", "../property/weather-logo/50d@2x.png"));
+			images.push($("<img>").attr("src", "../property/weather-logo/mist.png"));
 		}
 
 		images[i].attr("class", dpsVal).appendTo($("#chartContainer>.canvasjs-chart-container"));
