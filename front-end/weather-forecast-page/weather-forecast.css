@@ -7,12 +7,19 @@
     background-color: rgb(245, 245, 245);
 }
 
-#header-fore, #header-fores {
+#tops-contain {
+    padding-top: 3vw;
+}
+
+#header-fore,
+#header-fores {
     padding-bottom: 35px;
 }
+
 #desc-wind {
     padding-top: 25px;
 }
+
 #head-wind {
     padding-top: 25px;
     font-size: 28px;

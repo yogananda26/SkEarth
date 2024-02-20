@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const { GetForecast_weather,
-    GetCurrent_weather } = require("../controller/fetching-weather")
+    GetCurrent_weather} = require("../controller/fetching-weather")
 const GetLonLat = require("../middleware/GetLonLat")
+const GetCityCurr = require("../middleware/GetCityCurr")
 
 router
     .route('/')
