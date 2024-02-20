@@ -104,17 +104,24 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center ;
+    justify-content: center;
     border-bottom: solid;
     border-color: white;
 }
 
-.content-dropbtn{
-    color: white;
-    font-size: 55px;
+.top-right .image{
+    width: 70px;
+    height: 70px;
     margin-right: 20px;
+    border-radius: 10px;
+    -webkit-filter: invert(100%);
     border: none;
     background-color: transparent;
+}
+
+.top-right img{
+    width: 50px;
+    height: 50px;
 }
 
 form{
@@ -123,6 +130,7 @@ form{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 input{
@@ -143,6 +151,7 @@ input::placeholder{
 }
 
 .submit{
+    margin-right: 10px;
     font-size: 18px;
     border: none;
     background-color: transparent;
@@ -230,8 +239,4 @@ input::placeholder{
 .like, .comment, .share{
     border: none;
     background-color: transparent;
-}
-
-.content-dropdown-list{
-    
 }
