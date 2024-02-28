@@ -129,6 +129,21 @@ const GetForecast_weather = async_wrapper(async (req, res) => {
             return res.json(obj);
         })
 })
+
+const GetCity_Curr = async_wrapper(async (req, res) => {
+    const { latitude, longitude } = req.body;
+    const API_URL = `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=${1}&appid=${process.env.API_KEY}`
+
+    fetch(API_URL)
+        .then((result) => {
+            if(!result) throw new bad_request("Error found in GetForecastWeather");
+            return result.json();
+        })
+        .then((obj) => {
+            return res.json(obj);
+        })
+})
+
 const solar_panel = async_wrapper(async(req, res, next)=>{
     const {longitude, latitude} = req.body.requirement;
 
@@ -153,5 +168,6 @@ module.exports = {
     GetCurrentAirPolution,
     GetCurrent_weather,
     GetForecast_weather, 
+    GetCity_Curr,
     solar_panel
 }

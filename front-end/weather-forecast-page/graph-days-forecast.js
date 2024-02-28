@@ -14,6 +14,7 @@ formsdom.addEventListener('submit', async (e) => {
 		createDatass(data.data);
 		// images = [];
 		addImagess(data.data);
+		headerDays.innerText = `5 Days Forecast in ${citiesinput.value[0].toUpperCase() + citiesinput.value.slice(1)}`;
 		console.log(data.data.list[0].weather[0].main);
 	} catch (e) {
 		console.log(e);
@@ -66,8 +67,6 @@ chartDays.render();
 function createDatass(data) {
 	headerDays.innerHTML = '';
 	var newDataPoints = [];
-
-	headerDays.innerText = `5 Days Forecast in ${citiesinput.value[0].toUpperCase() + citiesinput.value.slice(1)}`;
 
 	const timestamp1 = new Date(data.list[0].dt * 1000).toDateString();
 	const timestamp2 = new Date(data.list[24].dt * 1000).toDateString();

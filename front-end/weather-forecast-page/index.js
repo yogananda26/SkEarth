@@ -4,34 +4,61 @@ const header_city = document.getElementById("header-city");
 const desc_city = document.getElementById("desc-city");
 const image_city = document.getElementById("image-city");
 const desc_temp = document.getElementById("desc-temp");
+const headerDays2 = document.getElementById("header-fores");
+const headerFore2 = document.getElementById("header-fore");
+const humidtitle2 = document.getElementById("humid-title");
+const headWind2 = document.getElementById("head-wind");
 
 var latitude, longitude;
 
-getLocation();
-console.log(latitude);
-console.log(longitude);
 
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
+window.onload = async function () {
+    getLocation();
 
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+    
+        }
     }
-}
+    async function showPosition(position) {
+        latitude = position.coords.latitude;
+        longitude = position.coords.longitude;
+        console.log(latitude);
+        console.log(longitude);
 
-function showPosition(position) {
-    latitude = position.coords.latitude;
-    longitude = position.coords.longitude;
-    console.log(latitude);
-    console.log(longitude);
-}
+        const dataq = await axios.post("/api/v1/weather/city",
+            {
+                latitude: latitude,
+                longitude: longitude
+            })
+        var cityCurrent = dataq.data[0].name;
+        const dataz1 = await axios.post("/api/v1/weather/current",
+            {
+                city_name: cityCurrent
+            })
+        const dataz2 = await axios.post("/api/v1/weather/forecast",
+            {
+                city_name: cityCurrent
+            })
+        console.log(dataq.data[0].name);
+        
+        displayCurrentContent(dataz1.data);
+        createDatass(dataz2.data);
+		addImagess(dataz2.data);
+        createDatas(dataz2.data);
+		addImages(dataz2.data);
+        insertNewData(dataz2.data);
+        insertData(dataz2.data);
+        header_city.innerText = cityCurrent.toUpperCase();
+        headerDays2.innerText = `5 Days Forecast in ${cityCurrent[0].toUpperCase() + cityCurrent.slice(1)}`;
+        headerFore2.innerText = `12 Hours Forecast Onwards in ${cityCurrent[0].toUpperCase() + cityCurrent.slice(1)}`;
+        humidtitle2.innerText = `Humidity Concentrate in ${cityCurrent[0].toUpperCase() + cityCurrent.slice(1)}`;
+        headWind2.innerText = `Wind Velocity Onwards in ${cityCurrent[0].toUpperCase() + cityCurrent.slice(1)}`;
+    }
 
-// window.onload = function () {
-//     const data = await axios.post("/api/v1/weather/city",
-//             {
-//                 city_name: city_input.value
-//             })
-// }
+}
 
 
 formDom.addEventListener('submit', async (e) => {

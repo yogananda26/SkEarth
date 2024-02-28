@@ -14,8 +14,54 @@ const header_forecast = document.getElementById("header-forecast");
 const historic_aqi = document.getElementById("historical-aqi");
 const image_aqi = document.getElementById("image-level-aqi");
 
-window.onload = function () {
+window.onload = async function () {
     displayAirQualityRanking();
+    getLocation();
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+    
+        }
+    }
+    async function showPosition(position) {
+        latitude = position.coords.latitude;
+        longitude = position.coords.longitude;
+        console.log(latitude);
+        console.log(longitude);
+
+        const dataq = await axios.post("/api/v1/weather/city",
+            {
+                latitude: latitude,
+                longitude: longitude
+            })
+        var cityCurrent = dataq.data[0].name;
+        const data1 = await axios.post("/api/v1/air-polution",
+            {
+                city_name: cityCurrent
+            })
+        const data2 = await axios.post("/api/v1/air-polution/current",
+            {
+                city_name: cityCurrent
+            })
+        const data3 = await axios.post("/api/v1/air-polution/forecast",
+            {
+                city_name: cityCurrent
+            })
+        content_aqi.style.display = "flex";
+        displayContentHeader(data2.data);
+        displayImageAQI(data2.data);
+        displayCarbonData(data1.data);
+        displayWeatherData(data1.data);
+        createColorAqi(data2.data);
+        displayForecastData(data1.data, data2.data, data3.data);
+        forecastAQIData(data1.data, data2.data, data3.data);
+        header_forecast.innerText = `${cityCurrent[0].toUpperCase() + cityCurrent.slice(1)} Air Quality Index (AQI) Forecast`;
+        historic_aqi.innerText = `${cityCurrent[0].toUpperCase() + cityCurrent.slice(1)} Historical Air Quality Index (AQI)`;
+        headerCity.innerText = cityCurrent.toUpperCase();
+
+        }
 }
 
 formDom.addEventListener('submit', async (e) => {
@@ -41,6 +87,9 @@ formDom.addEventListener('submit', async (e) => {
         createColorAqi(data2.data);
         displayForecastData(data1.data, data2.data, data3.data);
         forecastAQIData(data1.data, data2.data, data3.data);
+        header_forecast.innerText = `${city_input.value[0].toUpperCase() + city_input.value.slice(1)} Air Quality Index (AQI) Forecast`;
+        historic_aqi.innerText = `${city_input.value[0].toUpperCase() + city_input.value.slice(1)} Historical Air Quality Index (AQI)`;
+        headerCity.innerText = city_input.value.toUpperCase();
         // console.log(data.list);
         // console.log(data2.data.list[0].main.aqi);
     } catch (e) {
@@ -243,7 +292,7 @@ function displayCarbonData(data) {
     o3_text.innerText = '';
     so2_text.innerText = '';
 
-    const pollutionData = data.list[1].components;
+    const pollutionData = data.list[8].components;
     co2_text.innerText = pollutionData.co;
     o3_text.innerText = pollutionData.o3;
     no2_text.innerText = pollutionData.no2;
@@ -256,11 +305,7 @@ function displayContentHeader(data) {
     header_forecast.innerText = '';
     historic_aqi.innerText = '';
 
-
-    header_forecast.innerText = `${city_input.value[0].toUpperCase() + city_input.value.slice(1)} Air Quality Index (AQI) Forecast`;
-    historic_aqi.innerText = `${city_input.value[0].toUpperCase() + city_input.value.slice(1)} Historical Air Quality Index (AQI)`;
     headerAQI.innerText = data.list[0].main.aqi;
-    headerCity.innerText = city_input.value.toUpperCase();
 
 }
 

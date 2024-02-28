@@ -12,6 +12,7 @@ formdom.addEventListener('submit', async (e) => {
 		console.log(Math.round(data.data.list[0].main.temp - 273, 15));
 		createDatas(data.data);
 		addImages(data.data);
+		headerFore.innerText = `12 Hours Forecast Onwards in ${cityinput.value[0].toUpperCase() + cityinput.value.slice(1)}`
 		console.log(data.data.list[0].weather[0].main);
 	} catch (e) {
 		console.log(e);
@@ -71,8 +72,6 @@ chart.render();
 function createDatas(data) {
 	headerFore.innerHTML = '';
 	var newDataPoints = [];
-
-	headerFore.innerText = `12 Hours Forecast Onwards in ${cityinput.value[0].toUpperCase() + cityinput.value.slice(1)}`
 
 	for (i = 0; i < chart.options.data[0].dataPoints.length; i++) {
 		var timestamp = data.list[i].dt;
