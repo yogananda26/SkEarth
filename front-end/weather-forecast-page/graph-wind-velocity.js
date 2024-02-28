@@ -11,6 +11,7 @@ formdoms.addEventListener('submit', async (e) => {
                 city_name: cityinputs.value
             })
         insertData(data.data);
+        headWind.innerText = `Wind Velocity Onwards in ${cityinputs.value[0].toUpperCase() + cityinputs.value.slice(1)}`;
     } catch (e) {
         console.log(e);
     }
@@ -60,9 +61,7 @@ function insertData(data) {
     headWind.innerHTML = '';
     descWind.innerHTML = '';
     var newDataPoints = [];
-    var sumWind = 0;
-
-    headWind.innerText = `Wind Velocity Onwards in ${cityinputs.value[0].toUpperCase() + cityinputs.value.slice(1)}`;
+    var sumWind = 0;    
 
     for (i = 0; i < chartWind.options.data[0].dataPoints.length; i++) {
         var timestamp = data.list[i].dt;

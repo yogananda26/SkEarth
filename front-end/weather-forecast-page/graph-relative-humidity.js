@@ -12,7 +12,7 @@ formsdoms.addEventListener('submit', async (e) => {
       })
     console.log(data.data.list[0].main.humidity);
     insertNewData(data.data);
-
+    humidtitle.innerText = `Humidity Concentrate in ${citysinput.value[0].toUpperCase() + citysinput.value.slice(1)}`
     console.log(data.data.list[0].weather[0].main);
   } catch (e) {
     console.log(e);
@@ -139,9 +139,7 @@ chartRelative.render();
 function insertNewData(data) {
   var newDataPoints = [];
   var humidsum = 0;
-  humidtitle.innerHTML = '';
-
-  humidtitle.innerText = `Humidity Concentrate in ${citysinput.value[0].toUpperCase() + citysinput.value.slice(1)}`
+  humidtitle.innerHTML = '';  
 
   for (i = 0; i < chartRelative.options.data[0].dataPoints.length; i++) {
     humidsum += data.list[i].main.humidity;
