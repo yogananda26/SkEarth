@@ -206,7 +206,9 @@ hr{
   font-size: var(--fontsizeRegular);
 }
 
-
+.row>* {
+  width: 50%;
+}
 .follow-us-text p{
   text-align: right;
   font-weight: var(--weight-700);
