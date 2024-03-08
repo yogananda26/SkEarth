@@ -29,10 +29,6 @@ const User = new mongoose.Schema({
         default : `hello there`
     }, 
     following : [new mongoose.Schema({
-        name : {
-            default : null, 
-            type: String
-        },
         UserID : { 
             type : mongoose.Types.ObjectId, 
             required : [true, 'please provide follower userID']
@@ -51,7 +47,7 @@ User.methods.create_JWT = function() {
         UserID : this._id,
         name : this.name
     },process.env.PRIVATE_CODE,{ 
-        expiresIn : '2d' 
+        expiresIn : '1d' 
     })
     return token; 
 }

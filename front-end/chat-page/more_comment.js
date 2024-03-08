@@ -4,6 +4,8 @@ const container_chat = document.querySelector(".comment-replys-details");
 const commentID = new URLSearchParams(params).get('commentID'); 
 var token = localStorage.getItem('token');
 const temp_div = document.createElement("div");
+const comment_reply_form = document.querySelector('.form-input');
+const user_input = document.getElementById("comment-reply");
 
 const result = async() => {
     try{ 
@@ -20,7 +22,7 @@ const result = async() => {
                             <div class="comment-replys-unit-left">
                                 <p class="username-reply"> ${replyBy}</p>
                                 <p class="user-reply-content">
-                                    ${comment}
+                                    ${comment} 
                                 </p>
                                  <p class="hastag">#youdeservethis</p>
                                  <h6 style="margin-top: 5px;">${timeDiff(new Date(createdAt).getTime(), new Date().getTime())} ago</h6>
@@ -33,12 +35,37 @@ const result = async() => {
         })
 
     }catch(error){
-        console.log("please input login first");
+        
     }
-
 }
-
 result();
+
+comment_reply_form.addEventListener("submit", async(e) =>{
+    e.preventDefault(); 
+    if(!user_input.value){return};
+    try{
+        axios.post(`/api/v1/message/comment/${commentID}`, 
+        {
+            comment : user_input.value,
+        },
+        {
+            headers : {
+                'Authorization' : 'Bearer ' + token ,
+                "Content-Type" : 'application/json'
+            }
+        }
+        )
+        .then(()=>{
+            setTimeout(()=>{
+                result(); 
+            }, 300); 
+        })
+    }catch(e){
+        console.log(e); 
+    }
+    console.log(user_input.value);
+    user_input.value = ''; 
+})
 
 const timeDiff = ( tstart, tend ) => {
     var diff = Math.floor((tend - tstart) / 1000), units = [

@@ -6,7 +6,7 @@ const {auth_error,
 const fetch_news = async(req, res, next) => { 
     var url = 'https://newsapi.org/v2/everything?' +
           'q=Weather and Climate Change&' +
-          'from=2024-01-02&' +
+          `from=${new Date().getDate() - 12}&` +
           'sortBy=popularity&' +
           `apiKey=${process.env.API_NEWS_KEY}`;
     

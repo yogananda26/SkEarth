@@ -1,6 +1,9 @@
 const left_container = document.querySelector(".bottom-left");
 const right_container = document.querySelector(".bottom-right");
 var token = localStorage.getItem('token');
+const form_input = document.querySelector(".form_input");
+
+const fetch_control = new AbortController();
 
 function dropFunction(dropdownlist){
     document.getElementById(dropdownlist).classList.toggle("show");
@@ -27,17 +30,22 @@ window.onclick = function(event) {
     }
 }
 
-const tweet_container = document.createElement("div");
 const value = async() => {
+    const {signal} = fetch_control;
+    let timer = setTimeout(() => {
+        fetch_control.abort();
+        console.log("Abort");
+    }, 1000);  
+
     try {
         axios.get('/api/v1/message', {
+            signal : signal, 
             headers : { 
                 'Authorization' : 'Bearer ' + token ,
             }
         }).then(({data})=>{
+            clearTimeout(timer);
             // this is for assign the text
-
-    
             right_container.innerHTML = data.map(({content, createdBy, _id, updatedAt})=>{ 
                 // this is for content thing
                 return `<div class="comment-unit">
@@ -93,8 +101,10 @@ const value = async() => {
             container.forEach((item)=>{
                 let comment_id = item.getAttribute('id'); 
                 try{
-                    axios.get(`/api/v1/message/img/${comment_id}`,{}, {
-                        timeout : 1000
+                    axios.get(`/api/v1/message/img/${comment_id}`,{
+                        headers : { 
+                            'Authorization' : 'Bearer ' + token ,
+                        }
                     }).then((result)=>{
                         
                         const array = result.data.map(({filename, metadata})=>{
@@ -105,27 +115,29 @@ const value = async() => {
                             if(types === 'image'){
                                 var elem = document.createElement("img");
                                 elem.setAttribute("src", `http://localhost:2000/api/v1/message/img/render/${name}`);
-                                elem.setAttribute("height", "500");
-                                elem.setAttribute("width", "600");
+                                elem.setAttribute("height", "490");
+                                elem.setAttribute("width", "650");
+                                elem.setAttribute('style',"object-fit: cover")
+                                elem.setAttribute('style',"object-position: center")
                                 item.appendChild(elem);
                             };
                             if(types === 'video'){
                                 var elem = document.createElement("video");
                                 elem.setAttribute("src", `http://localhost:2000/api/v1/message/img/render/${name}`);
-                                elem.setAttribute("height", "500");
-                                elem.setAttribute("width", "600");
+                                elem.setAttribute("height", "490");
+                                elem.setAttribute("width", "650");
                                 elem.setAttribute("controls", true);
                                 item.appendChild(elem);
                             };
                         });
                     }); 
                 }catch(e){
-                    console.log(e);
+                    console.log(e)
                 };
             });
         });
     } catch (error) {
-        console.log(error);
+        alert(error.response.data.msg);
     };
 };
 
@@ -157,6 +169,29 @@ const fetch_5_user = async() =>{
 fetch_5_user();
 
 
+// this is for user input
+form_input.addEventListener("submit", async(e)=>{
+    e.preventDefault();
+
+    const fd = new FormData(form_input);
+    try{ 
+        axios.post('/api/v1/message', fd ,{
+        headers : { 
+                'Authorization': 'Bearer ' + token , 
+                'Content-type' : "multipart/form-data" ,
+            }
+        })  
+        .then(()=>{
+            setTimeout(() => {
+                value();
+            }, 2000);
+        })
+    }catch(e){  
+        console.log(e)
+    }
+})
+
+
 const timeDiff = ( tstart, tend ) => {
     var diff = Math.floor((tend - tstart) / 1000), units = [
       { d: 60, l: "seconds" },
@@ -174,5 +209,5 @@ const timeDiff = ( tstart, tend ) => {
         
     };
     return s;
-  }
+}
 

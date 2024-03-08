@@ -37,9 +37,10 @@ app.use('/auth', route_auth);
 app.use(get_error);
 
 // this is for making the connection to localhost on port 1234
-app.listen(2000, () => {
+const server = app.listen(2000, () => {
     console.log('this is your server side is running .... ');
 });
+
 
 // invoked the database
 const connect = async (url) => {

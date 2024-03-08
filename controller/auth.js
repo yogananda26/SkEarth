@@ -42,7 +42,7 @@ const get_user = async_wrapper(async(req,res,next)=>{
         throw new auth_error("please login first");
     }
     const result = await User.find({_id : user_info.UserID})
-    res.json(result);
+    res.status(200).json(result);
 })
 
 const get_all_user = async_wrapper(async(req, res)=>{  

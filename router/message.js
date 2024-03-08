@@ -24,11 +24,11 @@ const upload = require('../middleware/Multer')
 router 
     .route('/')
     .get(authentication, get_all_message)
-    .post(authentication, upload.array('testing', 5) , make_message, upload_image); 
+    .post(authentication, upload.array('image-upload', 5) , make_message, upload_image); 
 
 router
     .route('/img/:commentID')
-    .get(search_img)
+    .get(authentication ,search_img)
 
 router
     .route('/img/render/:filename')

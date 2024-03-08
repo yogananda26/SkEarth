@@ -1,7 +1,7 @@
-*{
+/* *{
     margin: 0px 0px 0px 0px;
     font-family: 'Inter', sans-serif;
-}
+} */
 
 body{
     background-color: rgb(32, 50, 67);
@@ -21,7 +21,7 @@ footer{
 
 .left-page{
     width: 25%;
-    min-height: 100%;
+    height: 100%;
     background-color: rgb(32, 50, 67);
     display: flex;
     align-items: center;
@@ -31,10 +31,11 @@ footer{
 
 .top-left{
     width: 100%;
-    height: 25vh;
+    height: 20vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     border-right: solid;
     border-bottom: solid;
     border-color: white;
@@ -42,7 +43,7 @@ footer{
 
 .bottom-left{
     width: 100%;
-    height: calc(75vh - 60px);
+    height: calc(75vh - 10px);
     display: flex;
     flex-direction: column;
     border-right: solid;
@@ -50,18 +51,17 @@ footer{
 }
 
 .round-dot {
-    margin: 30px 0px 20px 0px;
-    height: 75px;
-    width: 75px;
+    height: 60px;
+    width: 60px;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
-    margin-right: 20px;
 }
 
 .username{
     color: white;
-    font-size: 25px;
+    font-size: 20px;
+    margin: 10px;
 }
 
 .friends-title{
@@ -104,7 +104,7 @@ footer{
 
 .top-right{
     width: 100%;
-    height: 25vh;
+    height: 20vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -117,6 +117,7 @@ footer{
     width: 70px;
     height: 70px;
     margin-right: 20px;
+    margin-top: 20px;
     border-radius: 10px;
     -webkit-filter: invert(100%);
     border: none;
@@ -164,7 +165,7 @@ input::placeholder{
 
 .bottom-right{
     width: 100%;
-    height: calc(75vh - 60px);
+    height: calc(75vh - 10px);
     display: flex;
     flex-direction: column;
     align-items: center;

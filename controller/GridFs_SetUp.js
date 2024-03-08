@@ -37,7 +37,7 @@ const upload_image = async_wrapper(async(req, res, next)=>{
                 belongTo : req.message_id
             }
         }))
-        })
+        }); 
     res.status(200).json({msg: 'success'});
 })
 
@@ -45,7 +45,7 @@ const search_img = async_wrapper(async(req, res, next)=>{
 
     // @connecting the database
     const stream = setup_gate(process.env.MONGO_GRIDFS, "new_thing")
-    const data = (await stream).find({});
+    const data = (await stream).find({}); 
     var array_result = []; 
 
     // this is for pushing every image that user have

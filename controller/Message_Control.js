@@ -80,6 +80,7 @@ const replies_the_message = async_wrapper(async(req, res, next)=>{
         replyBy : req.user.UserID, 
         comment : comment
     })
+    console.log(req.body);
     // this is for saving the document 
     parent.save();
     res.status(200).json(parent)

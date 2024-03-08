@@ -52,6 +52,7 @@ const resolve = async(e)=>{
         user_document.innerHTML = data[0].name;
     })
     .catch((e)=>{
+        alert(error.response.data.msg);
         user_document.innerHTML = 'User';
     })
 }

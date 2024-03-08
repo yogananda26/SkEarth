@@ -69,12 +69,17 @@
       </div>
       <div class="right-page">
         <div class="top-right">
-          <button class="image"><img src="../property/chat/add-image.png" alt=""></button>
-          <form id="input_1">
-            <input placeholder="Share your stories and experiences here !" />
+          <label for="input-file" class="image">
+            <img src="../property/chat/add-image.png" alt="">
+          </label>
+          <!-- this is for user input -->
+          <form id="input_1" class="form_input">
+            <input name="content" placeholder="Share your stories and experiences here !" />
+            <input type="file" accept="video/*|image/*" name="image-upload" id="input-file" style="display: none;">
             <button type="submit" class="submit">Post</button>
           </form>
         </div>
+        
         <div class="bottom-right">
           <p class="comment-title">Comment</p>
          <a href="./more_comment.html?"></a>
