@@ -3,6 +3,7 @@ const right_container = document.querySelector(".bottom-right");
 var token = localStorage.getItem('token');
 const form_input = document.querySelector(".form_input");
 
+
 const fetch_control = new AbortController();
 
 function dropFunction(dropdownlist){
@@ -73,14 +74,14 @@ const value = async() => {
                                 <!-- this is for like -->
 
                                 <button class="like">
-                                <img src="like.png" alt="" />
+                                <img src="../property/comment-asset/like.png" alt="" />
                                 </button>
     
                                 <!-- this is for comment -->
 
                                 <button class="comment">
-                                    <a style="text-decoration: none; color:inherit;" href="./more_comment.html?commentID=${_id}">
-                                        <img src="comment-icon-1024x964-julk98bl.png" alt="" />
+                                    <a style="text-decoration: none; color:inherit;" href="/comment-page/more_comment.html?commentID=${_id}">
+                                        <img src="../property/comment-asset/comment-icon-1024x964-julk98bl.png" alt="" />
                                     </a>
                                 </button>
     
@@ -88,7 +89,7 @@ const value = async() => {
 
                                 <button class="share">
                                 <img
-                                    src="kisspng-computer-icons-share-icon-sharing-symbol-share-5ac0b95e8abc13.8486960415225798065683.jpg"
+                                    src="../property/comment-asset/kisspng-computer-icons-share-icon-sharing-symbol-share-5ac0b95e8abc13.8486960415225798065683.jpg"
                                     alt=""
                                 />
                                 </button>
@@ -155,7 +156,7 @@ const fetch_5_user = async() =>{
             container_temp.innerHTML = data.slice(0, 9).map(({name, _id})=>{ 
                return `<div class="friends-unit">
                             <span class="round-dot-friend"> </span>
-                            <a style="text-decoration: none; color:inherit;" href="./user_profile.html?UserID=${_id}">
+                            <a style="text-decoration: none; color:inherit;" href="../newuser-page/new_user.html?UserID=${_id}">
                                 <p style="color : white; "><strong>${name}</strong></p>
                             </a>
                         </div>`

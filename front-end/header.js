@@ -1,5 +1,6 @@
 // const { validate } = require("../model/User");
 const validation = document.getElementById("user-button");
+validation.href = `/login/login.html`
 
 //drop down list dan inactivate drop down list ketika kita menekan drop down button yang lainnya 
 function dropFunction(dropdownlist){
@@ -37,7 +38,7 @@ window.onclick = function(event) {
                 openDropdown.classList.remove('show');
             }
         }
-    }
+    }   
 }
 
 const user_document = document.getElementById('user-button')
@@ -50,6 +51,7 @@ const resolve = async(e)=>{
     })  
     .then(({data})=>{
         user_document.innerHTML = data[0].name;
+        user_document.href = `/newuser-page/new_user.html?UserID=${data[0]._id}`; 
     })
     .catch((e)=>{
         alert(error.response.data.msg);
