@@ -7,39 +7,42 @@ const levelcontainer = document.getElementById("uv_level_content");
 const toggle = document.getElementById("uv_level_content");
 const leftheader = document.getElementById("uv_level_content_left");
 const forecast = document.getElementById("forecast-non-title");
+const regionjumbotron = document.getElementById("region");
 
 
-// window.onload = async function () {
-//     getLocation();
+window.onload = async function () {
+    getLocation();
 
-//     function getLocation() {
-//         if (navigator.geolocation) {
-//             navigator.geolocation.getCurrentPosition(showPosition);
-//         } else {
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
     
-//         }
-//     }
-//     async function showPosition(position) {
-//         latitude = position.coords.latitude;
-//         longitude = position.coords.longitude;
-//         console.log(latitude);
-//         console.log(longitude);
+        }
+    }
+    async function showPosition(position) {
+        latitude = position.coords.latitude;
+        longitude = position.coords.longitude;
+        console.log(latitude);
+        console.log(longitude);
 
-//         const dataq = await axios.post("/api/v1/weather/city",
-//             {
-//                 latitude: latitude,
-//                 longitude: longitude
-//             })
-//         var cityCurrent = dataq.data[0].name;
-//         const data1 = await axios.post("/api/v1/uv-index",
-//             {
-//                 city_name: cityCurrent
-//             })
-
-//         content_aqi.style.display = "flex";
-//         displayCategory(data1.data);
-//         }
-// }
+        const dataq = await axios.post("/api/v1/weather/city",
+            {
+                latitude: latitude,
+                longitude: longitude
+            })
+        var cityCurrent = dataq.data[0].name;
+        const data1 = await axios.post("/api/v1/uv-index",
+            {
+                city_name: cityCurrent
+            })
+        
+        levelcontainer.classList.toggle("show");
+        regionjumbotron.innerHTML = cityCurrent;
+        displayCategory(data1.data);
+        displayForecast(data1.data);
+        }
+}
 
 input.addEventListener("submit", async (e) => {
     toggle.classList.toggle('show');
