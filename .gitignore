@@ -1,4 +1,6 @@
 /node_modules
 .env
 /middleware/upload
-/property/home-page-asset/Video
+/front-end/property/Video
+
+
