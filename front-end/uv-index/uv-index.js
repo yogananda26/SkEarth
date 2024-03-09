@@ -53,6 +53,8 @@ input.addEventListener("submit", async (e) => {
         {
             city_name: region.value
         });
+    
+    regionjumbotron.innerText = `${region.value[0].toUpperCase() + region.value.slice(1)}`;
     displayCategory(data1.data);
     displayForecast(data1.data);
     }catch(e) {
