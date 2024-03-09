@@ -38,7 +38,7 @@ const fetch_all_comment = ()=>{
                         </div>
                         <div class="d-flex gap-3 mt-4" >
                             <a href="#"><img src="like.png" style="height:30px;" class="img-icon "></img> </a>
-                            <a href="./more_comment.html?commentID=${_id}"><img src="comment-icon-1024x964-julk98bl.png" style="height: 28px;" class="img-icon"></img> </a>
+                            <a href="/comment-page/more_comment.html?commentID=${_id}"><img src="comment-icon-1024x964-julk98bl.png" style="height: 28px;" class="img-icon"></img> </a>
                             <a href="#"> <img style="height: 30px;" src="kisspng-computer-icons-share-icon-sharing-symbol-share-5ac0b95e8abc13.8486960415225798065683.jpg" class="img-icon"></img></a>
                         </div>
                     </div>
