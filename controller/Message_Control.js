@@ -57,14 +57,15 @@ const get_unique_message = async_wrapper(async(req, res)=>{
     })
     search_all_comment.forEach((result)=>{
         result.reply.map((data)=>{
-            if(data.replyBy == UserID){ 
-                all_message.push(data);
+            if((data.replyBy == UserID) && (result.createdBy != UserID)){ 
+                all_message.push(result);
             }
         })
     })
     // this for destructing
-    
-    res.status(200).json(all_message);
+    res.status(200).json(all_message.filter(((v, i, self)=>{
+        return i == self.indexOf(v);
+    })))
 })
 
 const replies_the_message = async_wrapper(async(req, res, next)=>{ 
