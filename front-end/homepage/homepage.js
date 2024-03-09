@@ -78,92 +78,92 @@ function displayCurrentContent(data) {
     if(data.weather[0].description === 'clear sky') {//DONE
         desc_city.innerText = 'Clear Sky';
         image_city.src = "../property/weather-logo/clear-sky-day.png";
-        weather_vid.src = "../property/video/ClearSkyVid.mp4";
+        weather_vid.src = "../property/ClearSkyVid.mp4";
         weather_vid.playbackRate = 0.3;
     } else if(data.weather[0].description === 'few clouds') {//DONE
         desc_city.innerText = 'Few Clouds';
         image_city.src = "../property/weather-logo/few-clouds-day.png";
-        weather_vid.src = "../property/video/FewCloudsVid.mp4";
+        weather_vid.src = "../property/FewCloudsVid.mp4";
         weather_vid.playbackRate = 1;
     } else if(data.weather[0].description === 'scattered clouds') {//DONE
         desc_city.innerText = 'Scattered Clouds';
         image_city.src = "../property/weather-logo/scattered-clouds.png";
-        weather_vid.src = "../property/video/ScatteredCloudsVid.mp4";
+        weather_vid.src = "../property/ScatteredCloudsVid.mp4";
         weather_vid.playbackRate = 1;
     } else if(data.weather[0].description === 'broken clouds') {//DONE
         desc_city.innerText = 'Broken Clouds';
         image_city.src = "../property/weather-logo/broken-clouds.png";
-        weather_vid.src = "../property/video/BrokenCloudsVid.mp4";
+        weather_vid.src = "../property/BrokenCloudsVid.mp4";
         weather_vid.playbackRate = 1;
     } else if(data.weather[0].description === 'overcast clouds') {//DONE
         desc_city.innerText = 'Overcast Clouds';
         image_city.src = "../property/weather-logo/scattered-clouds.png";
-        weather_vid.src = "../property/video/OvercastCloudsVid.mp4";
+        weather_vid.src = "../property/OvercastCloudsVid.mp4";
         weather_vid.playbackRate = 1;
     } else if(data.weather[0].main === 'Drizzle') {//DONE
         desc_city.innerText = capitalizeFirstLetter(data.weather[0].description);
         image_city.src = "../property/weather-logo/shower-rain.png";
-        weather_vid.src = "../property/video/DrizzleVid.mp4";
+        weather_vid.src = "../property/DrizzleVid.mp4";
         weather_vid.playbackRate = 1;
     } else if(data.weather[0].main === 'Rain') {//DONE
         desc_city.innerText = capitalizeFirstLetter(data.weather[0].description) ;
         image_city.src = "../property/weather-logo/rain.png";
-        weather_vid.src = "../property/video/RainVid.mp4";
+        weather_vid.src = "../property/RainVid.mp4";
         weather_vid.playbackRate = 1;
     } else if(data.weather[0].main === 'Thunderstorm') { //DONE
         desc_city.innerText = capitalizeFirstLetter(data.weather[0].description);
         image_city.src = "../property/weather-logo/thunderstorm.png";
-        weather_vid.src = "../property/video/NightThunderstromVid.mp4";
+        weather_vid.src = "../property/NightThunderstromVid.mp4";
         weather_vid.playbackRate = 0.7;
     } else if (data.weather[0].main === 'Snow') { //DONE
         desc_city.innerText = 'Snow';
         image_city.src = "../property/weather-logo/snow.png";
-        weather_vid.src = "../property/video/SnowVid.mp4";
+        weather_vid.src = "../property/SnowVid.mp4";
         weather_vid.playbackRate = 1;
     } else if (data.weather[0].main === 'Mist') { //DONE
         desc_city.innerText = 'Mist';
         image_city.src = "../property/weather-logo/mist.png";
-        weather_vid.src = "../property/video/MistVid.mp4";
+        weather_vid.src = "../property/MistVid.mp4";
         weather_vid.playbackRate = 1;
     } else if (data.weather[0].main === 'Haze') { //DONE
         desc_city.innerText = 'Haze';
         image_city.src = "../property/weather-logo/mist.png";
-        weather_vid.src = "../property/video/HazeVid.mp4";
+        weather_vid.src = "../property/HazeVid.mp4";
         weather_vid.playbackRate = 1;
     } else if (data.weather[0].main === 'Smoke') { //DONE
         desc_city.innerText = 'Smoke';
         image_city.src = "../property/weather-logo/mist.png";
-        weather_vid.src = "../property/video/SmokeVid.mp4";
+        weather_vid.src = "../property/SmokeVid.mp4";
         weather_vid.playbackRate = 1;
     } else if (data.weather[0].main === 'Fog') { //DONE
         desc_city.innerText = 'Fog';
         image_city.src = "../property/weather-logo/mist.png";
-        weather_vid.src = "../property/video/FogVid.mp4";
+        weather_vid.src = "../property/FogVid.mp4";
         weather_vid.playbackRate = 1;
     } else if (data.weather[0].main === 'Dust') { //DONE
         desc_city.innerText = 'Dust';
         image_city.src = "../property/weather-logo/mist.png";
-        weather_vid.src = "../property/video/DustVid.mp4";
+        weather_vid.src = "../property/DustVid.mp4";
         weather_vid.playbackRate = 0.4;
     } else if (data.weather[0].main === 'Sand') { //DONE
         desc_city.innerText = 'Sand';
         image_city.src = "../property/weather-logo/mist.png";
-        weather_vid.src = "../property/video/SandVid.mp4";
+        weather_vid.src = "../property/SandVid.mp4";
         weather_vid.playbackRate = 1;
     } else if (data.weather[0].main === 'Ash') { //DONE
         desc_city.innerText = 'Ash';
         image_city.src = "../property/weather-logo/mist.png";
-        weather_vid.src = "../property/video/AshVid.mp4";
+        weather_vid.src = "../property/AshVid.mp4";
         weather_vid.playbackRate = 1;
     } else if (data.weather[0].main === 'Squall') { //DONE
         desc_city.innerText = 'Squall';
         image_city.src = "../property/weather-logo/mist.png";
-        weather_vid.src = "../property/video/SquallVid.mp4";
+        weather_vid.src = "../property/SquallVid.mp4";
         weather_vid.playbackRate = 0.5;
     } else if (data.weather[0].main === 'Tornado') { //DONE
         desc_city.innerText = 'Tornado';
         image_city.src = "../property/weather-logo/mist.png";
-        weather_vid.src = "../property/video/TornadoVid.mp4";
+        weather_vid.src = "../property/TornadoVid.mp4";
         weather_vid.playbackRate = 1;
     } else {
         console.log("Wrong API");
