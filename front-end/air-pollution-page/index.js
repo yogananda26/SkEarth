@@ -59,7 +59,7 @@ window.onload = async function () {
         forecastAQIData(data1.data, data2.data, data3.data);
         header_forecast.innerText = `${cityCurrent[0].toUpperCase() + cityCurrent.slice(1)} Air Quality Index (AQI) Forecast`;
         historic_aqi.innerText = `${cityCurrent[0].toUpperCase() + cityCurrent.slice(1)} Historical Air Quality Index (AQI)`;
-        headerCity.innerText = cityCurrent.toUpperCase();
+        headerCity.innerText = cityCurrent[0].toUpperCase() + cityCurrent.slice(1);
 
         }
 }
@@ -89,7 +89,7 @@ formDom.addEventListener('submit', async (e) => {
         forecastAQIData(data1.data, data2.data, data3.data);
         header_forecast.innerText = `${city_input.value[0].toUpperCase() + city_input.value.slice(1)} Air Quality Index (AQI) Forecast`;
         historic_aqi.innerText = `${city_input.value[0].toUpperCase() + city_input.value.slice(1)} Historical Air Quality Index (AQI)`;
-        headerCity.innerText = city_input.value.toUpperCase();
+        headerCity.innerText = city_input.value[0].toUpperCase() + city_input.value.slice(1);
         // console.log(data.list);
         // console.log(data2.data.list[0].main.aqi);
     } catch (e) {

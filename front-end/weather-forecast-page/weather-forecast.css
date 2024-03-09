@@ -34,7 +34,17 @@
     font-size: 34px;
     margin-left: 50px;
 }
-
+#image-city {
+    width: 120px;
+    length: 120px;
+}
+#desc-temp {
+    margin-top: 20px;
+    font-size: 36px;
+}
+#desc-city {
+    font-size: 34px;
+}
 input[type="search"] {
     border: none;
     background: transparent;

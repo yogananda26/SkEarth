@@ -51,7 +51,7 @@ window.onload = async function () {
 		addImages(dataz2.data);
         insertNewData(dataz2.data);
         insertData(dataz2.data);
-        header_city.innerText = cityCurrent.toUpperCase();
+        header_city.innerText = cityCurrent[0].toUpperCase() + cityCurrent.slice(1);
         headerDays2.innerText = `5 Days Forecast in ${cityCurrent[0].toUpperCase() + cityCurrent.slice(1)}`;
         headerFore2.innerText = `12 Hours Forecast Onwards in ${cityCurrent[0].toUpperCase() + cityCurrent.slice(1)}`;
         humidtitle2.innerText = `Humidity Concentrate in ${cityCurrent[0].toUpperCase() + cityCurrent.slice(1)}`;
@@ -70,6 +70,8 @@ formDom.addEventListener('submit', async (e) => {
                 city_name: city_input.value
             })
         // getLocation();
+        header_city.innerHTML = '';
+        header_city.innerText = city_input.value[0].toUpperCase() + city_input.value.slice(1);
         console.log(data.data.weather[0].description);
         displayCurrentContent(data.data);
     } catch (e) {
@@ -77,13 +79,18 @@ formDom.addEventListener('submit', async (e) => {
     }
 })
 
+function capitalizeFirstLetter(string) {
+    const words = string.split(" ");
+    for (var i = 0; i < words.length; i++) {
+        words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+    }
+    return words.join(" ");
+}
 
 function displayCurrentContent(data) {
-    header_city.innerHTML = '';
     desc_city.innerHTML = '';
     image_city.innerHTML = '';
     desc_temp.innerHTML = '';
-    header_city.innerText = city_input.value.toUpperCase();
 
     if (data.weather[0].description === 'clear sky') {
         desc_city.innerText = 'Clear Sky';
@@ -106,15 +113,15 @@ function displayCurrentContent(data) {
         desc_temp.innerText = `${Math.round(data.main.temp - 273, 15)}°C`;
         image_city.src = "../property/weather-logo/scattered-clouds.png";
     } else if (data.weather[0].main === 'Drizzle') {
-        desc_city.innerText = data.weather[0].description;
+        desc_city.innerText = capitalizeFirstLetter(data.weather[0].description);
         desc_temp.innerText = `${Math.round(data.main.temp - 273, 15)}°C`;
         image_city.src = "../property/weather-logo/shower-rain.png";
     } else if (data.weather[0].main === 'Rain') {
-        desc_city.innerText = data.weather[0].description;
+        desc_city.innerText = capitalizeFirstLetter(data.weather[0].description);
         desc_temp.innerText = `${Math.round(data.main.temp - 273, 15)}°C`;
         image_city.src = "../property/weather-logo/rain.png";
     } else if (data.weather[0].main === 'Thunderstorm') {
-        desc_city.innerText = data.weather[0].description;
+        desc_city.innerText = capitalizeFirstLetter(data.weather[0].description);
         desc_temp.innerText = `${Math.round(data.main.temp - 273, 15)}°C`;
         image_city.src = "../property/weather-logo/thunderstorm.png";
     } else if (data.weather[0].main === 'Snow') {
