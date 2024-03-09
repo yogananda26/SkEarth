@@ -21,7 +21,7 @@ const GetUV_index = async_wrapper(async (req, res) => {
             uv_current = obj.current.uvi; 
             const hasil = {
                 "uv_current" : uv_current, 
-                "uv_forecast_4_days" : uv_forecast
+                "uv_forecast_2_days" : uv_forecast
             }
             // this is for result
             res.status(200).json(hasil);

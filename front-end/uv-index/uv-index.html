@@ -50,11 +50,18 @@
               <a href="../chat-page/chat.html">Chat</a>
             </div>
           </div>
-          <button onclick="" class="dropbtn" id="user-button">User</button>
         </div>
       </div>
       <div class="right-header">
-        <input type="text" id="input" , placeholder="Search" />
+        <a href="../login/login.html"
+          ><img
+            src=""
+            alt=""
+            class="user-profile-image"
+        /></a>
+        <a href="../login/login.html" class="dropbtnright" id="user-button"
+          >User</a
+        >
       </div>
     </div>
     <div class="jumbotron">
@@ -67,7 +74,9 @@
             ,
             placeholder="Type any place to see UV-Index ..."
           />
-          <button type="submit"><img src="../property/header-asset/search-logo.png" alt=""></button>
+          <button type="submit">
+            <img src="../property/header-asset/search-logo.png" alt="" />
+          </button>
         </form>
         <div class="uv-level-content" id="uv_level_content">
           <div class="uv-container-left" id="uv_level_content_left">
@@ -80,6 +89,10 @@
         </div>
       </div>
     </div>
+    <div class="forecast" id="forecast">
+      <p class="title">One Day Forecast</p>
+      <div class="forecast-non-title" id="forecast-non-title"></div>
+    </div>
     <div class="guide">
       <p class="title">Guide</p>
       <p class="description">
@@ -89,9 +102,9 @@
       <img src="../property/uvindex-asset/uv-photo.png" alt="" />
       <table>
         <tr>
-          <th class="category" style="width: 15%">UV Level Category</th>
-          <th class="index" style="width: 10%">Index</th>
-          <th class="explanation" style="width: 75%">Explanation</th>
+          <th class="categoryguide" style="width: 15%">UV Level Category</th>
+          <th class="indexguide" style="width: 10%">Index</th>
+          <th class="explanationguide" style="width: 75%">Explanation</th>
         </tr>
         <tr>
           <td class="low">LOW</td>
