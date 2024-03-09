@@ -56,16 +56,20 @@
       </div>
     </div>
     <div class="jumbotron">
+      <video autoplay muted loop id="myVideo" src="../property/video/NightThunderstromVid.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
       <div class="content">
-        <p class="time">06:00 PM</p>
+        <p class="time" id="curTime">00:00 PM</p>
         <p class="place" id="loc-tag">Sentul City</p>
-        <p class="date" id="loc-tag">December 06, 2023</p>
+        <p class="date" id="curDate">December 06, 2023</p>
         <img
           class="weather"
-          src="../property/weather-logo/sunny-logo.png"
+          src="../property/weather-logo/clear-sky-day.png"
           alt=""
+          id ="weather-logo"
         />
-        <p class="explanation" id="loc-tag">Sunny</p>
+        <p class="explanation" id="weather-status">Thunderstorm</p>
         <a
           class="jumbotron-details-button"
           href="../weather-forecast-page/weather-forecast.html"
@@ -128,23 +132,6 @@
         </div>
         <div class="image">
           <img src="../property/home-page-asset/uv-image.jpg" alt="" />
-        </div>
-      </div>
-      <div class="content-container">
-        <div class="image">
-          <img src="../property/home-page-asset/solarpanel-image.jpg" alt="" />
-        </div>
-        <div class="explanation2">
-          <p class="label">Solar Panel Prediction</p>
-          <p class="description">
-            This feature forecasts the optimal moments for solar energy
-            production at your location. Maximize the efficiency of your solar
-            panels, reduce energy costs, and embrace sustainability
-            effortlessly.
-          </p>
-          <a class="details-button" href="../solar-panel-page/solar-panel.html"
-            >Details</a
-          >
         </div>
       </div>
     </div>
@@ -213,5 +200,6 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="../header.js"></script>
+    <script src="homepage.js"></script>
   </body>
 </html>
