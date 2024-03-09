@@ -9,5 +9,4 @@ router
     .route('/')
     .get()
     .post(GetLonLat,GetUV_index)
-    
 module.exports = router;

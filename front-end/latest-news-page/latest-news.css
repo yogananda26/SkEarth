@@ -4,7 +4,37 @@
 
 .main-content::-webkit-scrollbar {
     display: none;
-  }
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 450px 450px 450px;
+    grid-gap: 20px;
+    background-color: transparent;
+    padding: 10px;
+    margin-bottom: 150px;
+}
+
+.grid-item {
+    background-color: transparent;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
+    height: 400px;
+}
+
+.content-unit{
+    border-radius: 20px;
+    width: 90%;
+    height: 50vh;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10vh;
+}
 
 .wrap{
     margin: 0;
@@ -19,29 +49,10 @@
     padding: 0;
 }
 
-.main-content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 70vw;
-    height: 60vh;
-    overflow-y: scroll;
-    
-    margin-bottom: 100px;
-}
-
 .title{
     margin-top: 100px;
     font-weight: bolder;
     margin-bottom: 40px;
-}
-
-.main-content .content-row{
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
 }
 
 @media screen and (min-width: 1450px){
@@ -50,51 +61,41 @@
         font-size: 60px;
     }
 
-    .main-content .content-row{
-        flex-direction: row;
-    }
-
-    .main-content .content-unit{
-        width: 30%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
     .content-unit .news-detail{
         width: 100%;
         height: 5%;
-        display: flex;
-        flex-direction: row;
+        text-align: start;
     }
 
     .news-detail .published-date{
         font-weight: thin;
-        font-size: 18px;
-        margin-right: 5px;
-    }
-
-    .news-detail .content-category{
-        font-weight: thin;
-        font-size: 18px;
+        font-size: 14px;
         color: rgb(255, 168, 0);
     }
 
-    .main-content .content-image{
+    .grid-item .content-image{
         width: 100%;
         height: 50%;
     }
 
     .content-unit .content-title{
         font-weight: bolder;
-        font-size: 24px;
+        font-size: 18px;
+        text-align: left;
+        min-height: 15%;
+        text-align: justify;
         width: 100%;
         height: 10%;
+        color: black;
+        text-align: start;
     }
 
     .content-unit .description{
-        font-weight: 550;
-        height: 35%;
+        font-size: 14px;
+        width: 100%;
+        height: 25%;
+        text-align: justify;
+        color: black;
     }
 }
 

@@ -4,10 +4,6 @@
     font-family: 'Inter', sans-serif;
 }
 
-::placeholder{
-    color: white;
-}
-
 @media screen and (min-width:800px){
     .header{
         height: 60px;
@@ -43,7 +39,7 @@
 
     .center-header{
         height: 100%;
-        width: 50%;
+        width: 60%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -52,10 +48,33 @@
 
     .right-header{
         height: 100%;
-        width: 30%;
+        width: 20%;
         display: flex;
         align-items: center;
         justify-content:right;
+        flex-direction: row;
+    }
+
+    .dropbtnright {
+        color: black;
+        text-decoration: none;
+        height: 60px;
+        width: 90px;
+        font-size: 18px;  
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .right-header .user-profile-image {
+        height: 35px;
+        width: 35px;
+        background-color: yellow;
+        border-radius: 50%;
+        margin-right: 20px;
     }
 
     .dropbtn {
@@ -103,33 +122,6 @@
         display: block;
     }
     
-    .right-header input{
-        background-image: url("../front-end/property/header-asset/search-logo.png");
-        background-position: 95%;
-        background-size: 18px;
-        background-repeat: no-repeat;
-    }
-
-    .right-header input{
-        height : 45%;
-        width : 80%;
-        margin-right: 20px;
-        border-radius: 25px;
-        padding: 0px 5px 0px 5px;
-        text-align: center;
-        color: white;
-        background-color: rgb(32, 50, 67);
-    }
-    
-    .right-header input:focus::placeholder{
-        color: transparent;
-    }
-    
-    .right-header input:focus{
-        background-size: 0px;
-        background-image: none;
-    }
-    
     .left-header img{
         height: 70%;
         width: auto;
@@ -169,7 +161,7 @@
         margin: 0px 20% 0px 20%;
         height: 30px;
         width: 30px;
-        background-image: url("../front-end/property/header-asset/menu-icon.png");
+        background-image: url("property/header-asset/menu-icon.png");
         background-color: transparent;
         background-size: 30px;
         background-repeat: no-repeat;
@@ -196,6 +188,28 @@
         display: flex;
         align-items: center;
         justify-content:right;
+    }
+
+    .dropbtnright {
+        color: black;
+        text-decoration: none;
+        height: 60px;
+        width: 90px;
+        font-size: 18px;  
+        border: none;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .right-header .user-profile-image {
+        height: 35px;
+        width: 35px;
+        background-color: black;
+        border-radius: 50%;
+        margin-right: 20px;
     }
 
     .dropbtn {
@@ -242,35 +256,8 @@
     
     .show{
         display: block;
-    }
-    
-    .right-header input{
-        background-image: url("../front-end/property/header-asset/search-logo.png");
-        background-position: 95%;
-        background-size: 18px;
-        background-repeat: no-repeat;
-    }      
+    }    
 
-    .right-header input{
-        height : 45%;
-        width : 80%;
-        margin-right: 20px;
-        border-radius: 25px;
-        padding: 0px 5px 0px 5px;
-        text-align: center;
-        color: white;
-        background-color: rgb(32, 50, 67);
-    }
-    
-    .right-header input:focus::placeholder{
-        color: transparent;
-    }
-    
-    .right-header input:focus{
-        background-size: 0px;
-        background-image: none;
-    }
-    
     .left-header img{
         height: 70%;
         width: auto;
@@ -312,7 +299,7 @@
         margin: 0px 20% 0px 20%;
         height: 30px;
         width: 30px;
-        background-image: url("../front-end/property/header-asset/menu-icon.png");
+        background-image: url("property/header-asset/menu-icon.png");
         background-color: transparent;
         background-size: 30px;
         background-repeat: no-repeat;
@@ -339,6 +326,28 @@
         display: flex;
         align-items: center;
         justify-content:right;
+    }
+
+    .dropbtnright {
+        color: black;
+        text-decoration: none;
+        height: 60px;
+        width: 90px;
+        font-size: 18px;  
+        border: none;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .right-header .user-profile-image {
+        height: 35px;
+        width: 35px;
+        background-color: black;
+        border-radius: 50%;
+        margin-right: 20px;
     }
 
     .dropbtn {
@@ -388,35 +397,6 @@
         display: block;
     }
     
-    .right-header input{
-        background-image: url("../front-end/property/header-asset/search-logo.png");
-        background-position: 90%;
-        background-size: 12px;
-        background-repeat: no-repeat;
-    }  
-    
-    .right-header input{
-        height : 45%;
-        width : 100%;
-        margin-right: 10px;
-        border-radius: 25px;
-        padding: 0px 5px 0px 5px;
-        text-align: center;
-        color: white;
-        background-color: rgb(32, 50, 67);
-        font-size: 10px;
-    }
-    
-    .right-header input:focus::placeholder{
-        color: transparent;
-    }
-    
-    .right-header input:focus{
-        background-size: 0px;
-        background-image: none;
-    }
-    
-    
     .left-header img{
         height: 40%;
         width: auto;
@@ -459,7 +439,7 @@
         margin: 0px 20% 0px 20%;
         height: 30px;
         width: 30px;
-        background-image: url("../front-end/property/header-asset/menu-icon.png");
+        background-image: url("property/header-asset/menu-icon.png");
         background-color: transparent;
         background-size: 20px;
         background-repeat: no-repeat;
@@ -534,29 +514,6 @@
     
     .show{
         display: block;
-    }
-    
-    .right-header input{
-        background-image: url("../front-end/property/header-asset/search-logo.png");
-        background-position: 90%;
-        background-size: 12px;
-        background-repeat: no-repeat;
-    }  
-    
-    .right-header input{
-        height : 45%;
-        width : 100%;
-        margin-right: 10px;
-        border-radius: 25px;
-        padding: 0px 5px 0px 5px;
-        text-align: center;
-        color: white;
-        background-color: rgb(32, 50, 67);
-        font-size: 8px;
-    }
-    
-    .right-header input:focus::placeholder{
-        color: transparent;
     }
     
     .right-header input:focus{
