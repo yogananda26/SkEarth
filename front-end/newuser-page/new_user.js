@@ -23,12 +23,12 @@ const fetch_all_comment = ()=>{
             <div class="circle">
             </div>
             </div>
-            <div class="col-10 mb-5" >
+            <div class="col-10 mb-5">
                 <div class="profil-name">
                     <h5 class="text-light d-block">${createdBy}</h3>
                 </div>
-                <div class="card rounded-4 " style="position: relative;">
-                    <div class="rounded-4 d-flex justify-content-between px-xxl-3 px-xl-3 px-lg-3 px-md-3 px-sm-2 ">
+                <div class="card rounded-4 " style="position: relative; flex-direction: row; padding-right: none;">
+                    <div class="rounded-4 d-flex justify-content-between px-xxl-3 px-xl-3 px-lg-3 px-md-3 px-sm-2 " style="padding-right: none;">
                         <div class="px-xxl-3 px-xl-3 px-lg-3 px-md-3 px-sm-2 px-3 py-3">
                             <p class="card-title">${content}</p>
                             <div class="img-container" id=${_id}>
@@ -36,11 +36,11 @@ const fetch_all_comment = ()=>{
                             <p class="text-secondary mb-0">#youdeservethis</p>
                             <h6 style="margin-top: 5px;">${timeDiff(new Date(updatedAt).getTime(), new Date().getTime())} ago</h6>
                         </div>
-                        <div class="d-flex gap-3 mt-4" >
-                            <a href="#"><img src="like.png" style="height:30px;" class="img-icon "></img> </a>
-                            <a href="/comment-page/more_comment.html?commentID=${_id}"><img src="comment-icon-1024x964-julk98bl.png" style="height: 28px;" class="img-icon"></img> </a>
-                            <a href="#"> <img style="height: 30px;" src="kisspng-computer-icons-share-icon-sharing-symbol-share-5ac0b95e8abc13.8486960415225798065683.jpg" class="img-icon"></img></a>
-                        </div>
+                    </div>
+                    <div class="d-flex gap-3 mt-4 px-xxl-3 px-xl-3 px-lg-3 px-md-3 px-sm-2 px-3 py-3 align-items-center" style="flex-direction: row;">
+                        <a href="#"><img src="../property/comment-asset/like.png" alt="" style="height:30px;" class="img-icon "></a>
+                        <a href="../comment-page/more_comment.html?commentID=${_id}"><img src="../property/comment-asset/comment-icon-1024x964-julk98bl.png" alt="" style="height: 28px;" class="img-icon"></a>
+                        <a href="#"> <img style="height: 30px;" src="../property/comment-asset/kisspng-computer-icons-share-icon-sharing-symbol-share-5ac0b95e8abc13.8486960415225798065683.jpg" alt="" class="img-icon"></a>
                     </div>
                 </div>
             </div>
@@ -65,8 +65,8 @@ const fetch_all_comment = ()=>{
                         if(types === 'image'){
                             var elem = document.createElement("img");
                             elem.setAttribute("src", `http://localhost:2000/api/v1/message/img/render/${name}`);
-                            elem.setAttribute("height", "490");
-                            elem.setAttribute("width", "650");
+                            elem.setAttribute("height", "auto");
+                            elem.setAttribute("width", "60%");
                             elem.setAttribute('style',"object-fit: cover")
                             elem.setAttribute('style',"object-position: center")
                             item.appendChild(elem);
@@ -74,8 +74,8 @@ const fetch_all_comment = ()=>{
                         if(types === 'video'){
                             var elem = document.createElement("video");
                             elem.setAttribute("src", `http://localhost:2000/api/v1/message/img/render/${name}`);
-                            elem.setAttribute("height", "490");
-                            elem.setAttribute("width", "650");
+                            elem.setAttribute("height", "auto");
+                            elem.setAttribute("width", "60%");
                             elem.setAttribute("controls", true);
                             item.appendChild(elem);
                         };
