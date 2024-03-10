@@ -57,7 +57,7 @@ const get_unique_message = async_wrapper(async(req, res)=>{
     })
     search_all_comment.forEach((result)=>{
         result.reply.map((data)=>{
-            if((data.replyBy == UserID) || (result.createdBy != UserID)){ 
+            if((data.replyBy == UserID) && (result.createdBy != UserID)){ 
                 all_message.push(result);
             }
         })
