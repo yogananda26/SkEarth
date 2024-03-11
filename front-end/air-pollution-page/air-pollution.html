@@ -72,21 +72,24 @@
             </button>
             <div id="dropdown-list2" class="dropdown-content">
               <a href="../latest-news-page/latest-news.html">News</a>
-              <a href="../newchat-page/newchat.html">Chat</a>
+              <a href="../chat-page/chat.html">Chat</a>
             </div>
           </div>
         </div>
       </div>
       <div class="right-header">
-        <a href="../login/login.html"
-          ><img
+        <button onclick="dropFunction('dropdown-listuser')" class="user-profile">
+          <img
             src="../property/header-asset/blck.jpg"
             alt=""
             class="user-profile-image"
-        /></a>
-        <a href="../login/login.html" class="dropbtnright" id="user-button"
-          >User</a
-        >
+          />
+          <p class="dropbtnright" id="user-button">User</p>
+        </button>
+        <div id="dropdown-listuser" class="dropdown-content-right">
+          <a href="../newuser-page/new_user.html">Profile</a>
+          <a href="">Log-Out</a>
+        </div>
       </div>
     </div>
     <div class="top-contain">

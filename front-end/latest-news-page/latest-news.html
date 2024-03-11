@@ -56,15 +56,18 @@
           </div>
         </div>
         <div class="right-header">
-          <a href="../login/login.html"
-            ><img
+          <button onclick="dropFunction('dropdown-listuser')" class="user-profile">
+            <img
               src="../property/header-asset/blck.jpg"
               alt=""
               class="user-profile-image"
-          /></a>
-          <a href="../login/login.html" class="dropbtnright" id="user-button"
-            >User</a
-          >
+            />
+            <p class="dropbtnright" id="user-button">User</p>
+          </button>
+          <div id="dropdown-listuser" class="dropdown-content-right">
+            <a href="../newuser-page/new_user.html">Profile</a>
+            <a href="">Log-Out</a>
+          </div>
         </div>
       </div>
       <p class="title">Latest News</p>

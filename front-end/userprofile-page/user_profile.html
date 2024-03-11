@@ -11,60 +11,63 @@
 
 </head>
 <body>
-    <div class="header">
-        <div class="left-header">
-          <img
-            src="../property/contactUs-asset/logoSkearth.png"
-            alt="skearth-logo"
-          />
-        </div>
-        <div class="big-centerr">
-          <button
-            onclick="menuFunction('center')"
-            class="big-center"
-            id="burger"
-          ></button>
-          <div class="center-header" id="center">
-            <a href="../homepage/homepage.html" class="dropbtn" id="home-button"
-              >Home</a
+  <div class="header">
+    <div class="left-header">
+      <img
+        src="../property/contactUs-asset/logoSkearth.png"
+        alt="skearth-logo"
+      />
+    </div>
+    <div class="big-centerr">
+      <button
+        onclick="menuFunction('center')"
+        class="big-center"
+        id="burger"
+      ></button>
+      <div class="center-header" id="center">
+        <a href="../homepage/homepage.html" class="dropbtn" id="home-button"
+          >Home</a
+        >
+        <div class="dropdown">
+          <button onclick="dropFunction('dropdown-list1')" class="dropbtn">
+            Features
+          </button>
+          <div id="dropdown-list1" class="dropdown-content">
+            <a href="../weather-forecast-page/weather-forecast.html"
+              >Weather Forecast</a
             >
-            <div class="dropdown">
-              <button onclick="dropFunction('dropdown-list1')" class="dropbtn">
-                Features
-              </button>
-              <div id="dropdown-list1" class="dropdown-content">
-                <a href="../weather-forecast-page/weather-forecast.html"
-                  >Weather Forecast</a
-                >
-                <a href="../air-pollution-page/air-pollution.html"
-                  >Air Pollution</a
-                >
-                <a href="../uv-index/uv-index.html">UV - Index</a>
-              </div>
-            </div>
-            <div class="dropdown">
-              <button onclick="dropFunction('dropdown-list2')" class="dropbtn">
-                More
-              </button>
-              <div id="dropdown-list2" class="dropdown-content">
-                <a href="../latest-news-page/latest-news.html">News</a>
-                <a href="../chat-page/chat.html">Chat</a>
-              </div>
-            </div>
+            <a href="../air-pollution-page/air-pollution.html"
+              >Air Pollution</a
+            >
+            <a href="../uv-index/uv-index.html">UV - Index</a>
           </div>
         </div>
-        <div class="right-header">
-          <a href="../login/login.html"
-            ><img
-              src="../property/header-asset/blck.jpg"
-              alt=""
-              class="user-profile-image"
-          /></a>
-          <a href="../login/login.html" class="dropbtnright" id="user-button"
-            >User</a
-          >
+        <div class="dropdown">
+          <button onclick="dropFunction('dropdown-list2')" class="dropbtn">
+            More
+          </button>
+          <div id="dropdown-list2" class="dropdown-content">
+            <a href="../latest-news-page/latest-news.html">News</a>
+            <a href="../chat-page/chat.html">Chat</a>
+          </div>
         </div>
       </div>
+    </div>
+    <div class="right-header">
+      <button onclick="dropFunction('dropdown-listuser')" class="user-profile">
+        <img
+          src="../property/header-asset/blck.jpg"
+          alt=""
+          class="user-profile-image"
+        />
+        <p class="dropbtnright" id="user-button">User</p>
+      </button>
+      <div id="dropdown-listuser" class="dropdown-content-right">
+        <a href="../newuser-page/new_user.html">Profile</a>
+        <a href="">Log-Out</a>
+      </div>
+    </div>
+  </div>
     <!-- this is for displaying the user thing -->
     <div id="content">
         <div id="content-container">
