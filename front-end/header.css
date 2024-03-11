@@ -52,7 +52,7 @@
         display: flex;
         align-items: center;
         justify-content:right;
-        flex-direction: row;
+        flex-direction: column;
     }
 
     .dropbtnright {
@@ -77,6 +77,16 @@
         margin-right: 20px;
     }
 
+    .right-header .user-profile{
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background-color: transparent;
+    }
+
     .dropbtn {
         background-color: transparent;
         color: black;
@@ -94,6 +104,24 @@
     .dropbtn:hover {
         background-color: rgb(32, 50, 67);
         color: white;
+    }
+
+    .dropdown-content-right {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: #f1f1f1;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 0;
+        margin-top: 65px;
+    }
+    
+    .dropdown-content-right a {
+        color: black;
+        width: 130px;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
     }
     
     .dropdown {

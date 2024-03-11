@@ -1,4 +1,3 @@
-const regioninfo = document.getElementById("regioninfo");
 const level = document.getElementById("level");
 const category = document.getElementById("category");
 const input = document.getElementById("input_1");
@@ -53,8 +52,6 @@ input.addEventListener("submit", async (e) => {
         {
             city_name: region.value
         });
-    
-    regionjumbotron.innerText = `${region.value[0].toUpperCase() + region.value.slice(1)}`;
     displayCategory(data1.data);
     displayForecast(data1.data);
     }catch(e) {
@@ -65,8 +62,6 @@ input.addEventListener("submit", async (e) => {
 
 function displayForecast(data){
     const forecast_container = document.getElementById("forecast");
-    const currenttime = new Date();
-    const currenthour = currenttime.getHours();
     const uvforecast = data.uv_forecast_2_days;
     var forecast_category = "";
     var forecast_color = "";
@@ -74,20 +69,32 @@ function displayForecast(data){
     forecast_container.classList.toggle("show");
 
     temp2 = document.getElementById("forecast-non-title");
-    for (let index = 0; index < 24-currenthour; index++) {
-        if(uvforecast[index] < 3){
+    for (let index = 0; index < 24; index++) {
+        let unix_timestamp = uvforecast[index].dt;
+
+        var date = new Date(unix_timestamp * 1000);
+    
+        var hours = date.getHours();
+    
+        var minutes = "0" + date.getMinutes();
+    
+        var seconds = "0" + date.getSeconds();
+    
+        var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+
+        if(uvforecast[index].uvi < 3){
             forecast_category = "Low";
             forecast_color = "rgb(123, 183, 51)";
         }
-        else if(uvforecast[index] < 6){
+        else if(uvforecast[index].uvi < 6){
             forecast_category = "Moderate";
             forecast_color = "rgb(246, 178, 10)";
         }
-        else if(uvforecast[index] < 8){
+        else if(uvforecast[index].uvi < 8){
             forecast_category = "High";
             forecast_color = "rgb(239, 134, 21)";
         }
-        else if(uvforecast[index] < 11){
+        else if(uvforecast[index].uvi < 11){
             forecast_category = "Very High";
             forecast_color = "rgb(224, 64, 41)";
         }
@@ -98,13 +105,13 @@ function displayForecast(data){
 
         temp2.innerHTML += 
         `<div class="forecast-unit" id="forecast-unit${index}">
-        <p class="time">${currenthour+index}:00</p>
+        <p class="time">${formattedTime}:00</p>
         <p class="category">${forecast_category}</p>
-        <p class="uvi">${uvforecast[index]}</p>
+        <p class="uvi">${uvforecast[index].uvi}</p>
         </div>`
 
         let forecastcolor = document.getElementById(`forecast-unit${index}`);
-        forecastcolor.style.backgroundColor = forecast_color;
+        forecastcolor.style.backgroundColor = `${forecast_color}`;
     }
 }
 

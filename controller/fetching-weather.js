@@ -15,8 +15,8 @@ const GetUV_index = async_wrapper(async (req, res) => {
         .then((obj) => {
         
             // this is for forecast
-            uv_forecast = obj.hourly.map(({uvi})=>{ 
-                return uvi
+            uv_forecast = obj.hourly.map(({uvi, dt})=>{ 
+                return {uvi, dt};
             })
             uv_current = obj.current.uvi; 
             const hasil = {
