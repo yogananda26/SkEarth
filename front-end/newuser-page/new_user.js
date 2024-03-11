@@ -3,7 +3,6 @@ var token = localStorage.getItem("token");
 const params = window.location.search
 const id = new URLSearchParams(params).get('UserID');
 
-
 const input_user_follower = ()=>{ 
     // this is for inputing the user follower
 };
@@ -16,8 +15,6 @@ const fetch_all_comment = ()=>{
         }
     })
     .then(({data})=>{ 
-        // this is for printing the result
-        // container.innerHTML = data.map(()=>{
         container.innerHTML = data.map(({_id, content, updatedAt, createdBy})=>{ 
             return  `<div class="col-2 d-flex justify-content-center" style="height: 10vh; width: 6vw;">
             <div class="circle">

@@ -1,411 +1,510 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Air Pollution</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" 
-        rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
-        crossorigin="anonymous"/>
-    <link rel="stylesheet" href="air-pollution.css">
-    <link rel="stylesheet" href="../header.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="air-pollution.css" />
+    <link rel="stylesheet" href="../header.css" />
     <link rel="stylesheet" href="../footer.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/4d9121ebec.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="faq.css" >
-</head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/4d9121ebec.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="faq.css" />
+  </head>
 
-<body class="bg-light">
+  <body class="bg-light">
     <div class="header">
-        <div class="left-header">
-          <img
-            src="../property/contactUs-asset/logoSkearth.png"
-            alt="skearth-logo"
-          />
+      <div class="left-header">
+        <img
+          src="../property/contactUs-asset/logoSkearth.png"
+          alt="skearth-logo"
+        />
+      </div>
+      <div class="big-centerr">
+        <button
+          onclick="menuFunction('center')"
+          class="big-center"
+          id="burger"
+        ></button>
+        <div class="center-header" id="center">
+          <a href="../homepage/homepage.html" class="dropbtn" id="home-button"
+            >Home</a
+          >
+          <div class="dropdown">
+            <button onclick="dropFunction('dropdown-list1')" class="dropbtn">
+              Features
+            </button>
+            <div id="dropdown-list1" class="dropdown-content">
+              <a href="../weather-forecast-page/weather-forecast.html"
+                >Weather Forecast</a
+              >
+              <a href="../air-pollution-page/air-pollution.html"
+                >Air Pollution</a
+              >
+              <a href="../uv-index/uv-index.html">UV - Index</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button onclick="dropFunction('dropdown-list2')" class="dropbtn">
+              More
+            </button>
+            <div id="dropdown-list2" class="dropdown-content">
+              <a href="../latest-news-page/latest-news.html">News</a>
+              <a href="../newchat-page/newchat.html">Chat</a>
+            </div>
+          </div>
         </div>
-        <div class="big-centerr">
-          <button
-            onclick="menuFunction('center')"
-            class="big-center"
-            id="burger"
-          ></button>
-          <div class="center-header" id="center">
-            <a href="../homepage/homepage.html" class="dropbtn" id="home-button"
-              >Home</a
-            >
-            <div class="dropdown">
-              <button onclick="dropFunction('dropdown-list1')" class="dropbtn">
-                Features
-              </button>
-              <div id="dropdown-list1" class="dropdown-content">
-                <a href="../weather-forecast-page/weather-forecast.html"
-                  >Weather Forecast</a
-                >
-                <a href="../air-pollution-page/air-pollution.html"
-                  >Air Pollution</a
-                >
-                <a href="../uv-index/uv-index.html">UV - Index</a>
+      </div>
+      <div class="right-header">
+        <a href="../login/login.html"
+          ><img
+            src="../property/header-asset/blck.jpg"
+            alt=""
+            class="user-profile-image"
+        /></a>
+        <a href="../login/login.html" class="dropbtnright" id="user-button"
+          >User</a
+        >
+      </div>
+    </div>
+    <div class="top-contain">
+      <div class="container">
+        <div class="d-flex flex-row" id="container-body">
+          <div class="top-ranking sticky-top-ranking">
+            <div class="d-flex flex-column p-5">
+              <div class="box-left mb-5">
+                <p class="fw-bold left-title">Live AQI Country Ranking</p>
+                <p class="text-left fs-6 fw-bold">
+                  Real-Time World Country Ranking
+                </p>
+                <table id="ranking-table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Countries</th>
+                      <th>AQI</th>
+                    </tr>
+                  </thead>
+                  <tbody id="ranking-body"></tbody>
+                </table>
+              </div>
+
+              <div class="box-left">
+                <p class="fw-bold left-title">Live AQI City Ranking</p>
+                <p class="text-left fs-6 fw-bold">
+                  Real-Time Indonesia City Ranking
+                </p>
+                <table id="table-city">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>City Name</th>
+                      <th>AQI</th>
+                    </tr>
+                  </thead>
+                  <tbody id="ranking-city"></tbody>
+                </table>
               </div>
             </div>
-            <div class="dropdown">
-              <button onclick="dropFunction('dropdown-list2')" class="dropbtn">
-                More
-              </button>
-              <div id="dropdown-list2" class="dropdown-content">
-                <a href="../latest-news-page/latest-news.html">News</a>
-                <a href="../chat-page/chat.html">Chat</a>
+          </div>
+
+          <div class="d-flex flex-column p-5">
+            <div class="box-right upper-box mb-5">
+              <h1 id="header-city"></h1>
+              <form id="input_form">
+                <div>
+                  <input
+                    type="text"
+                    class="search-input"
+                    id="search-input"
+                    placeholder="Type any place to see air pollution..."
+                  />
+                  <button id="btn_input" type="submit">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </div>
+                <!-- <button id="btn_input" type="submit">Submit</button> -->
+              </form>
+              <div class="upper-box-content" id="content-aqi">
+                <div class="upper-content-left">
+                  <div class="content-left-one" id="sub-content-aqi">
+                    <h5 class="mb-4">AQI</h5>
+                    <h2 id="header-aqi"></h2>
+                  </div>
+                  <div class="content-left-two">
+                    <p>LIVE AQI INDEX</p>
+                    <h1 id="aqi-category"></h1>
+                  </div>
+                </div>
+                <div class="upper-content-right">
+                  <img id="image-level-aqi" src="" />
+                </div>
+              </div>
+            </div>
+
+            <div class="box-right mb-5 p-5">
+              <h3>Guide Air Quality Index (AQI)</h3>
+              <div class="content-guide">
+                <div class="guide">
+                  <div class="box-guide-good"></div>
+                  <div class="text-guide">
+                    <p class="title-guide text-good fw-bold">Good (LEVEL 1)</p>
+                    <p class="desc-guide">
+                      Fresh air, deep breaths, outdoor fun (healthy for
+                      everyone).
+                    </p>
+                  </div>
+                </div>
+
+                <div class="guide">
+                  <div class="box-guide-fair"></div>
+                  <div class="text-guide">
+                    <p class="title-guide text-fair fw-bold">Fair (LEVEL 2)</p>
+                    <p class="desc-guide">
+                      Hint of haze, sensitive beware, shorten outdoor time
+                      (caution for sensitive groups).
+                    </p>
+                  </div>
+                </div>
+
+                <div class="guide">
+                  <div class="box-guide-moderate"></div>
+                  <div class="text-guide">
+                    <p class="title-guide text-moderate fw-bold">
+                      Moderate (LEVEL 3)
+                    </p>
+                    <p class="desc-guide">
+                      Cough in the wind, masks advised, limit activities
+                      (everyone impacted, stay indoors if feasible).
+                    </p>
+                  </div>
+                </div>
+
+                <div class="guide">
+                  <div class="box-guide-poor"></div>
+                  <div class="text-guide">
+                    <p class="title-guide text-poor fw-bold">Poor (LEVEL 4)</p>
+                    <p class="desc-guide">
+                      Stinging air, danger lurks, stay inside, protect lungs
+                      (hazardous for everyone, avoid outdoors).
+                    </p>
+                  </div>
+                </div>
+                <div class="guide">
+                  <div class="box-guide-vpoor"></div>
+                  <div class="text-guide">
+                    <p class="title-guide text-vpoor fw-bold">
+                      Very Poor (LEVEL 5)
+                    </p>
+                    <p class="desc-guide">
+                      Suffocating fog, health at risk, seal windows, air
+                      purifiers (emergency situation, stay indoors).
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-right middle-box mb-5 p-5">
+              <h3 id="historical-aqi">Historical Air Quality Index (AQI)</h3>
+              <div id="weatherData"></div>
+              <div id="lineGraph"></div>
+              <div class="level-boxes" id="levelData">
+                <div class="level-box">
+                  <div class="title-upper-level">
+                    <p>level of</p>
+                    <p class="ms-2">CO2</p>
+                  </div>
+                  <div
+                    class="progress"
+                    style="
+                      height: 5px;
+                      width: 75%;
+                      background-color: rgb(226, 60, 199);
+                    "
+                  ></div>
+                  <div class="desc-upper-level text-center">
+                    <p class="fs-10" id="co2-text"></p>
+                    <p class="fs-8">PPM</p>
+                  </div>
+                </div>
+
+                <div class="level-box">
+                  <div class="title-upper-level">
+                    <p>level of</p>
+                    <p class="ms-2">O3</p>
+                  </div>
+                  <div
+                    class="progress"
+                    style="
+                      height: 5px;
+                      width: 75%;
+                      background-color: rgb(226, 60, 199);
+                    "
+                  ></div>
+                  <div class="desc-upper-level text-center">
+                    <p class="fs-10" id="o3-text"></p>
+                    <p class="fs-8">PPM</p>
+                  </div>
+                </div>
+
+                <div class="level-box">
+                  <div class="title-upper-level">
+                    <p>level of</p>
+                    <p class="ms-2">NO2</p>
+                  </div>
+                  <div
+                    class="progress"
+                    style="
+                      height: 5px;
+                      width: 75%;
+                      background-color: rgb(92, 116, 219);
+                    "
+                  ></div>
+                  <div class="desc-upper-level text-center">
+                    <p class="fs-10" id="no2-text"></p>
+                    <p class="fs-8">PPM</p>
+                  </div>
+                </div>
+
+                <div class="level-box">
+                  <div class="title-upper-level">
+                    <p>level of</p>
+                    <p class="ms-2">SO2</p>
+                  </div>
+                  <div
+                    class="progress"
+                    style="
+                      height: 5px;
+                      width: 75%;
+                      background-color: rgb(92, 116, 219);
+                    "
+                  ></div>
+                  <div class="desc-upper-level text-center">
+                    <p class="fs-10" id="so2-text"></p>
+                    <p class="fs-8">PPM</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="box-right bottom-box" id="forecast-container">
+              <h3 id="header-forecast">Air Quality Index (AQI) Forecast</h3>
+              <div class="border border-info m-4">
+                <table class="table-forecast">
+                  <thead>
+                    <tr>
+                      <th style="width: 25%">Day</th>
+                      <th>Pollution Index</th>
+                      <th style="width: 25%" class="ps-3">AQI level</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td id="forecast1-date"></td>
+                      <td
+                        class="bg-color-forecast1 rounded ps-2 pe-2 text-light"
+                        id="bg-color-forecast1"
+                      ></td>
+                      <td class="ps-3" id="forecast1-aqi"></td>
+                    </tr>
+                    <tr>
+                      <td id="forecast2-date"></td>
+                      <td
+                        class="bg-color-forecast2 rounded ps-2 pe-2 text-light"
+                        id="bg-color-forecast2"
+                      ></td>
+                      <td class="ps-3" id="forecast2-aqi"></td>
+                    </tr>
+                    <tr>
+                      <td id="forecast3-date"></td>
+                      <td
+                        class="bg-color-forecast3 rounded ps-2 pe-2 text-light"
+                        id="bg-color-forecast3"
+                      ></td>
+                      <td class="ps-3" id="forecast3-aqi"></td>
+                    </tr>
+                    <tr>
+                      <td id="forecast4-date"></td>
+                      <td
+                        class="bg-color-forecast4 rounded ps-2 pe-2 text-light"
+                        id="bg-color-forecast4"
+                      ></td>
+                      <td class="ps-3" id="forecast4-aqi"></td>
+                    </tr>
+                    <tr>
+                      <td id="forecast5-date"></td>
+                      <td
+                        class="bg-color-forecast5 rounded ps-2 pe-2 text-light"
+                        id="bg-color-forecast5"
+                      ></td>
+                      <td class="ps-3" id="forecast5-aqi"></td>
+                    </tr>
+                    <tr>
+                      <td id="forecast6-date"></td>
+                      <td
+                        class="bg-color-forecast6 rounded ps-2 pe-2 text-light"
+                        id="bg-color-forecast6"
+                      ></td>
+                      <td class="ps-3" id="forecast6-aqi"></td>
+                    </tr>
+                    <tr>
+                      <td id="forecast7-date"></td>
+                      <td
+                        class="bg-color-forecast7 rounded ps-2 pe-2 text-light"
+                        id="bg-color-forecast7"
+                      ></td>
+                      <td class="ps-3" id="forecast7-aqi"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="box-right bottom-box">
+              <h3 id="header-forecast">How to Protect from Air Pollution?</h3>
+              <div class="info-boxes">
+                <div class="info-box">
+                  <img
+                    class="image-info"
+                    src="../property/airPolution-asset/mask.png"
+                  />
+                  <h3 class="image-text">Wear an Mask</h3>
+                </div>
+
+                <div class="info-box">
+                  <img
+                    class="image-info"
+                    src="../property/airPolution-asset/air-purifier.png"
+                  />
+                  <h3 class="image-text">Use an Air Purifier</h3>
+                </div>
+
+                <div class="info-box">
+                  <img
+                    class="image1-info"
+                    src="../property/airPolution-asset/bus.png"
+                  />
+                  <h3 class="image-text">Use Public Transportation</h3>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="right-header">
-          <a href="../login/login.html"
-            ><img
-              src="../property/header-asset/blck.jpg"
-              alt=""
-              class="user-profile-image"
-          /></a>
-          <a href="../login/login.html" class="dropbtnright" id="user-button"
-            >User</a
-          >
-        </div>
       </div>
-    <div class="top-contain">
-        <div class="container">
-            <div class="d-flex flex-row" id="container-body">
-                <div class="top-ranking sticky-top-ranking">
-                    <div class="d-flex flex-column p-5">
-                        <div class="box-left mb-5">
-                            <p class="fw-bold left-title">Live AQI Country Ranking</p>
-                            <p class="text-left fs-6 fw-bold">Real-Time World Country Ranking</p>
-                            <table id="ranking-table">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Countries</th>
-                                        <th>AQI</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="ranking-body"></tbody>
-                            </table>
-                        </div>
-
-                        <div class="box-left">
-                            <p class="fw-bold left-title">Live AQI City Ranking</p>
-                            <p class="text-left fs-6 fw-bold">Real-Time Indonesia City Ranking</p>
-                            <table id="table-city">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>City Name</th>
-                                        <th>AQI</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="ranking-city"></tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="d-flex flex-column p-5">
-                    <div class="box-right upper-box mb-5">
-                        <h1 id="header-city"></h1>
-                        <form id="input_form">
-                            <div>
-                                <input type="text" class="search-input" id="search-input"
-                                    placeholder="Type any place to see air pollution...">
-                                <button id="btn_input" type="submit"><i class="fa fa-search"></i></button>
-                            </div>
-                            <!-- <button id="btn_input" type="submit">Submit</button> -->
-                        </form>
-                        <div class="upper-box-content" id="content-aqi">
-                            <div class="upper-content-left">
-                                <div class="content-left-one" id="sub-content-aqi">
-                                    <h5 class="mb-4">AQI</h5>
-                                    <h2 id="header-aqi"></h2>
-                                </div>
-                                <div class="content-left-two">
-                                    <p>LIVE AQI INDEX</p>
-                                    <h1 id="aqi-category"></h1>
-                                </div>
-                            </div>
-                            <div class="upper-content-right">
-                                <img id="image-level-aqi" src="">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="box-right mb-5 p-5">
-                        <h3>Guide Air Quality Index (AQI)</h3>
-                        <div class="content-guide">
-                            <div class="guide">
-                                <div class="box-guide-good">
-                                </div>
-                                <div class="text-guide">
-                                    <p class="title-guide text-good fw-bold">Good (LEVEL 1)</p>
-                                    <p class="desc-guide">Fresh air, deep breaths, outdoor fun (healthy for everyone).
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="guide">
-                                <div class="box-guide-fair">
-                                </div>
-                                <div class="text-guide">
-                                    <p class="title-guide text-fair fw-bold">Fair (LEVEL 2)</p>
-                                    <p class="desc-guide">Hint of haze, sensitive beware, shorten outdoor time (caution
-                                        for
-                                        sensitive groups).</p>
-                                </div>
-                            </div>
-
-                            <div class="guide">
-                                <div class="box-guide-moderate">
-                                </div>
-                                <div class="text-guide">
-                                    <p class="title-guide text-moderate fw-bold">Moderate (LEVEL 3)</p>
-                                    <p class="desc-guide">Cough in the wind, masks advised, limit activities (everyone
-                                        impacted, stay indoors if feasible).</p>
-                                </div>
-                            </div>
-
-                            <div class="guide">
-                                <div class="box-guide-poor">
-                                </div>
-                                <div class="text-guide">
-                                    <p class="title-guide text-poor fw-bold">Poor (LEVEL 4)</p>
-                                    <p class="desc-guide">Stinging air, danger lurks, stay inside, protect lungs
-                                        (hazardous
-                                        for everyone, avoid outdoors).</p>
-                                </div>
-                            </div>
-                            <div class="guide">
-                                <div class="box-guide-vpoor">
-                                </div>
-                                <div class="text-guide">
-                                    <p class="title-guide text-vpoor fw-bold">Very Poor (LEVEL 5)</p>
-                                    <p class="desc-guide">Suffocating fog, health at risk, seal windows, air purifiers
-                                        (emergency situation, stay indoors).</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="box-right middle-box mb-5 p-5">
-                        <h3 id="historical-aqi">Historical Air Quality Index (AQI)</h3>
-                        <div id="weatherData"></div>
-                        <div id="lineGraph"></div>
-                        <div class="level-boxes" id="levelData">
-                            <div class="level-box">
-                                <div class="title-upper-level">
-                                    <p>level of</p>
-                                    <p class="ms-2">CO2</p>
-                                </div>
-                                <div class="progress"
-                                    style="height: 5px; width: 75%; background-color: rgb(226, 60, 199);">
-                                </div>
-                                <div class="desc-upper-level text-center">
-                                    <p class="fs-10" id="co2-text"></p>
-                                    <p class="fs-8">PPM</p>
-                                </div>
-                            </div>
-
-                            <div class="level-box">
-                                <div class="title-upper-level">
-                                    <p>level of</p>
-                                    <p class="ms-2">O3</p>
-                                </div>
-                                <div class="progress"
-                                    style="height: 5px; width: 75%; background-color: rgb(226, 60, 199);">
-                                </div>
-                                <div class="desc-upper-level text-center">
-                                    <p class="fs-10" id="o3-text"></p>
-                                    <p class="fs-8">PPM</p>
-                                </div>
-                            </div>
-
-                            <div class="level-box">
-                                <div class="title-upper-level">
-                                    <p>level of</p>
-                                    <p class="ms-2">NO2</p>
-                                </div>
-                                <div class="progress"
-                                    style="height: 5px; width: 75%; background-color: rgb(92, 116, 219)">
-                                </div>
-                                <div class="desc-upper-level text-center">
-                                    <p class="fs-10" id="no2-text"></p>
-                                    <p class="fs-8">PPM</p>
-                                </div>
-                            </div>
-
-                            <div class="level-box">
-                                <div class="title-upper-level">
-                                    <p>level of</p>
-                                    <p class="ms-2">SO2</p>
-                                </div>
-                                <div class="progress"
-                                    style="height: 5px; width: 75%; background-color: rgb(92, 116, 219)">
-                                </div>
-                                <div class="desc-upper-level text-center">
-                                    <p class="fs-10" id="so2-text"></p>
-                                    <p class="fs-8">PPM</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="box-right bottom-box" id="forecast-container">
-                        <h3 id="header-forecast">Air Quality Index (AQI) Forecast</h3>
-                        <div class="border border-info m-4">
-                            <table class="table-forecast">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 25%;">Day</th>
-                                        <th>Pollution Index</th>
-                                        <th style="width: 25%;" class="ps-3">AQI level</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td id="forecast1-date"></td>
-                                        <td class="bg-color-forecast1 rounded ps-2 pe-2 text-light"
-                                            id="bg-color-forecast1">
-                                        </td>
-                                        <td class="ps-3" id="forecast1-aqi"></td>
-                                    </tr>
-                                    <tr>
-                                        <td id="forecast2-date"></td>
-                                        <td class="bg-color-forecast2 rounded ps-2 pe-2 text-light"
-                                            id="bg-color-forecast2">
-                                        </td>
-                                        <td class="ps-3" id="forecast2-aqi"></td>
-                                    </tr>
-                                    <tr>
-                                        <td id="forecast3-date"></td>
-                                        <td class="bg-color-forecast3 rounded ps-2 pe-2 text-light"
-                                            id="bg-color-forecast3">
-                                        </td>
-                                        <td class="ps-3" id="forecast3-aqi"></td>
-                                    </tr>
-                                    <tr>
-                                        <td id="forecast4-date"></td>
-                                        <td class="bg-color-forecast4 rounded ps-2 pe-2 text-light"
-                                            id="bg-color-forecast4">
-                                        </td>
-                                        <td class="ps-3" id="forecast4-aqi"></td>
-                                    </tr>
-                                    <tr>
-                                        <td id="forecast5-date"></td>
-                                        <td class="bg-color-forecast5 rounded ps-2 pe-2 text-light"
-                                            id="bg-color-forecast5">
-                                        </td>
-                                        <td class="ps-3" id="forecast5-aqi"></td>
-                                    </tr>
-                                    <tr>
-                                        <td id="forecast6-date"></td>
-                                        <td class="bg-color-forecast6 rounded ps-2 pe-2 text-light"
-                                            id="bg-color-forecast6">
-                                        </td>
-                                        <td class="ps-3" id="forecast6-aqi"></td>
-                                    </tr>
-                                    <tr>
-                                        <td id="forecast7-date"></td>
-                                        <td class="bg-color-forecast7 rounded ps-2 pe-2 text-light"
-                                            id="bg-color-forecast7">
-                                        </td>
-                                        <td class="ps-3" id="forecast7-aqi"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <div class="box-right bottom-box">
-                        <h3 id="header-forecast">How to Protect from Air Pollution?</h3>
-                        <div class="info-boxes">
-                            <div class="info-box">
-                                <img class="image-info" src="../property/airPolution-asset/mask.png">
-                                <h3 class="image-text">Wear an Mask</h3>
-                            </div>
-
-                            <div class="info-box">
-                                <img class="image-info" src="../property/airPolution-asset/air-purifier.png">
-                                <h3 class="image-text">Use an Air Purifier</h3>
-                            </div>
-
-                            <div class="info-box">
-                                <img class="image1-info" src="../property/airPolution-asset/bus.png">
-                                <h3 class="image-text">Use Public Transportation</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <footer>
-      
-        <div class="top-footer">
-            <div class="info-1">
-                <div class="img-footer-logo">
-                    <img src="/property/contactUs-asset/logoSkearth.png" alt="">
-                </div>
-                <div class="address">
-                    <p>ini rencananya <br> slogan ajaa</p>
-                </div>
-            </div>
-            <div class="desc-footer">
-                <p class="desc p-desc" style="text-align: center;">
-                    SkEarth is the perfect place to get all your weather information, <br>
-                    from real-time forecasts to provide users with a comprehensive and<br>
-                    easy-to-understand overview of the current weather conditions around the world. <br>
-                </p>
-                <div class="row" >
-                    <div class="menu-footer-1" >
-                        <ul>
-                            <li><a class="not-active-footer" href="/front-end/contact-us-page/contact-us.html">Contact Us</a></li>
-                        </ul>
-                    </div>
-                    <div class="menu-footer-2">
-                        <ul>
-                            <li><a class="footer-active" href="/front-end/faq-page/faq.html">Privacy Policy & FAQ</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="menu-follow-us">
-                <div class="follow-us-text">
-                    <p>Follow Us More!</p>
-                </div>
-                <div class="icon-footer">
-                  <img src="../../property/footer-asset/youtube-logo.png" />
-                  <img src="" />
-                  <img src="/property/contactUs-asset/instagram-icon.png" />
-                  <img src="/property/contactUs-asset/facebook-icon.png" />
-                </div>
-            </div>
+      <div class="top-footer">
+        <div class="info-1">
+          <div class="img-footer-logo">
+            <img src="/property/contactUs-asset/logoSkearth.png" alt="" />
+          </div>
+          <div class="address">
+            <p>
+              ini rencananya <br />
+              slogan ajaa
+            </p>
+          </div>
         </div>
-        <div class="bottom-footer">
-            <p>&copy; 2023 Skearth.com by PT Skearth Indonesia Tbk. | All rights reserved.</p>
+        <div class="desc-footer">
+          <p class="desc p-desc" style="text-align: center">
+            SkEarth is the perfect place to get all your weather information,
+            <br />
+            from real-time forecasts to provide users with a comprehensive
+            and<br />
+            easy-to-understand overview of the current weather conditions around
+            the world. <br />
+          </p>
+          <div class="row">
+            <div class="menu-footer-1">
+              <ul>
+                <li>
+                  <a
+                    class="not-active-footer"
+                    href="/front-end/contact-us-page/contact-us.html"
+                    >Contact Us</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="menu-footer-2">
+              <ul>
+                <li>
+                  <a class="footer-active" href="/front-end/faq-page/faq.html"
+                    >Privacy Policy & FAQ</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+
+        <div class="menu-follow-us">
+          <div class="follow-us-text">
+            <p>Follow Us More!</p>
+          </div>
+          <div class="icon-footer">
+            <img src="../../property/footer-asset/youtube-logo.png" />
+            <img src="" />
+            <img src="/property/contactUs-asset/instagram-icon.png" />
+            <img src="/property/contactUs-asset/facebook-icon.png" />
+          </div>
+        </div>
+      </div>
+      <div class="bottom-footer">
+        <p>
+          &copy; 2023 Skearth.com by PT Skearth Indonesia Tbk. | All rights
+          reserved.
+        </p>
+      </div>
     </footer>
     <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-            integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src="index.js"></script>
-        <script src="../header.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
-</body>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="index.js"></script>
+    <script src="../header.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
