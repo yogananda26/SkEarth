@@ -99,11 +99,6 @@ function insertData(data) {
         descWind.innerText = `The average wind speed exceeds 73 mph (over 32 m/s). Hurricanes bring about violent destruction, causing widespread devastation to landscapes and infrastructure. These extreme weather events demand the highest level of caution and emergency preparedness.`;
     }
 
-    // for (i = 1; i < newDataPoints.length; i++) {
-    // 	if (newDataPoints[i].label === newDataPoints[i - 1].label) {
-    // 		newDataPoints[i - 1].label = null;
-    // 	}
-    // }
     chartWind.options.data[0].dataPoints = newDataPoints;
     chartWind.render();
 }
