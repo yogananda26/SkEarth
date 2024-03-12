@@ -8,7 +8,12 @@ const confirm_passDOM = document.getElementById('signUp-confirm-passwordtextbox'
 
 formDOM.addEventListener("submit", async(e)=>{
     e.preventDefault();
-    if(passwordDOM.value != confirm_passDOM.value){
+    if(ageDOM.value < 10){
+        ageDOM.value = ''
+        alert("Sorry, only for those aged 10 years and over who can register!"); 
+        return; 
+    }
+    else if(passwordDOM.value != confirm_passDOM.value){
         passwordDOM.value = ''
         confirm_passDOM.value = ''
         alert("Please correct your password, Your password is not match"); 
@@ -22,7 +27,7 @@ formDOM.addEventListener("submit", async(e)=>{
         })
         localStorage.setItem('token', data.token); 
         alert('successfully register your id');
-        window.location.href = '/homepage/homepage.html'; 
+        window.location.href = '/login/login.html'; 
     }catch(e){ 
         localStorage.removeItem('token');
         alert(e.response.data.msg);

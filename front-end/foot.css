@@ -35,8 +35,8 @@ footer{
     width: 70%;
     height: 40%;
     display: flex;
-    /* flex-direction: column; */
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .mid-mid .footer-option{
