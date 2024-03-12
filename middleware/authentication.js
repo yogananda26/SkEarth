@@ -1,6 +1,6 @@
 // this is for verify if there is any token in header page
 const jwt = require("jsonwebtoken"); 
-const {auth_error} = require("../error/driver-error")
+const {auth_error} = require("../error/driver-error");
 const {async_wrapper} = require("./async-wrapper");
 
 const authentication = async_wrapper(async(req, res, next)=>{ 

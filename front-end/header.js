@@ -15,17 +15,23 @@ function logout(){
 function dropFunction(dropdownlist){
         document.getElementById(dropdownlist).classList.toggle("show");
         if(dropdownlist == "dropdown-list1"){
-            var remdropdown = document.getElementById("dropdown-list2");
-            var closedropdown = remdropdown;
-            if (closedropdown.classList.contains('show')) {
-                closedropdown.classList.remove('show');
+            var list2 = document.getElementById("dropdown-list2");
+            var userdropdown = document.getElementById("dropdown-listuser");
+            if (list2.classList.contains('show')) {
+                list2.classList.remove('show');
+            }
+            if (userdropdown.classList.contains('show')) {
+                userdropdown.classList.remove('show');
             }
         }
         else{
-            var remdropdown = document.getElementById("dropdown-list1");
-            var closedropdown = remdropdown;
-            if (closedropdown.classList.contains('show')) {
-                closedropdown.classList.remove('show');
+            var list1 = document.getElementById("dropdown-list1");
+            var userdropdown = document.getElementById("dropdown-listuser");
+            if (list1.classList.contains('show')) {
+                list1.classList.remove('show');
+            }
+            if (userdropdown.classList.contains('show')) {
+                userdropdown.classList.remove('show');
             }
         }
 }
@@ -36,21 +42,16 @@ function dropFunctionUser(dropdownlist){
         }
         else{
             document.getElementById(dropdownlist).classList.toggle("show");
-            if(dropdownlist == "dropdown-list1"){
-                var remdropdown = document.getElementById("dropdown-list2");
-                var closedropdown = remdropdown;
-                if (closedropdown.classList.contains('show')) {
-                    closedropdown.classList.remove('show');
+            var list1 = document.getElementById("dropdown-list1");
+            var list2 = document.getElementById("dropdown-list2");
+                if (list1.classList.contains('show')) {
+                    list1.classList.remove('show');
                 }
-            }
-            else{
-                var remdropdown = document.getElementById("dropdown-list1");
-                var closedropdown = remdropdown;
-                if (closedropdown.classList.contains('show')) {
-                    closedropdown.classList.remove('show');
+                if (list2.classList.contains('show')) {
+                    list2.classList.remove('show');
                 }
-            }
         }
+        
 }
 //inactivate drop down ketika kita menekan diluar drop down button
 window.onclick = function(event) {
