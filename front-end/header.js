@@ -3,31 +3,55 @@ const validation = document.getElementById("user-button");
 validation.href = `/login/login.html`
 const user_profile = document.getElementById('user-profile');
 const user_dropdown = document.querySelector('userprofile-dropdown');
-
+const user_status = document.getElementById('user-button');
 //drop down list dan inactivate drop down list ketika kita menekan drop down button yang lainnya 
-function dropFunction(dropdownlist){
-    document.getElementById(dropdownlist).classList.toggle("show");
-    if(dropdownlist == "dropdown-list1"){
-        var remdropdown = document.getElementById("dropdown-list2");
-        var closedropdown = remdropdown;
-        if (closedropdown.classList.contains('show')) {
-            closedropdown.classList.remove('show');
-        }
-    }
-    else{
-        var remdropdown = document.getElementById("dropdown-list1");
-        var closedropdown = remdropdown;
-        if (closedropdown.classList.contains('show')) {
-            closedropdown.classList.remove('show');
-        }
-    }
-}
+
 
 function logout(){
-    localStorage.removeItem('token');
     window.location.href = "../login/login.html"; 
 }
 
+
+function dropFunction(dropdownlist){
+        document.getElementById(dropdownlist).classList.toggle("show");
+        if(dropdownlist == "dropdown-list1"){
+            var remdropdown = document.getElementById("dropdown-list2");
+            var closedropdown = remdropdown;
+            if (closedropdown.classList.contains('show')) {
+                closedropdown.classList.remove('show');
+            }
+        }
+        else{
+            var remdropdown = document.getElementById("dropdown-list1");
+            var closedropdown = remdropdown;
+            if (closedropdown.classList.contains('show')) {
+                closedropdown.classList.remove('show');
+            }
+        }
+}
+
+function dropFunctionUser(dropdownlist){
+        if(!localStorage.getItem('token')){
+            logout();
+        }
+        else{
+            document.getElementById(dropdownlist).classList.toggle("show");
+            if(dropdownlist == "dropdown-list1"){
+                var remdropdown = document.getElementById("dropdown-list2");
+                var closedropdown = remdropdown;
+                if (closedropdown.classList.contains('show')) {
+                    closedropdown.classList.remove('show');
+                }
+            }
+            else{
+                var remdropdown = document.getElementById("dropdown-list1");
+                var closedropdown = remdropdown;
+                if (closedropdown.classList.contains('show')) {
+                    closedropdown.classList.remove('show');
+                }
+            }
+        }
+}
 //inactivate drop down ketika kita menekan diluar drop down button
 window.onclick = function(event) {
     if (!event.target.matches('dropbtn')) {
