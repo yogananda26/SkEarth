@@ -66,8 +66,7 @@ chartDays.render();
 
 function createDatass(data) {
 	headerDays.innerHTML = '';
-	var newDataPoints = [];
-
+	
 	const timestamp1 = new Date(data.list[0].dt * 1000).toDateString();
 	const timestamp2 = new Date(data.list[24].dt * 1000).toDateString();
 	const timestamp3 = new Date(data.list[48].dt * 1000).toDateString();

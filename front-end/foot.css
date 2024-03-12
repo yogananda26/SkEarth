@@ -35,7 +35,8 @@ footer{
     width: 70%;
     height: 40%;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+    justify-content: space-between;
 }
 
 .mid-mid .footer-option{
@@ -86,10 +87,10 @@ footer{
 }
 
 .slogan{
-    width: 50%;
+    width: 65%;
     height: auto;
-    font-size: 20px;
-    margin-left: 20px;
+    font-size: 16px;
+    margin-left: 24px;
 }
 
 .mid-footer .mid-top .about-skearth{

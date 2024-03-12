@@ -69,7 +69,6 @@ formDom.addEventListener('submit', async (e) => {
             {
                 city_name: city_input.value
             })
-        // getLocation();
         header_city.innerHTML = '';
         header_city.innerText = city_input.value[0].toUpperCase() + city_input.value.slice(1);
         console.log(data.data.weather[0].description);

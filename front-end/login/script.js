@@ -2,7 +2,6 @@
 const formDOM = document.querySelector('.container');
 const email_inputDOM = document.getElementById('input-text-email');
 const password_inputDOM = document.getElementById('input-text-password');
-const testing = document.getElementById('testing');
 
 console.log("im in")
 

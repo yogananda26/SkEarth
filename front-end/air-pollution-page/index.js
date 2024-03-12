@@ -4,7 +4,6 @@ const co2_text = document.getElementById("co2-text");
 const o3_text = document.getElementById("o3-text");
 const no2_text = document.getElementById("no2-text");
 const so2_text = document.getElementById("so2-text");
-const showDataDOM = document.getElementById("levelData");
 const headerAQI = document.getElementById("header-aqi");
 const headerCity = document.getElementById("header-city");
 const content_aqi = document.getElementById("content-aqi");
@@ -60,7 +59,6 @@ window.onload = async function () {
         header_forecast.innerText = `${cityCurrent[0].toUpperCase() + cityCurrent.slice(1)} Air Quality Index (AQI) Forecast`;
         historic_aqi.innerText = `${cityCurrent[0].toUpperCase() + cityCurrent.slice(1)} Historical Air Quality Index (AQI)`;
         headerCity.innerText = cityCurrent[0].toUpperCase() + cityCurrent.slice(1);
-
         }
 }
 
@@ -90,12 +88,9 @@ formDom.addEventListener('submit', async (e) => {
         header_forecast.innerText = `${city_input.value[0].toUpperCase() + city_input.value.slice(1)} Air Quality Index (AQI) Forecast`;
         historic_aqi.innerText = `${city_input.value[0].toUpperCase() + city_input.value.slice(1)} Historical Air Quality Index (AQI)`;
         headerCity.innerText = city_input.value[0].toUpperCase() + city_input.value.slice(1);
-        // console.log(data.list);
-        // console.log(data2.data.list[0].main.aqi);
     } catch (e) {
         console.log(e);
     }
-    // console.log(city_input.value);
 })
 
 const displayAirQualityRanking = async () => {
