@@ -15,7 +15,6 @@ const authentication = async_wrapper(async(req, res, next)=>{
         const decode = jwt.verify(token, process.env.PRIVATE_CODE); 
         const {UserID, name} = decode;
         req.user = {UserID , name};
-        // console.log(decode);
         next()
     }catch(err){ 
         throw new auth_error("You dont have permission to access this page")

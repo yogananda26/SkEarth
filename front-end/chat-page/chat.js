@@ -52,7 +52,7 @@ const value = async() => {
                 return `<div class="comment-unit">
                             <div class="user-comment-identity">
                                 <span class="user-comment-profile"> </span>
-                                <a style="text-decoration: none; color:inherit;" href="./user_profile.html?UserID=${createdBy}">
+                                <a style="text-decoration: none; color:inherit;" href="/newuser-page/new_user.html?UserID=${createdBy}">
                                     <p class="user-comment-name">${createdBy}</p>
                                 </a>
                             </div>

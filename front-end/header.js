@@ -1,6 +1,8 @@
 // const { validate } = require("../model/User");
 const validation = document.getElementById("user-button");
 validation.href = `/login/login.html`
+const user_profile = document.getElementById('user-profile');
+const user_dropdown = document.querySelector('userprofile-dropdown');
 
 //drop down list dan inactivate drop down list ketika kita menekan drop down button yang lainnya 
 function dropFunction(dropdownlist){
@@ -21,10 +23,9 @@ function dropFunction(dropdownlist){
     }
 }
 
-function login(){
-    if(!(localStorage.getItem('token'))){
-        window.location.href = "../login/login.html"; 
-    }
+function logout(){
+    localStorage.removeItem('token');
+    window.location.href = "../login/login.html"; 
 }
 
 //inactivate drop down ketika kita menekan diluar drop down button
@@ -44,14 +45,14 @@ window.onclick = function(event) {
 const user_document = document.getElementById('user-button')
 const resolve = async(e)=>{
     var token = localStorage.getItem("token");
-    axios.get("/user", {
+    axios.get("/user/registered", {
         headers: {
             'Authorization': 'Bearer ' + token
         }
     })  
     .then(({data})=>{
         user_document.innerHTML = data[0].name;
-        user_document.href = `/newuser-page/new_user.html?UserID=${data[0]._id}`; 
+        user_profile.href = `/newuser-page/new_user.html?UserID=${data[0]._id}`; 
     })
     .catch((e)=>{
         alert(error.response.data.msg);

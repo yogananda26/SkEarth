@@ -66,8 +66,8 @@
             <p class="dropbtnright" id="user-button">User</p>
           </button>
           <div id="dropdown-listuser" class="dropdown-content-right">
-            <a href="../newuser-page/new_user.html">Profile</a>
-            <a href="">Log-Out</a>
+            <a id="user-profile">Profile</a>
+            <a onclick="logout()" >Log-Out</a>
           </div>
         </div>
       </div>
@@ -79,10 +79,10 @@
                     <div class="col-12" style=" background-color: #203243;" >
                         <div class="row">
                             <div class="col d-flex gap-3">
-                                <div class="circle" data-bs-toggle="modal" data-bs-target="#exModal"></div>
+                                <div class="circle"></div>
                                 <div class="text-light">
-                                    <h3 class="m-0">Yoga</h3> <br>
-                                    <h5 class="m-0">this is would be your bio</h5> <br>
+                                    <h3 id="current-user-profile" class="m-0">Yoga</h3> <br>
+                                    <h5 id="current-user-bio" class="m-0">this is would be your bio</h5> <br>
 
                                 </div>
                             </div>
@@ -94,7 +94,11 @@
                             </div>
                             <div class="col d-flex justify-content-end">
                                 <div id="testing">
-                                    <button onclick=input_user_follower() class="btn btn-light fw-bold px-5 rounded-5">Follow</button>
+                                    <button
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#exModal"
+                                    id="user-button-setting" 
+                                    class="btn btn-light fw-bold px-5 rounded-5">Follow</button>
                                 </div>
                             </div>
                             <div class="garis" style="background-color: white; width: 100%; height: 2px;"></div>
@@ -202,21 +206,22 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <form>
+                <form class="user-update-profile">
                   <div class="mb-3">
-                    <label for="recipient-name" class="col-form-label">Name:</label>
-                    <input type="text" class="form-control" id="recipient-name">
+                    <label for="recipient-name"  class="col-form-label">Name:</label>
+                    <input type="text" name="new_name" class="form-control" id="recipient-name">
                   </div>
                   <div class="mb-3">
                     <label for="message-text" class="col-form-label">Bio:</label>
-                    <textarea class="form-control" id="message-text"></textarea>
+                    <textarea class="form-control" name="new_bio" id="message-text"></textarea>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Change</button>
                   </div>
                 </form>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">Change</button>
-              </div>
+        
             </div>
           </div>
         </div>
@@ -294,5 +299,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
-
 </html>

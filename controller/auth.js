@@ -36,7 +36,7 @@ const logIn = async_wrapper(async(req, res, next)=>{
     const token = await user.create_JWT();
     res.status(StatusCodes.ACCEPTED).json({token : token});
 })
-const get_user = async_wrapper(async(req,res,next)=>{ 
+const get_user_registered = async_wrapper(async(req,res,next)=>{ 
     const user_info = req.user; 
     if(!user_info){
         throw new auth_error("please login first");
@@ -45,10 +45,21 @@ const get_user = async_wrapper(async(req,res,next)=>{
     res.status(200).json(result);
 })
 
+const get_user = async_wrapper(async(req,res,next)=>{ 
+    const {UserID} = req.query; 
+    if(!UserID){
+        throw new auth_error("please login first");
+    }
+    const result = await User.find({_id : UserID})
+    const user_registered = req.user; 
+    var arr = {result, user_registered}
+    res.status(200).json(arr);
+})
+
 const get_all_user = async_wrapper(async(req, res)=>{  
     const result = await User.find({});
     res.status(200).json(result);
 })
 module.exports ={
-    logIn, signUp, get_user, get_all_user
+    logIn, signUp, get_user, get_all_user, get_user_registered
 }

@@ -1,10 +1,29 @@
+// this is for main site 
 const container = document.getElementById('main-row');
 var token = localStorage.getItem("token");
 const params = window.location.search
 const id = new URLSearchParams(params).get('UserID');
 
-const input_user_follower = ()=>{ 
+// this for settting the user profile
+const button_user_profile = document.getElementById("user-button-setting");
+
+// this for placeholder in user setting profile
+const placeholder_name = document.getElementById('recipient-name');
+const placeholder_bio = document.getElementById('message-text');
+
+// 
+const user_current_name = document.getElementById('current-user-profile'); 
+const user_current_bio = document.getElementById('current-user-bio') 
+
+
+
+// this is for take the user form 
+const form_input = document.querySelector('.user-update-profile');
+const modal = document.getElementById('exModal');
+
+const input_user_follower = async()=>{ 
     // this is for inputing the user follower
+    console.log("this is for following");
 };
 
 const fetch_all_comment = ()=>{ 
@@ -87,6 +106,51 @@ const fetch_all_comment = ()=>{
     })
 };
 fetch_all_comment();
+
+// this is for setting the current user profile
+const get = async()=>{
+    axios.get(`/user?UserID=${id}`, {
+        headers: {
+            'Authorization': 'Bearer ' + token
+        }
+    })  
+    .then(({data})=>{
+        if(data.user_registered.UserID == id){
+          button_user_profile.innerHTML = "Setting Profile"; 
+          placeholder_name.placeholder = data.result[0].name;
+          placeholder_bio.placeholder = data.result[0].bio;
+        }
+        else{
+            button_user_profile.setAttribute('onclick', "input_user_follower()")
+            button_user_profile.removeAttribute('data-bs-toggle'); 
+            button_user_profile.removeAttribute('data-bs-target');
+        }
+        user_current_name.innerHTML =  data.result[0].name; 
+        user_current_bio.innerHTML = data.result[0].bio; 
+    })
+    .catch((e)=>{
+        console.log(e)
+    })
+}
+get();
+
+// this is for updating the username and bio
+form_input.addEventListener('submit', async(e)=>{
+    // this is for inputting the bio
+    const form = new FormData(form_input);
+    e.preventDefault();
+    axios.patch("/user/setting",form,
+    {
+      // setting the headers
+      headers : { 
+        'Authorization': 'Bearer ' + token, 
+        'Content-type' : "multipart/form-data", 
+    }
+    })
+    window.location.href = `/newuser-page/new_user.html?UserID=${id}`; 
+    modal.visibility = "hidden";
+})
+
 
 
 // this is for calculating the time of that massage 
