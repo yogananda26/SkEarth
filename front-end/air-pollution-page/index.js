@@ -107,15 +107,6 @@ const displayAirQualityRanking = async () => {
         { name: 'Tokyo', country: 'Japan' }, { name: 'Delhi', country: 'India' }, { name: 'Beijing', country: 'China' }, { name: 'Moscow', country: 'Russia' },
         { name: 'Cairo', country: 'Egypt' }, { name: 'Paris', country: 'France' }, { name: 'Berlin', country: 'Germany' }, { name: 'London', country: 'United Kingdom' },
         { name: 'Rome', country: 'Italy' }, { name: 'Madrid', country: 'Spain' }, { name: 'Lisbon', country: 'Portugal' }, { name: 'Amsterdam', country: 'Netherlands' },
-        { name: 'Brussels', country: 'Belgium' }, { name: 'Vienna', country: 'Austria' }, { name: 'Dublin', country: 'Ireland' }, { name: 'Athens', country: 'Greece' },
-        { name: 'Stockholm', country: 'Sweden' }, { name: 'Oslo', country: 'Norway' }, { name: 'Copenhagen', country: 'Denmark' }, { name: 'Helsinki', country: 'Finland' },
-        { name: 'Warsaw', country: 'Poland' }, { name: 'Prague', country: 'Czech Republic' }, { name: 'Budapest', country: 'Hungary' }, { name: 'Bratislava', country: 'Slovakia' },
-        { name: 'Ljubljana', country: 'Slovenia' }, { name: 'Zagreb', country: 'Croatia' }, { name: 'Belgrade', country: 'Serbia' }, { name: 'Sofia', country: 'Bulgaria' },
-        { name: 'Bucharest', country: 'Romania' }, { name: 'Warsaw', country: 'Poland' }, { name: 'Kiev', country: 'Ukraine' }, { name: 'Ankara', country: 'Turkey' },
-        { name: 'Istanbul', country: 'Turkey' }, { name: 'Athens', country: 'Greece' }, { name: 'Tbilisi', country: 'Georgia' }, { name: 'Yerevan', country: 'Armenia' },
-        { name: 'Baku', country: 'Azerbaijan' }, { name: 'Tehran', country: 'Iran' }, { name: 'Baghdad', country: 'Iraq' }, { name: 'Riyadh', country: 'Saudi Arabia' },
-        { name: 'Kuwait City', country: 'Kuwait' }, { name: 'Doha', country: 'Qatar' }, { name: 'Abu Dhabi', country: 'United Arab Emirates' },
-        { name: 'Muscat', country: 'Oman' }, { name: 'Manama', country: 'Bahrain' }, { name: 'Jerusalem', country: 'Israel' }, { name: 'Amman', country: 'Jordan' },
         { name: 'Manila', country: 'Philippines' }, { name: 'Seoul', country: 'South Korea' }, { name: 'Hanoi', country: 'Vietnam' }, { name: 'Bangkok', country: 'Thailand' },
         { name: 'Jakarta', country: 'Indonesia' }, { name: 'Canberra', country: 'Australia' }, { name: 'Wellington', country: 'New Zealand' }, { name: 'Ottawa', country: 'Canada' },
         { name: 'Washington, D.C.', country: 'United States' }, { name: 'Mexico City', country: 'Mexico' }
@@ -124,17 +115,7 @@ const displayAirQualityRanking = async () => {
     const indonesiaCities = [
         { name: 'Jakarta' }, { name: 'Surabaya' }, { name: 'Bandung' }, { name: 'Medan' }, { name: 'Semarang' }, { name: 'Makassar' }, { name: 'Palembang' },
         { name: 'Depok' }, { name: 'Tangerang' }, { name: 'South Tangerang' }, { name: 'Bekasi' }, { name: 'Bogor' }, { name: 'Padang' }, { name: 'Bandar Lampung' },
-        { name: 'Malang' }, { name: 'Pekanbaru' }, { name: 'Denpasar' }, { name: 'Banjarmasin' }, { name: 'Yogyakarta' }, { name: 'Batam' },
-        { name: 'Samarinda' }, { name: 'Cilegon' }, { name: 'Pontianak' }, { name: 'Manado' }, { name: 'Balikpapan' }, { name: 'Jambi' }, { name: 'Serang' },
-        { name: 'Banda Aceh' }, { name: 'Ambon' }, { name: 'Palu' }, { name: 'Kupang' }, { name: 'Mataram' }, { name: 'Ternate' }, { name: 'Manokwari' },
-        { name: 'Jayapura' }, { name: 'Kendari' }, { name: 'Gorontalo' }, { name: 'Samarinda' }, { name: 'Tanjungpinang' }, { name: 'Tanjung Balai' },
-        { name: 'Pematangsiantar' }, { name: 'Binjai' }, { name: 'Tanjung Morawa' }, { name: 'Deli Serdang' }, { name: 'Lubuk Pakam' }, { name: 'Tebing Tinggi' },
-        { name: 'Pekanbaru' }, { name: 'Padang' }, { name: 'Solok' }, { name: 'Sawahlunto' }, { name: 'Payakumbuh' }, { name: 'Pariaman' }, { name: 'Bukittinggi' },
-        { name: 'Lubuk Basung' }, { name: 'Amlapura' }, { name: 'Karangasem' }, { name: 'Bangli' }, { name: 'Negara' }, { name: 'SINGARAJA' }, { name: 'Tabanan' },
-        { name: 'Klungkung' }, { name: 'Gianyar' }, { name: 'Denpasar' }, { name: 'Kupang' }, { name: 'Atambua' }, { name: 'Larantuka' }, { name: 'Lewoleba' },
-        { name: 'Maumere' }, { name: 'Ende' }, { name: 'Ruteng' }, { name: 'Bajawa' }, { name: 'Borong' }, { name: 'Sikka' }, { name: 'Flores Timur' },
-        { name: 'Manggarai' }, { name: 'Rote' }, { name: 'Ndao' }, { name: 'Manggarai Barat' }, { name: 'Manggarai Timur' }, { name: 'Manggarai Tengah' },
-        { name: 'Sumba Barat' }, { name: 'Sumba Barat Daya' }, { name: 'Sumba Tengah' }, { name: 'Sumba Timur' }, { name: 'Timor Tengah Selatan' },
+        { name: 'Malang' }, { name: 'Pekanbaru' }, { name: 'Denpasar' }, { name: 'Banjarmasin' }, { name: 'Yogyakarta' }, { name: 'Batam' },{ name: 'Pekanbaru' }, { name: 'Padang' },
         { name: 'Timor Tengah Utara' }, { name: 'Sabu Raijua' }, { name: 'Rote Ndao' }, { name: 'Gresik' }, { name: 'Banyuwangi' }, { name: 'Tuban' }
     ];
 
