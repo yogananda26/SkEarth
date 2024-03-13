@@ -64,10 +64,7 @@
         </div>
       </div>
       <div class="right-header">
-        <button
-          onclick="dropFunction('dropdown-listuser')"
-          class="user-profile"
-        >
+        <button onclick="dropFunctionUser('dropdown-listuser')" class="user-profile" id="user--profile">
           <img
             src="../property/header-asset/blck.jpg"
             alt=""
@@ -76,8 +73,8 @@
           <p class="dropbtnright" id="user-button">User</p>
         </button>
         <div id="dropdown-listuser" class="dropdown-content-right">
-          <a href="../newuser-page/new_user.html">Profile</a>
-          <a href="">Log-Out</a>
+          <a id="user-profile">Profile</a>
+          <a onclick="logout()" >Log-Out</a>
         </div>
       </div>
     </div>
